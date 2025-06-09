@@ -1,0 +1,35 @@
+{
+  "sceneId": "school_gate",
+  "background": "school_gate",
+  "characters": [
+    {
+      "name": "Hana",
+      "sprite": "Hana_default",
+      "position": "left"
+    },
+    {
+      "name": "Nova",
+      "sprite": "nova_happy",
+      "position": "right"
+    },
+    {
+      "name": "Shey",
+      "sprite": "shey_default",
+      "position": "left"
+    }
+  ],
+  "dialog": [
+    {
+      "speaker": "Hana",
+      "text": "Wah, tempat ini terlihat misterius..."
+    },
+    {
+      "speaker": "Nova",
+      "text": "Tenang saja, aku pernah lewat sini sebelumnya."
+    },
+    {
+      "speaker": "Shey",
+      "text": "yoi aman aja"
+    }
+  ]
+}

@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/DialogScene.unity
+    guid: 8183e27ffc9a88949a88710f8e31b372
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 415f7d761e266ae4cab79c5ae2dbd839, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 0c29d397004df7c4ca0db8b9fe629dcf, type: 2}
