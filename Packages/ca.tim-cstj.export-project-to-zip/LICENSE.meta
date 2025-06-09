@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 192aeb6558a513b43b8fd4e95ea1e46a
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 243983
+  packageName: Export Project to Zip
+  packageVersion: 1.1.3
+  assetPath: Packages/ca.tim-cstj.export-project-to-zip/LICENSE
+  uploadId: 729839

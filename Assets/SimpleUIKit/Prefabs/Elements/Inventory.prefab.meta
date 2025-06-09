@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: effddac9ad33cda4d92aa09df1fab3a0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/Inventory.prefab
+  uploadId: 669184

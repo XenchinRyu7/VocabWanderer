@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ec38acd29daeedd4e8e370a205d6d4aa
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Popup.prefab
+  uploadId: 669184

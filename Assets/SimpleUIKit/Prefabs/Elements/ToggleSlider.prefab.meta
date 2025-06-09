@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7d20c65d6f8282a4e8b9f1bf7ddcb226
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/ToggleSlider.prefab
+  uploadId: 669184

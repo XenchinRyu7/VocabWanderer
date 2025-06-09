@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 59248f17f019f4e43814d1b9dc8fa2fd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Settings.prefab
+  uploadId: 669184

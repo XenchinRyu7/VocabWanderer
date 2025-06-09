@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d77f4dd63c4805b42bdaa4e900dc50f4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/PopupSpin.prefab
+  uploadId: 669184

@@ -1,0 +1,1112 @@
+{
+  "challenges": [
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/background_school_0",
+      "questions": [
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "u",
+            "y"
+          ],
+          "scrambled_word": "b__",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "r",
+            "u"
+          ],
+          "scrambled_word": "__n",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "speak",
+          "missing_letters": [
+            "k",
+            "s"
+          ],
+          "scrambled_word": "_pea_",
+          "time_limit_seconds": 34
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "speak",
+          "missing_letters": [
+            "s",
+            "p"
+          ],
+          "scrambled_word": "__eak",
+          "time_limit_seconds": 20
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 31
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_library",
+      "questions": [
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "n",
+            "k"
+          ],
+          "scrambled_word": "dri__",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "e",
+            "i"
+          ],
+          "scrambled_word": "wr_t_",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "go",
+          "missing_letters": [
+            "g"
+          ],
+          "scrambled_word": "_o",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 24
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "u",
+            "y"
+          ],
+          "scrambled_word": "b__",
+          "time_limit_seconds": 23
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_space",
+      "questions": [
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "r",
+            "i"
+          ],
+          "scrambled_word": "w__te",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 31
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "speak",
+          "missing_letters": [
+            "p",
+            "s"
+          ],
+          "scrambled_word": "__eak",
+          "time_limit_seconds": 26
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "speak",
+          "missing_letters": [
+            "s",
+            "p"
+          ],
+          "scrambled_word": "__eak",
+          "time_limit_seconds": 26
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "i",
+            "d"
+          ],
+          "scrambled_word": "_r_nk",
+          "time_limit_seconds": 25
+        }
+      ]
+    },
+    {
+      "verb_level": "V2",
+      "background_asset": "Background/scene_forest_day",
+      "questions": [
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "b",
+            "h"
+          ],
+          "scrambled_word": "_oug_t",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Datang ke tempat tertentu",
+          "answer": "came",
+          "missing_letters": [
+            "a",
+            "m"
+          ],
+          "scrambled_word": "c__e",
+          "time_limit_seconds": 29
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "ran",
+          "missing_letters": [
+            "n",
+            "r"
+          ],
+          "scrambled_word": "_a_",
+          "time_limit_seconds": 24
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "went",
+          "missing_letters": [
+            "n",
+            "t"
+          ],
+          "scrambled_word": "we__",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "spoke",
+          "missing_letters": [
+            "o",
+            "p"
+          ],
+          "scrambled_word": "s__ke",
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "verb_level": "V2",
+      "background_asset": "Background/scene_classroom",
+      "questions": [
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "b",
+            "o"
+          ],
+          "scrambled_word": "__ught",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "spoke",
+          "missing_letters": [
+            "s",
+            "e"
+          ],
+          "scrambled_word": "_pok_",
+          "time_limit_seconds": 34
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "u",
+            "o"
+          ],
+          "scrambled_word": "b__ght",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "saw",
+          "missing_letters": [
+            "w",
+            "s"
+          ],
+          "scrambled_word": "_a_",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "wrote",
+          "missing_letters": [
+            "o",
+            "t"
+          ],
+          "scrambled_word": "wr__e",
+          "time_limit_seconds": 25
+        }
+      ]
+    },
+    {
+      "verb_level": "V3",
+      "background_asset": "Background/scene_forest_day",
+      "questions": [
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eaten",
+          "missing_letters": [
+            "t",
+            "e"
+          ],
+          "scrambled_word": "_a__n",
+          "time_limit_seconds": 31
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "spoken",
+          "missing_letters": [
+            "e",
+            "s"
+          ],
+          "scrambled_word": "_pok_n",
+          "time_limit_seconds": 30
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "spoken",
+          "missing_letters": [
+            "p",
+            "s"
+          ],
+          "scrambled_word": "__oken",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "g",
+            "b"
+          ],
+          "scrambled_word": "_ou_ht",
+          "time_limit_seconds": 31
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "written",
+          "missing_letters": [
+            "t",
+            "i"
+          ],
+          "scrambled_word": "wr___en",
+          "time_limit_seconds": 29
+        }
+      ]
+    },
+    {
+      "verb_level": "V3",
+      "background_asset": "Background/scene_city_night",
+      "questions": [
+        {
+          "context": "Menulis sesuatu",
+          "answer": "written",
+          "missing_letters": [
+            "w",
+            "r"
+          ],
+          "scrambled_word": "__itten",
+          "time_limit_seconds": 20
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "t",
+            "g"
+          ],
+          "scrambled_word": "bou_h_",
+          "time_limit_seconds": 30
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "written",
+          "missing_letters": [
+            "t",
+            "r"
+          ],
+          "scrambled_word": "w_i__en",
+          "time_limit_seconds": 35
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "spoken",
+          "missing_letters": [
+            "n",
+            "k"
+          ],
+          "scrambled_word": "spo_e_",
+          "time_limit_seconds": 29
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "spoken",
+          "missing_letters": [
+            "e",
+            "k"
+          ],
+          "scrambled_word": "spo__n",
+          "time_limit_seconds": 26
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_library",
+      "questions": [
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eat",
+          "missing_letters": [
+            "t",
+            "a"
+          ],
+          "scrambled_word": "e__",
+          "time_limit_seconds": 31
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "u",
+            "n"
+          ],
+          "scrambled_word": "r__",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "t",
+            "r"
+          ],
+          "scrambled_word": "w_i_e",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eat",
+          "missing_letters": [
+            "a",
+            "t"
+          ],
+          "scrambled_word": "e__",
+          "time_limit_seconds": 27
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "u",
+            "b"
+          ],
+          "scrambled_word": "__y",
+          "time_limit_seconds": 28
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_city_night",
+      "questions": [
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "w",
+            "t"
+          ],
+          "scrambled_word": "_ri_e",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "u",
+            "r"
+          ],
+          "scrambled_word": "__n",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "go",
+          "missing_letters": [
+            "g"
+          ],
+          "scrambled_word": "_o",
+          "time_limit_seconds": 28
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "go",
+          "missing_letters": [
+            "g"
+          ],
+          "scrambled_word": "_o",
+          "time_limit_seconds": 27
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_library",
+      "questions": [
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "i",
+            "t"
+          ],
+          "scrambled_word": "wr__e",
+          "time_limit_seconds": 22
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "r",
+            "n"
+          ],
+          "scrambled_word": "d_i_k",
+          "time_limit_seconds": 28
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "i",
+            "r"
+          ],
+          "scrambled_word": "w__te",
+          "time_limit_seconds": 20
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "r",
+            "k"
+          ],
+          "scrambled_word": "d_in_",
+          "time_limit_seconds": 30
+        },
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "r",
+            "e"
+          ],
+          "scrambled_word": "__ad",
+          "time_limit_seconds": 21
+        }
+      ]
+    },
+    {
+      "verb_level": "V3",
+      "background_asset": "Background/scene_space",
+      "questions": [
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eaten",
+          "missing_letters": [
+            "t",
+            "e"
+          ],
+          "scrambled_word": "_a__n",
+          "time_limit_seconds": 32
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "seen",
+          "missing_letters": [
+            "e",
+            "s"
+          ],
+          "scrambled_word": "___n",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "n",
+            "u"
+          ],
+          "scrambled_word": "r__",
+          "time_limit_seconds": 29
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "gone",
+          "missing_letters": [
+            "n",
+            "e"
+          ],
+          "scrambled_word": "go__",
+          "time_limit_seconds": 22
+        },
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "d",
+            "e"
+          ],
+          "scrambled_word": "r_a_",
+          "time_limit_seconds": 31
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_space",
+      "questions": [
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "d",
+            "n"
+          ],
+          "scrambled_word": "_ri_k",
+          "time_limit_seconds": 20
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "n",
+            "r"
+          ],
+          "scrambled_word": "_u_",
+          "time_limit_seconds": 27
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "u",
+            "y"
+          ],
+          "scrambled_word": "b__",
+          "time_limit_seconds": 28
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "i",
+            "d"
+          ],
+          "scrambled_word": "_r_nk",
+          "time_limit_seconds": 29
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "b",
+            "y"
+          ],
+          "scrambled_word": "_u_",
+          "time_limit_seconds": 28
+        }
+      ]
+    },
+    {
+      "verb_level": "V2",
+      "background_asset": "Background/scene_forest_day",
+      "questions": [
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "h",
+            "u"
+          ],
+          "scrambled_word": "bo_g_t",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Datang ke tempat tertentu",
+          "answer": "came",
+          "missing_letters": [
+            "m",
+            "e"
+          ],
+          "scrambled_word": "ca__",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "wrote",
+          "missing_letters": [
+            "e",
+            "t"
+          ],
+          "scrambled_word": "wro__",
+          "time_limit_seconds": 20
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "h",
+            "u"
+          ],
+          "scrambled_word": "bo_g_t",
+          "time_limit_seconds": 35
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drank",
+          "missing_letters": [
+            "k",
+            "a"
+          ],
+          "scrambled_word": "dr_n_",
+          "time_limit_seconds": 22
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_city_night",
+      "questions": [
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "r",
+            "d"
+          ],
+          "scrambled_word": "_ea_",
+          "time_limit_seconds": 30
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "go",
+          "missing_letters": [
+            "g"
+          ],
+          "scrambled_word": "_o",
+          "time_limit_seconds": 33
+        },
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eat",
+          "missing_letters": [
+            "e",
+            "t"
+          ],
+          "scrambled_word": "_a_",
+          "time_limit_seconds": 30
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 27
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "r",
+            "k"
+          ],
+          "scrambled_word": "d_in_",
+          "time_limit_seconds": 29
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_library",
+      "questions": [
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "y",
+            "u"
+          ],
+          "scrambled_word": "b__",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "write",
+          "missing_letters": [
+            "t",
+            "i"
+          ],
+          "scrambled_word": "wr__e",
+          "time_limit_seconds": 28
+        },
+        {
+          "context": "Berbicara dengan seseorang",
+          "answer": "speak",
+          "missing_letters": [
+            "e",
+            "s"
+          ],
+          "scrambled_word": "_p_ak",
+          "time_limit_seconds": 27
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 27
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "b",
+            "y"
+          ],
+          "scrambled_word": "_u_",
+          "time_limit_seconds": 34
+        }
+      ]
+    },
+    {
+      "verb_level": "V2",
+      "background_asset": "Background/scene_classroom",
+      "questions": [
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "saw",
+          "missing_letters": [
+            "w",
+            "s"
+          ],
+          "scrambled_word": "_a_",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drank",
+          "missing_letters": [
+            "a",
+            "k"
+          ],
+          "scrambled_word": "dr_n_",
+          "time_limit_seconds": 24
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "saw",
+          "missing_letters": [
+            "s",
+            "w"
+          ],
+          "scrambled_word": "_a_",
+          "time_limit_seconds": 35
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "t",
+            "g"
+          ],
+          "scrambled_word": "bou_h_",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "r",
+            "a"
+          ],
+          "scrambled_word": "_e_d",
+          "time_limit_seconds": 25
+        }
+      ]
+    },
+    {
+      "verb_level": "V3",
+      "background_asset": "Background/scene_classroom",
+      "questions": [
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "u",
+            "n"
+          ],
+          "scrambled_word": "r__",
+          "time_limit_seconds": 20
+        },
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eaten",
+          "missing_letters": [
+            "t",
+            "n"
+          ],
+          "scrambled_word": "ea_e_",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "r",
+            "u"
+          ],
+          "scrambled_word": "__n",
+          "time_limit_seconds": 26
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "gone",
+          "missing_letters": [
+            "n",
+            "g"
+          ],
+          "scrambled_word": "_o_e",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "d",
+            "r"
+          ],
+          "scrambled_word": "_ea_",
+          "time_limit_seconds": 27
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_city_night",
+      "questions": [
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "e",
+            "d"
+          ],
+          "scrambled_word": "r_a_",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "b",
+            "u"
+          ],
+          "scrambled_word": "__y",
+          "time_limit_seconds": 32
+        },
+        {
+          "context": "Melihat sesuatu dengan mata",
+          "answer": "see",
+          "missing_letters": [
+            "e"
+          ],
+          "scrambled_word": "s__",
+          "time_limit_seconds": 34
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drink",
+          "missing_letters": [
+            "i",
+            "d"
+          ],
+          "scrambled_word": "_r_nk",
+          "time_limit_seconds": 27
+        },
+        {
+          "context": "Membaca buku atau artikel",
+          "answer": "read",
+          "missing_letters": [
+            "a",
+            "d"
+          ],
+          "scrambled_word": "re__",
+          "time_limit_seconds": 32
+        }
+      ]
+    },
+    {
+      "verb_level": "V2",
+      "background_asset": "Background/scene_city_night",
+      "questions": [
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "bought",
+          "missing_letters": [
+            "g",
+            "u"
+          ],
+          "scrambled_word": "bo__ht",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Minum air atau teh",
+          "answer": "drank",
+          "missing_letters": [
+            "r",
+            "a"
+          ],
+          "scrambled_word": "d__nk",
+          "time_limit_seconds": 21
+        },
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "went",
+          "missing_letters": [
+            "t",
+            "n"
+          ],
+          "scrambled_word": "we__",
+          "time_limit_seconds": 23
+        },
+        {
+          "context": "Menulis sesuatu",
+          "answer": "wrote",
+          "missing_letters": [
+            "w",
+            "t"
+          ],
+          "scrambled_word": "_ro_e",
+          "time_limit_seconds": 25
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "ran",
+          "missing_letters": [
+            "a",
+            "n"
+          ],
+          "scrambled_word": "r__",
+          "time_limit_seconds": 33
+        }
+      ]
+    },
+    {
+      "verb_level": "V1",
+      "background_asset": "Background/scene_space",
+      "questions": [
+        {
+          "context": "Pergi ke suatu tempat",
+          "answer": "go",
+          "missing_letters": [
+            "g"
+          ],
+          "scrambled_word": "_o",
+          "time_limit_seconds": 28
+        },
+        {
+          "context": "Makan makanan favorit",
+          "answer": "eat",
+          "missing_letters": [
+            "a",
+            "e"
+          ],
+          "scrambled_word": "__t",
+          "time_limit_seconds": 30
+        },
+        {
+          "context": "Datang ke tempat tertentu",
+          "answer": "come",
+          "missing_letters": [
+            "e",
+            "c"
+          ],
+          "scrambled_word": "_om_",
+          "time_limit_seconds": 26
+        },
+        {
+          "context": "Berlari di taman",
+          "answer": "run",
+          "missing_letters": [
+            "u",
+            "n"
+          ],
+          "scrambled_word": "r__",
+          "time_limit_seconds": 24
+        },
+        {
+          "context": "Membeli barang dari toko",
+          "answer": "buy",
+          "missing_letters": [
+            "b",
+            "u"
+          ],
+          "scrambled_word": "__y",
+          "time_limit_seconds": 26
+        }
+      ]
+    }
+  ]
+}

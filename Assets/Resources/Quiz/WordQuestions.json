@@ -1,0 +1,12 @@
+[
+    {
+        "context": "Ucapan saat bertemu",
+        "answer": "welcome",
+        "missingIndices": [ 1, 4 ]
+    },
+    {
+        "context": "Kata untuk berlari cepat",
+        "answer": "sprint",
+        "missingIndices": [ 0, 5 ]
+    }
+]

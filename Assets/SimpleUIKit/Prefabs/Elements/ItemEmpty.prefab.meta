@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d35501b3d4b343c469c4beda0e6b3bdb
+timeCreated: 1508512886
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/ItemEmpty.prefab
+  uploadId: 669184

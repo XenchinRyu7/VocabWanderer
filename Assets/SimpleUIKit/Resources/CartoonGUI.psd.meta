@@ -1,0 +1,3065 @@
+fileFormatVersion: 2
+guid: d396c72e0d79dc74fb1aa158fb790dae
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Resources/CartoonGUI.psd
+  uploadId: 669184
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CartoonGUI_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 3446
+        width: 960
+        height: 652
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30db6af8076a33340a159a6b0ec12ca5
+      internalID: -221106385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_1
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 4056
+        width: 24
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca661ac0a494c1449fca3a3e4399982
+      internalID: -608044885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_2
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 3439
+        width: 927
+        height: 664
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97146f5d80b930748979169c73e54412
+      internalID: -730393046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_3
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 3564
+        width: 20
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104ab4b38a1343542a30ab57406ae3bb
+      internalID: -619543965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_4
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 3511
+        width: 425
+        height: 594
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32a863ead7807d4a8a862beddfbd6e2
+      internalID: 762241619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_5
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 3569
+        width: 344
+        height: 529
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1925f80d4471dc2419a9dcc44c11ee77
+      internalID: 628720896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_6
+      rect:
+        serializedVersion: 2
+        x: 3074
+        y: 3585
+        width: 22
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74022a30db628b46bef06ed7d7a96e8
+      internalID: -412677270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_8
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 3482
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9350b8a564e6a419a8adbbb22cc42a
+      internalID: 519383769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_9
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 3452
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f9beea60cb28c4cb0aa5a8ccebcea4
+      internalID: 350556951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_10
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 3444
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ab9991928b81447ad188084042bbb7
+      internalID: -1795289121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_11
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 3439
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: decef6fdaa5acf048bbb2791540881da
+      internalID: 1614329398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 3427
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5485eb58b4e517a40b2cd15540ff75d4
+      internalID: 826612430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_13
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 3419
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e15546dbfa0314ca362b9c3c6de2f0
+      internalID: 32543844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 3419
+        width: 870
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c15aa040eacac489e8ee5b853e31e9
+      internalID: 1213058412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_15
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 3425
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382a173d92f08794f83347aa0315c17b
+      internalID: -493159083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 3220
+        width: 788
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6b2d433281c734a8c706ce2ebf1ae4
+      internalID: 1143255049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_17
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 2567
+        width: 65
+        height: 655
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888962fa1c4dc324b86058f633b1d62c
+      internalID: -706163019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_18
+      rect:
+        serializedVersion: 2
+        x: 3091
+        y: 3210
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c864843a8fa384fbeab0f1966cc76e
+      internalID: 1323998860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2702
+        width: 855
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68379085384a244795023dd5b3584e9
+      internalID: 1508962553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_20
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 2639
+        width: 801
+        height: 557
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db775c471a0be904abf4ac5bee610aac
+      internalID: -2035048812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_21
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 2606
+        width: 10
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2827dbb250890a04093cabea07f2937f
+      internalID: -107987497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_22
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 2606
+        width: 6
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e82c85b24cc5e54386030fa4360746d
+      internalID: -336324646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_23
+      rect:
+        serializedVersion: 2
+        x: 3100
+        y: 3178
+        width: 606
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1819f53fed16a084d9a93ae19a9824e2
+      internalID: -1759757045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_24
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 3042
+        width: 26
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8382f6e674d3a3944bb7fbf582b53add
+      internalID: -1376464557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_25
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 3150
+        width: 577
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30d03d410f18cb47915c5c69f556568
+      internalID: 564726713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_26
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 2978
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fdb2e8a43a10c4cb0ca3d490c025eb
+      internalID: -296865002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_27
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 2696
+        width: 24
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3405a1641e8c69d4186f1fa8aff4e742
+      internalID: -55980807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_28
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 2683
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dccd91f467ba1f4f907c5db066df09e
+      internalID: 1705091474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_29
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 2683
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece481cc4a81d894aa50f1059b1a5168
+      internalID: 1848094393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_30
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 2671
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a18be4fdafd2824bb62aea854590901
+      internalID: -1181385286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_31
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 2671
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3447d54efb635b7459e0e6a729d12f20
+      internalID: -435974373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_32
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 2673
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a029fc47bde6be94a88a76480c8d5915
+      internalID: -426209789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_33
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 2653
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0651eaafb9745db4a8f1b47b8356d81a
+      internalID: -599447543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_34
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 2122
+        width: 384
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fad807140b3c14a856ee47f2482c01
+      internalID: -1100703187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_35
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2188
+        width: 358
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd50931f3aad1f947957e78fe2eeb80e
+      internalID: -842551190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_36
+      rect:
+        serializedVersion: 2
+        x: 2933
+        y: 2200
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86c799a30cfa9a44b1bc464be924f1b
+      internalID: 424700302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_37
+      rect:
+        serializedVersion: 2
+        x: 3070
+        y: 2001
+        width: 734
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15121edbde12bce439f69065565b4934
+      internalID: -1277011934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_38
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2096
+        width: 503
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ddf38791c7a864989aadf79fa8e60a
+      internalID: 125652505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_39
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 2175
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1c84085aaa20546b0f5402889a4850
+      internalID: 1399924173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_40
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 2071
+        width: 502
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b2107930c34eb498dc6340e46cb49f
+      internalID: 1185431058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_41
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2133
+        width: 401
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65483d403515eed4b8c81d21f435d472
+      internalID: -1793009547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_42
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 2175
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0889f35621c96fe49a71f01f0b6c1304
+      internalID: 1741011927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_43
+      rect:
+        serializedVersion: 2
+        x: 2114
+        y: 2118
+        width: 319
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1817c2e8e6789af4aa1c95a603369a1e
+      internalID: -2142704391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_44
+      rect:
+        serializedVersion: 2
+        x: 2599
+        y: 2118
+        width: 342
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e51802f8e4b16e47b7173510938f3db
+      internalID: 192786580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_45
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 2094
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7c4655a8896494fb1664664f65f778
+      internalID: 688546001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_46
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 2091
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a3537fb9b08ea479b30113e43293f0
+      internalID: 1634799710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_47
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 2081
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5977929cdb940f1469e7e816085ba319
+      internalID: 1839331746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_48
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 2077
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e65fe5627a23f448b7352ef9e8a2eab
+      internalID: -131250852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_49
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2067
+        width: 423
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6a72c17ab1c5b45b87ce20431e53bc
+      internalID: -98041954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_50
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 2069
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f04ec82f1198ff4aac198fe37bf74d4
+      internalID: 1074273791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_51
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 2085
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0aea13643a13434cb0f10db55e814e9
+      internalID: 56418354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_52
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 2067
+        width: 436
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dadd5de4e56168459e6dbd35055d603
+      internalID: -1549023587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_53
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1483
+        width: 485
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287d8840c5148724fb1996b98db355ab
+      internalID: -343836507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_54
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1633
+        width: 21
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fdbdfc377b26647ac3095bb53e96af
+      internalID: -1515721993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_55
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1483
+        width: 482
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71163607615b6704fa5899785d8c9a5c
+      internalID: -1235482133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_56
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1483
+        width: 485
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9de50cce942c0418f5bb19a338c328
+      internalID: 1344647318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_57
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1483
+        width: 485
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6546bc416c526ce44ba0ab46e6ccff63
+      internalID: -22272014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_58
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 1626
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25469ce9b2adb504c9164b26d44cbda5
+      internalID: -1192181488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_59
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 1483
+        width: 481
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090bfc95b1b066b4dbe55eee581ed2a8
+      internalID: 2101728463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_60
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1623
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dda019b33a3caf40920774c3f5d557c
+      internalID: 1433374744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_61
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1586
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2783532e702123d4faecb8571d556740
+      internalID: -1913197473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_62
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1594
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907f70d77a504634b82a39b30920a0c8
+      internalID: -1877407427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_63
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1592
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 428f2f8fe9c2a82468049eefe1041668
+      internalID: -1477669270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_64
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 1592
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbe15f829cfad4429db3b07d9a0d6fb
+      internalID: -816992214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_65
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1575
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b747f2b63329c409736d60be86ef52
+      internalID: 361268377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_66
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1567
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3511a61c6b05d804680cac289eb87aab
+      internalID: 2004547814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_67
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 1571
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a5f461d32161e4da07a0f686729cb6
+      internalID: 1990647119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_68
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 985
+        width: 239
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217aed64c987e1a44b24e1ccb8246c1e
+      internalID: -549950903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_69
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 985
+        width: 240
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35630cb0fe597444281e0281f7a241f8
+      internalID: 988990413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_70
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1129
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9135993a6d03c84a89bd751d2aca321
+      internalID: -867894574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_71
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 985
+        width: 238
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b510c8119013f4b4c84594f912f8b450
+      internalID: -1691964341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_72
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 981
+        width: 237
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bba073b19e1d24b9b7a076facf54df
+      internalID: -849808268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_73
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 983
+        width: 239
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86de6e01bc51ec64d9aeea7f4d5011e1
+      internalID: 1317249446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_74
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 1131
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8172440b18c3e64f84e23b4de7952f9
+      internalID: -1444637214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_75
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 1094
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800644c478fd33145a0c39f606cd4fc9
+      internalID: 149545518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_76
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1090
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3999ba9088aa949a52c39c1b7b9432
+      internalID: 2009488539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_77
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 1088
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a439861f2dbd5940962df16fdba6a03
+      internalID: -652296079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_78
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1070
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c681928da95bc04d989f4e18c0c767d
+      internalID: 1318304112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_79
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 985
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b95e5f53ac5a54d89fb049e390d767
+      internalID: 1805798429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_80
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 981
+        width: 59
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439fe8da0dc58984da14aa32bf13599e
+      internalID: -280668210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_81
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 985
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173965f89dba0ed45862711bb2c6aaf6
+      internalID: -534201738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_82
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 983
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6b089037a27284db44f893b80e8f39
+      internalID: -545632344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_83
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 981
+        width: 56
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3005abf4def680045a3becbd6d1089bb
+      internalID: 1929984109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_84
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 984
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c4c86da551c8c459c6568b4d9d4dd7
+      internalID: 2122760318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_85
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 981
+        width: 59
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0fc13b7b9084541a517180e1d35dbc
+      internalID: 1402227312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_86
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 984
+        width: 49
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282222ab481f30646a274c3d01f717c1
+      internalID: -2022749008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_87
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 981
+        width: 59
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f492a3f11c569e04aaf538abc85d7633
+      internalID: 382487228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_88
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 527
+        width: 191
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2242d87cb17465749985aae0677bc400
+      internalID: -159869998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_89
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 527
+        width: 201
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7ddb2f21e28d34aa4ba20f1f4166cc
+      internalID: -1107291956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_90
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 524
+        width: 225
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd48201ae825f04292d1791e397255b
+      internalID: 263123863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_91
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 516
+        width: 219
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88aa76a08c2566841a872be319431273
+      internalID: -1923839972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_92
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 701
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313c212ae3bf61249890959b81f8129e
+      internalID: 1380295572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_93
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 500
+        width: 220
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4689c419449f49a45aec022130369f0a
+      internalID: -734082126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_94
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 688
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94167db3181b194e922db9c4dd34f5e
+      internalID: 43783506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_95
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 484
+        width: 240
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e36517dfb10b6e4ea633f0ca4a292af
+      internalID: -1617349229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_96
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 670
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37de22255a2d4b4a8f816b20340fe0f
+      internalID: -810245138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_97
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 639
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a6e7cbc1bc84741a26798ae93163c6
+      internalID: 1332941429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_98
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 639
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b187d224e378b743906b4db0686fc88
+      internalID: -1018502960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_99
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 629
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4320a01db75b34fb0fa94c6de0c1b6
+      internalID: 1178794236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_100
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 615
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aab2caa094a39f4f877daa84d1d8f78
+      internalID: 1160728615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_101
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 584
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09fc5ae48c56504cbb8419b35eb4a0e
+      internalID: -1697877720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_102
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 588
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b8df2e5ec83dd4c8c3f738bce8eddf
+      internalID: 1026677432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_103
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 598
+        width: 28
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7ac2ff4ab178f48a445ab95a161744
+      internalID: 1137229877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_104
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 500
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcafb7c33813404598a40e213613b6c
+      internalID: -2029620068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_105
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 498
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2709a29c222714458fa402e7fbcecbd
+      internalID: 1033163725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_106
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 500
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81eb9848f9801c9498eba71da007d339
+      internalID: 259025856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_107
+      rect:
+        serializedVersion: 2
+        x: 1745
+        y: 502
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98475c6a51b93f4481fb6218e734da3
+      internalID: -1801035622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_108
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 74
+        width: 140
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2754feb35e620dc43a15458b36f7a6b4
+      internalID: -48012765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_109
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 221
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eed95e7b692ae8499818597065835fb
+      internalID: -146170714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_110
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 39
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b4c82c8c3b21143869938d95f32706
+      internalID: -933080937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_111
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 197
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecec17b3a6a86fb4b917da98221df543
+      internalID: -1089064151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_112
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 35
+        width: 153
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776ee51fc9b9d1442ba6b00056473bb1
+      internalID: 1731735712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_113
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 209
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc75aec4e942883488b67720a259edcf
+      internalID: -1587854848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_114
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 197
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb62f133995195489144f93291c0e59
+      internalID: -1302316003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_115
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 195
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f0836f6b3e78e489b568372d103602
+      internalID: -613714427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_116
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 197
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987551ef9852cee4c9220e01e6e1f30f
+      internalID: -941707138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_117
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 35
+        width: 174
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ba33f937a48864f806765c6e570371
+      internalID: -1228480821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_118
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 111
+        width: 16
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c008d84a5e273934ba7ec976a7530b3e
+      internalID: 2082133196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_119
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 150
+        width: 21
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac545302e573a4409710f39a0568c68
+      internalID: -1291920676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_120
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 69
+        width: 136
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852270d964c14ac4ab3a6a1eb47bc1ae
+      internalID: -1249671769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_121
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 123
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3976f0526a8c743849568311753339
+      internalID: -1131957360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_124
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 113
+        width: 21
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9786731066396a24dbc0ed00eddf366b
+      internalID: 822927820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_126
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 94
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5c82991c7e8cf408d66b23c96d9ba4
+      internalID: -1531154812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_127
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 88
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af96f799db6bdb04d9ba0eb6430d13fe
+      internalID: 958002802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_128
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 66
+        width: 73
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65d3c420535bfd45a958be6e9976af3
+      internalID: -1237155906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartoonGUI_129
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 68
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47e231451737504b96a058665ac0a4c
+      internalID: 1962488250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CartoonGUI_0: -221106385
+      CartoonGUI_1: -608044885
+      CartoonGUI_10: -1795289121
+      CartoonGUI_100: 1160728615
+      CartoonGUI_101: -1697877720
+      CartoonGUI_102: 1026677432
+      CartoonGUI_103: 1137229877
+      CartoonGUI_104: -2029620068
+      CartoonGUI_105: 1033163725
+      CartoonGUI_106: 259025856
+      CartoonGUI_107: -1801035622
+      CartoonGUI_108: -48012765
+      CartoonGUI_109: -146170714
+      CartoonGUI_11: 1614329398
+      CartoonGUI_110: -933080937
+      CartoonGUI_111: -1089064151
+      CartoonGUI_112: 1731735712
+      CartoonGUI_113: -1587854848
+      CartoonGUI_114: -1302316003
+      CartoonGUI_115: -613714427
+      CartoonGUI_116: -941707138
+      CartoonGUI_117: -1228480821
+      CartoonGUI_118: 2082133196
+      CartoonGUI_119: -1291920676
+      CartoonGUI_12: 826612430
+      CartoonGUI_120: -1249671769
+      CartoonGUI_121: -1131957360
+      CartoonGUI_122: -1660251278
+      CartoonGUI_123: 1970634033
+      CartoonGUI_124: 822927820
+      CartoonGUI_125: 761113175
+      CartoonGUI_126: -1531154812
+      CartoonGUI_127: 958002802
+      CartoonGUI_128: -1237155906
+      CartoonGUI_129: 1962488250
+      CartoonGUI_13: 32543844
+      CartoonGUI_14: 1213058412
+      CartoonGUI_15: -493159083
+      CartoonGUI_16: 1143255049
+      CartoonGUI_17: -706163019
+      CartoonGUI_18: 1323998860
+      CartoonGUI_19: 1508962553
+      CartoonGUI_2: -730393046
+      CartoonGUI_20: -2035048812
+      CartoonGUI_21: -107987497
+      CartoonGUI_22: -336324646
+      CartoonGUI_23: -1759757045
+      CartoonGUI_24: -1376464557
+      CartoonGUI_25: 564726713
+      CartoonGUI_26: -296865002
+      CartoonGUI_27: -55980807
+      CartoonGUI_28: 1705091474
+      CartoonGUI_29: 1848094393
+      CartoonGUI_3: -619543965
+      CartoonGUI_30: -1181385286
+      CartoonGUI_31: -435974373
+      CartoonGUI_32: -426209789
+      CartoonGUI_33: -599447543
+      CartoonGUI_34: -1100703187
+      CartoonGUI_35: -842551190
+      CartoonGUI_36: 424700302
+      CartoonGUI_37: -1277011934
+      CartoonGUI_38: 125652505
+      CartoonGUI_39: 1399924173
+      CartoonGUI_4: 762241619
+      CartoonGUI_40: 1185431058
+      CartoonGUI_41: -1793009547
+      CartoonGUI_42: 1741011927
+      CartoonGUI_43: -2142704391
+      CartoonGUI_44: 192786580
+      CartoonGUI_45: 688546001
+      CartoonGUI_46: 1634799710
+      CartoonGUI_47: 1839331746
+      CartoonGUI_48: -131250852
+      CartoonGUI_49: -98041954
+      CartoonGUI_5: 628720896
+      CartoonGUI_50: 1074273791
+      CartoonGUI_51: 56418354
+      CartoonGUI_52: -1549023587
+      CartoonGUI_53: -343836507
+      CartoonGUI_54: -1515721993
+      CartoonGUI_55: -1235482133
+      CartoonGUI_56: 1344647318
+      CartoonGUI_57: -22272014
+      CartoonGUI_58: -1192181488
+      CartoonGUI_59: 2101728463
+      CartoonGUI_6: -412677270
+      CartoonGUI_60: 1433374744
+      CartoonGUI_61: -1913197473
+      CartoonGUI_62: -1877407427
+      CartoonGUI_63: -1477669270
+      CartoonGUI_64: -816992214
+      CartoonGUI_65: 361268377
+      CartoonGUI_66: 2004547814
+      CartoonGUI_67: 1990647119
+      CartoonGUI_68: -549950903
+      CartoonGUI_69: 988990413
+      CartoonGUI_7: 560849260
+      CartoonGUI_70: -867894574
+      CartoonGUI_71: -1691964341
+      CartoonGUI_72: -849808268
+      CartoonGUI_73: 1317249446
+      CartoonGUI_74: -1444637214
+      CartoonGUI_75: 149545518
+      CartoonGUI_76: 2009488539
+      CartoonGUI_77: -652296079
+      CartoonGUI_78: 1318304112
+      CartoonGUI_79: 1805798429
+      CartoonGUI_8: 519383769
+      CartoonGUI_80: -280668210
+      CartoonGUI_81: -534201738
+      CartoonGUI_82: -545632344
+      CartoonGUI_83: 1929984109
+      CartoonGUI_84: 2122760318
+      CartoonGUI_85: 1402227312
+      CartoonGUI_86: -2022749008
+      CartoonGUI_87: 382487228
+      CartoonGUI_88: -159869998
+      CartoonGUI_89: -1107291956
+      CartoonGUI_9: 350556951
+      CartoonGUI_90: 263123863
+      CartoonGUI_91: -1923839972
+      CartoonGUI_92: 1380295572
+      CartoonGUI_93: -734082126
+      CartoonGUI_94: 43783506
+      CartoonGUI_95: -1617349229
+      CartoonGUI_96: -810245138
+      CartoonGUI_97: 1332941429
+      CartoonGUI_98: -1018502960
+      CartoonGUI_99: 1178794236
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

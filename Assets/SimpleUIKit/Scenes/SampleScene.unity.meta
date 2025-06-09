@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bc4e3c1725dac28438b46f329e179d52
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Scenes/SampleScene.unity
+  uploadId: 669184

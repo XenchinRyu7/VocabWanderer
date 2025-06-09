@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e8d1028c60cb0ff49949f34083628cd8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/Parts/Inner.prefab
+  uploadId: 669184

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e13be7c4e4e8afc42b3d062a9c7977d3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/SliderScale.prefab
+  uploadId: 669184

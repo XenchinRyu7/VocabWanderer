@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 47da7d31a743d4f47aa0de5b1171f609
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Menu.prefab
+  uploadId: 669184

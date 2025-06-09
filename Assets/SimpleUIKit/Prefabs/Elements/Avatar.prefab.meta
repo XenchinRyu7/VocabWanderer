@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c166a926ea39d74e8bee73fd85dae0b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/Avatar.prefab
+  uploadId: 669184

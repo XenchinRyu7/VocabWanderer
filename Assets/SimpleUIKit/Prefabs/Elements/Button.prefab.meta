@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5a05dcbc44dbd0d4fb91edafc7c952df
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/Button.prefab
+  uploadId: 669184

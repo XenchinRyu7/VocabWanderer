@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3363445a0f04f2f489be745c9357c654
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/MessageRowR.prefab
+  uploadId: 669184

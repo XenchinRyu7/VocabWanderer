@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7766cf2c11f7aa5469082b9fa3ef5c0a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Dialog.prefab
+  uploadId: 669184

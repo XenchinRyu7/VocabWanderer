@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dfab69716e0c4fa478e1dc5161a772c5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Chat.prefab
+  uploadId: 669184

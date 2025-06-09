@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 438f69a2ff6e6cf47bf42d582d2a1d20
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/ItemTypeFilter.prefab
+  uploadId: 669184

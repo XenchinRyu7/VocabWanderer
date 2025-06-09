@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7df1379ac66f96149aae115632e4104e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/SimpleDropdown.prefab
+  uploadId: 669184

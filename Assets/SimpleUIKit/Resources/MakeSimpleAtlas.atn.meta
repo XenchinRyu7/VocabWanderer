@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b81ef1ce1dcdcf647874595d0a12a185
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Resources/MakeSimpleAtlas.atn
+  uploadId: 669184

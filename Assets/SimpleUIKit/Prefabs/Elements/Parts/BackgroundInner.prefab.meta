@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3481e9cece041a3438d03c046678b6f9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/Parts/BackgroundInner.prefab
+  uploadId: 669184

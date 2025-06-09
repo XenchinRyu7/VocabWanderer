@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4444e74605e9cf5498e63fd6a2869600
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 243983
+  packageName: Export Project to Zip
+  packageVersion: 1.1.3
+  assetPath: Packages/ca.tim-cstj.export-project-to-zip/ReadMe.md
+  uploadId: 729839

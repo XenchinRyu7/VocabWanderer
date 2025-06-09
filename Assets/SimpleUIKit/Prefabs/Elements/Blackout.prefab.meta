@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6b4343e151c869f40ae232a1c2280490
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/Elements/Blackout.prefab
+  uploadId: 669184

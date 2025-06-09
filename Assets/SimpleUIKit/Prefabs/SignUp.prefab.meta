@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 12589902e46c4754f80a1ef0c778be1c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 284292
+  packageName: Simple UI Kit
+  packageVersion: 1.0.1
+  assetPath: Assets/SimpleUIKit/Prefabs/SignUp.prefab
+  uploadId: 669184
