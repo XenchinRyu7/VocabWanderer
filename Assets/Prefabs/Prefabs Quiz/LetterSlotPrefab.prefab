@@ -226,4 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotIndex: 0
-  displayText: {fileID: 0}
+  displayText: {fileID: 8726344892825366115}
+  filledSprite: {fileID: -221106385, guid: d396c72e0d79dc74fb1aa158fb790dae, type: 3}
+  slotImage: {fileID: 0}

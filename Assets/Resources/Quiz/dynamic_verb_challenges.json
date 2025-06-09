@@ -28,8 +28,8 @@
           "context": "Berbicara dengan seseorang",
           "answer": "speak",
           "missing_letters": [
-            "k",
-            "s"
+            "s",
+            "k"
           ],
           "scrambled_word": "_pea_",
           "time_limit_seconds": 34
@@ -48,6 +48,7 @@
           "context": "Melihat sesuatu dengan mata",
           "answer": "see",
           "missing_letters": [
+            "e",
             "e"
           ],
           "scrambled_word": "s__",

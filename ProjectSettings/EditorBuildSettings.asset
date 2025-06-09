@@ -22,7 +22,10 @@ EditorBuildSettings:
     guid: 20297693dedb9c74f82437208e90c090
   - enabled: 1
     path: Assets/Scenes/QuestionScene.unity
-    guid: 91e5049a28846244fb2e2b336b90739a
+    guid: 0b2a87e1cce005f4f93bcc708a3ecb04
+  - enabled: 1
+    path: Assets/Scenes/SuccessScene.unity
+    guid: 1c87e6c36b55b1c41b8ad327a0e7eb2a
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02

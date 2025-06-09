@@ -10,12 +10,19 @@ public class AnswerChecker : MonoBehaviour
 
     public void SubmitAnswer() {
         var slots = letterSlotParent.GetComponentsInChildren<LetterDropSlot>();
-        string userAnswer = "";
+        List<string> userInput = new List<string>();
         foreach (var slot in slots) {
-            char? c = slot.GetCurrentLetter();
-            userAnswer += c.HasValue ? c.Value.ToString() : "_";
+            // Ambil text dari setiap slot input user (tanpa cek enabled)
+            if (slot.displayText != null) {
+                var text = slot.displayText.text;
+                userInput.Add(string.IsNullOrEmpty(text) ? "_" : text.ToLower());
+            }
         }
-        bool correct = userAnswer.Replace("_","") == GameManager.Instance.currentQuestion.answer;
+        string userAnswer = string.Join("", userInput).Replace("_", "");
+        string kunci = string.Join("", GameManager.Instance.currentQuestion.missing_letters).ToLower();
+        Debug.Log($"[AnswerChecker] userAnswer='{userAnswer}', kunci='{kunci}'");
+        bool correct = userAnswer == kunci;
+        Debug.Log($"[AnswerChecker] correct={correct}");
         GameManager.Instance.OnAnswerSubmitted(correct);
     }
 

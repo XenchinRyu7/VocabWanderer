@@ -14,7 +14,6 @@ public class DynamicUIBuilder : MonoBehaviour
     public TextMeshProUGUI contextText;
     public Image backgroundImage;
     public TimerLine timerLine;
-    public HealthManager healthManager;
     public Transform healthParent;
     public GameObject heartPrefabFull;
     public GameObject heartPrefabEmpty;
@@ -103,23 +102,6 @@ public class DynamicUIBuilder : MonoBehaviour
         {
             Debug.LogWarning("TimerLine belum di-assign di DynamicUIBuilder!");
         }
-        // Sinkronkan HealthManager dengan health saat build UI
-        if (healthManager != null && GameManager.Instance != null)
-        {
-            healthManager.UpdateHealth(GameManager.Instance.health);
-        }
-        else
-        {
-            Debug.LogWarning("HealthManager atau GameManager.Instance belum di-assign di DynamicUIBuilder!");
-        }
-        // Update health UI setelah build soal
-        if (healthParent != null && heartPrefabFull != null && heartPrefabEmpty != null && GameManager.Instance != null)
-        {
-            UpdateHealthUI(GameManager.Instance.health);
-        }
-        else
-        {
-            Debug.LogWarning("Health UI prefab/parent/GameManager belum di-assign di DynamicUIBuilder!");
-        }
+        
     }
 }
