@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
 
 public class TimerLine : MonoBehaviour
 {
-    private float duration; // Ganti jadi private
+    private float duration;
     private float timeRemaining;
     private float originalWidth;
     private RectTransform rectTransform;
@@ -12,7 +15,7 @@ public class TimerLine : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        originalWidth = rectTransform.sizeDelta.x;
+        originalWidth = 100;
     }
 
     void Update()
@@ -34,6 +37,7 @@ public class TimerLine : MonoBehaviour
 
     public void StartLine(float newDuration)
     {
+        Debug.Log($"Starting timer line with duration: {newDuration} seconds");
         duration = newDuration;
         timeRemaining = duration;
         if (rectTransform == null)
