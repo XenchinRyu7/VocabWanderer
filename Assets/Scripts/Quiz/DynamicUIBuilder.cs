@@ -25,12 +25,27 @@ public class DynamicUIBuilder : MonoBehaviour
 
     void Start()
     {
+        // Tampilkan health UI di awal scene
+        if (GameManager.Instance != null)
+        {
+            UpdateHealthUI(GameManager.Instance.health);
+        }
+        else
+        {
+            UpdateHealthUI(maxHealth); // fallback jika GameManager belum siap
+        }
+
         if (timerLine != null)
         {
             timerLine.OnLineTimeout = () => {
                 GameManager.Instance.OnTimeOut();
                 timerLine.StartLine(GameManager.Instance.currentQuestion.time_limit_seconds);
             };
+            // Jika ingin timerLine langsung muncul di awal scene, pastikan currentQuestion sudah ada
+            if (GameManager.Instance != null && GameManager.Instance.currentQuestion != null)
+            {
+                timerLine.StartLine(GameManager.Instance.currentQuestion.time_limit_seconds);
+            }
         }
     }
 
