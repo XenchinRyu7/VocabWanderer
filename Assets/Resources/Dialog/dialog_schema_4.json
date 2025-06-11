@@ -1,0 +1,60 @@
+{
+  "sceneId": "word_cafe",
+  "background": "cozy_cafe",
+  "characters": [
+    {
+      "name": "Elena",
+      "sprite": "elena_smile",
+      "position": "center"
+    },
+    {
+      "name": "Om Lex",
+      "sprite": "lex_glasses",
+      "position": "right"
+    },
+    {
+      "name": "Nino",
+      "sprite": "nino_joking",
+      "position": "left"
+    },
+    {
+      "name": "Mira",
+      "sprite": "mira_thinking",
+      "position": "right"
+    }
+  ],
+  "dialog": [
+    {
+      "speaker": "Om Lex",
+      "text": "Selamat datang di Kafe Kata. Setiap pesanan di sini... adalah teka-teki."
+    },
+    {
+      "speaker": "Elena",
+      "text": "Wah! Aku harus memesan sambil menjawab soal?"
+    },
+    {
+      "speaker": "Nino",
+      "text": "Yup! Coba tebak: Apa arti 'benevolent' dalam konteks ini?"
+    },
+    {
+      "speaker": "Mira",
+      "text": "Kalau bingung, baca deskripsi menunya baik-baik. Clue-nya tersembunyi."
+    },
+    {
+      "speaker": "Elena",
+      "text": "'Benevolent'... artinya baik hati, ya?"
+    },
+    {
+      "speaker": "Om Lex",
+      "text": "Tepat sekali! Kamu mendapat satu heart."
+    },
+    {
+      "speaker": "Nino",
+      "text": "Kafe ini tempat yang asyik untuk belajar tanpa tekanan."
+    },
+    {
+      "speaker": "Mira",
+      "text": "Tapi ingat, setiap kata punya nuansa makna yang berbeda."
+    }
+  ]
+}

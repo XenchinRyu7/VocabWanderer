@@ -3,8 +3,8 @@
   "background": "school_gate",
   "characters": [
     {
-      "name": "Hana",
-      "sprite": "Hana_default",
+      "name": "Elena",
+      "sprite": "Elena_default",
       "position": "left"
     },
     {
@@ -20,7 +20,7 @@
   ],
   "dialog": [
     {
-      "speaker": "Hana",
+      "speaker": "Elena",
       "text": "Wah, tempat ini terlihat misterius..."
     },
     {
@@ -33,3 +33,4 @@
     }
   ]
 }
+

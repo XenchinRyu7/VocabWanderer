@@ -338,11 +338,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1044896480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3488973448903805490, guid: 47da7d31a743d4f47aa0de5b1171f609, type: 3}
-  m_PrefabInstance: {fileID: 1750893426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1161539119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -743,7 +738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2476302439308034526, guid: 47da7d31a743d4f47aa0de5b1171f609, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: StartGame
+      value: DialogScene
       objectReference: {fileID: 0}
     - target: {fileID: 3488973448903805490, guid: 47da7d31a743d4f47aa0de5b1171f609, type: 3}
       propertyPath: m_Name
@@ -1339,7 +1334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableSceneChange: 1
   dialogPanel: {fileID: 1161539121}
-  menuPanel: {fileID: 1044896480}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

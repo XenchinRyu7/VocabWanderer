@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b62bad5477c8e8d448b560ca34eb6253
+guid: a7e02bf03ae5c764290e22f40a216116
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5572304003529106051
-    second: Hana_default_0
+      213: -7871795710193825533
+    second: Elena_default_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hana_default_0
+      name: Elena_default_0
       rect:
         serializedVersion: 2
         x: 155
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7d192938033ba2b0800000000000000
-      internalID: -5572304003529106051
+      spriteID: 30904751283c1c290800000000000000
+      internalID: -7871795710193825533
       vertices: []
       indices: 
       edges: []

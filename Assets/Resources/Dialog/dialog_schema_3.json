@@ -1,0 +1,60 @@
+{
+  "sceneId": "city_park",
+  "background": "mystic_park",
+  "characters": [
+    {
+      "name": "Elena",
+      "sprite": "elena_thinking",
+      "position": "center"
+    },
+    {
+      "name": "Tara",
+      "sprite": "tara_smile",
+      "position": "left"
+    },
+    {
+      "name": "Bima",
+      "sprite": "bima_confident",
+      "position": "right"
+    },
+    {
+      "name": "Ayu",
+      "sprite": "ayu_serene",
+      "position": "right"
+    }
+  ],
+  "dialog": [
+    {
+      "speaker": "Tara",
+      "text": "Lihat, tulisan di batu itu berubah-ubah!"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Sepertinya itu anagram dalam bahasa Inggris... tapi ada petunjuknya?"
+    },
+    {
+      "speaker": "Bima",
+      "text": "Coba susun ulang hurufnya jadi nama benda. Aku yakin kamu bisa!"
+    },
+    {
+      "speaker": "Ayu",
+      "text": "Dan jangan lupa, setiap kata punya kisah. Dengarkan baik-baik."
+    },
+    {
+      "speaker": "Elena",
+      "text": "Hmm... apakah 'tca' bisa jadi 'cat'?"
+    },
+    {
+      "speaker": "Tara",
+      "text": "Ya! Dan lihat, bunga itu mekar!"
+    },
+    {
+      "speaker": "Bima",
+      "text": "Taman ini akan membimbingmu jika kamu terus berpikir kreatif."
+    },
+    {
+      "speaker": "Ayu",
+      "text": "Setiap teka-teki di taman ini akan menguji cara pandangmu terhadap bahasa."
+    }
+  ]
+}

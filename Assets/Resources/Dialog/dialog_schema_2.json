@@ -1,0 +1,60 @@
+{
+  "sceneId": "hidden_classroom",
+  "background": "old_classroom",
+  "characters": [
+    {
+      "name": "Elena",
+      "sprite": "elena_curious",
+      "position": "center"
+    },
+    {
+      "name": "Pak Arka",
+      "sprite": "arka_wise",
+      "position": "right"
+    },
+    {
+      "name": "Dian",
+      "sprite": "dian_serious",
+      "position": "left"
+    },
+    {
+      "name": "Riko",
+      "sprite": "riko_cheerful",
+      "position": "left"
+    }
+  ],
+  "dialog": [
+    {
+      "speaker": "Elena",
+      "text": "Kenapa ruang kelas ini terasa... hidup?"
+    },
+    {
+      "speaker": "Pak Arka",
+      "text": "Karena di sinilah banyak mimpi terlahir—dan tidak semuanya sempat terwujud."
+    },
+    {
+      "speaker": "Dian",
+      "text": "Ruang ini menyimpan energi dari mereka yang pernah belajar keras di sini."
+    },
+    {
+      "speaker": "Riko",
+      "text": "Termasuk kakakmu, Elena. Ia sering menghabiskan waktu di sini."
+    },
+    {
+      "speaker": "Elena",
+      "text": "Benarkah? Jadi... buku itu bukan kebetulan kutemukan."
+    },
+    {
+      "speaker": "Pak Arka",
+      "text": "Sekarang, waktumu untuk membuktikan bahwa mimpi itu belum mati."
+    },
+    {
+      "speaker": "Dian",
+      "text": "Pecahkan teka-teki vocabulary di papan tulis untuk membuka gerbang selanjutnya."
+    },
+    {
+      "speaker": "Riko",
+      "text": "Tenang, kita bantu! Yuk mulai dari soal pertama!"
+    }
+  ]
+}

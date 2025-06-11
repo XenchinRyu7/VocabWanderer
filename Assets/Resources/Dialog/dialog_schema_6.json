@@ -1,0 +1,60 @@
+{
+  "sceneId": "lexicon_stage",
+  "background": "grand_stage",
+  "characters": [
+    {
+      "name": "Elena",
+      "sprite": "elena_determined",
+      "position": "center"
+    },
+    {
+      "name": "Host",
+      "sprite": "host_formal",
+      "position": "right"
+    },
+    {
+      "name": "Sarah",
+      "sprite": "sarah_rival",
+      "position": "left"
+    },
+    {
+      "name": "Voice of Kakak",
+      "sprite": "voice_memory",
+      "position": "right"
+    }
+  ],
+  "dialog": [
+    {
+      "speaker": "Host",
+      "text": "Selamat datang di The Grand Lexicon Challenge! Ini dia babak penentuan!"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Ini untukmu, Kak... Aku akan menyelesaikan petualangan ini!"
+    },
+    {
+      "speaker": "Sarah",
+      "text": "Kita lihat saja seberapa jauh kamu bisa melangkah, Elena."
+    },
+    {
+      "speaker": "Voice of Kakak",
+      "text": "Beranilah. Kamu telah melewati lebih dari yang kupikirkan dulu. Aku bangga padamu."
+    },
+    {
+      "speaker": "Elena",
+      "text": "Aku percaya, belajar bukan soal menang, tapi soal bertumbuh."
+    },
+    {
+      "speaker": "Host",
+      "text": "Pertanyaan pertama: Apa lawan kata dari 'abundant'?"
+    },
+    {
+      "speaker": "Elena",
+      "text": "'Scarce'! Artinya langka."
+    },
+    {
+      "speaker": "Sarah",
+      "text": "Hmph... jangan senang dulu. Masih ada soal lainnya!"
+    }
+  ]
+}

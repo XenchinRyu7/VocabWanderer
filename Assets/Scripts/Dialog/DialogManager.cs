@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class DialogManager : MonoBehaviour
     private int currentLine = 0;
 
     private Dictionary<string, CharacterInfo> characterMap = new Dictionary<string, CharacterInfo>();
+
+    public GameObject clickToContinueGO;
+
+    public string nextSceneName = "QuestionScene";
+    public GameObject nextButton; 
 
     void Start()
     {
@@ -71,6 +77,16 @@ public class DialogManager : MonoBehaviour
         if (currentLine >= currentScene.dialog.Count)
         {
             Debug.Log("Dialog selesai.");
+            if (clickToContinueGO != null)
+                clickToContinueGO.SetActive(false); // Sembunyikan click to continue saat dialog habis
+            if (nextButton != null)
+            {
+                nextButton.SetActive(true); // Tampilkan tombol lanjut jika ada
+            }
+            else if (!string.IsNullOrEmpty(nextSceneName))
+            {
+                SceneManager.LoadScene(nextSceneName); // Langsung pindah scene jika tidak pakai tombol
+            }
             return;
         }
 
@@ -81,6 +97,12 @@ public class DialogManager : MonoBehaviour
         UpdateCharacterVisuals(line.speaker);
 
         currentLine++;
+
+        // Tampilkan click to continue jika masih ada dialog berikutnya
+        if (clickToContinueGO != null)
+            clickToContinueGO.SetActive(true);
+        if (nextButton != null)
+            nextButton.SetActive(false); // Pastikan next button tetap hidden selama dialog belum habis
     }
 
     void UpdateCharacterVisuals(string currentSpeaker)
@@ -153,6 +175,14 @@ public class DialogManager : MonoBehaviour
         ShowNextLine();
     }
 
+    // Fungsi untuk dipanggil tombol lanjut (jika pakai tombol)
+    public void OnClickNextScene()
+    {
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+    }
 
     void Update()
     {

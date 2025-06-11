@@ -1,0 +1,60 @@
+{
+  "sceneId": "secret_library",
+  "background": "hidden_library",
+  "characters": [
+    {
+      "name": "Elena",
+      "sprite": "elena_surprised",
+      "position": "center"
+    },
+    {
+      "name": "Keeper",
+      "sprite": "keeper_hooded",
+      "position": "right"
+    },
+    {
+      "name": "Ina",
+      "sprite": "ina_curious",
+      "position": "left"
+    },
+    {
+      "name": "Rai",
+      "sprite": "rai_bookish",
+      "position": "right"
+    }
+  ],
+  "dialog": [
+    {
+      "speaker": "Keeper",
+      "text": "Hanya yang bisa menerjemahkan kutipan kuno yang boleh masuk."
+    },
+    {
+      "speaker": "Elena",
+      "text": "Kutipan ini... dari puisi Inggris klasik?"
+    },
+    {
+      "speaker": "Ina",
+      "text": "Coba padukan pemahaman bahasa dan rasa. Artinya bukan hanya di kata, tapi di makna."
+    },
+    {
+      "speaker": "Rai",
+      "text": "Kalimat itu mengandung idiom. Kamu tahu 'break the ice'?"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Ya! Itu berarti memulai percakapan."
+    },
+    {
+      "speaker": "Keeper",
+      "text": "Jawaban benar. Pintu terbuka untukmu."
+    },
+    {
+      "speaker": "Ina",
+      "text": "Wow, kamu cepat tanggap, Elena!"
+    },
+    {
+      "speaker": "Rai",
+      "text": "Kamu layak mendapatkan akses ke ruang literasi tertinggi."
+    }
+  ]
+}

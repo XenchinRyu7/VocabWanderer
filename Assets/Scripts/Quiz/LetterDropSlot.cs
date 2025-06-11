@@ -22,7 +22,7 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
         {
             // Ambil huruf dari tile yang didrag
             currentLetter = dragged.letter;
-            displayText.text = currentLetter.ToString();
+            displayText.text = currentLetter.ToString().ToUpper();
             Destroy(dragged.gameObject); // Hapus tile huruf setelah dipakai
             // Ganti sprite background box ke filled
             if (filledSprite != null && slotImage != null)

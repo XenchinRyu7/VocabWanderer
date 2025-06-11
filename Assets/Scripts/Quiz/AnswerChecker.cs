@@ -23,11 +23,28 @@ public class AnswerChecker : MonoBehaviour
         Debug.Log($"[AnswerChecker] userAnswer='{userAnswer}', kunci='{kunci}'");
         bool correct = userAnswer == kunci;
         Debug.Log($"[AnswerChecker] correct={correct}");
+        if (correct)
+        {
+            AddHeart();
+        }
         GameManager.Instance.OnAnswerSubmitted(correct);
     }
 
     public void ClearSlots() {
         var slots = letterSlotParent.GetComponentsInChildren<LetterDropSlot>();
         foreach (var slot in slots) slot.ClearSlot();
+    }
+
+    // Fungsi untuk menambah heart, maksimal 5
+    public void AddHeart()
+    {
+        if (GameManager.Instance != null)
+        {
+            if (GameManager.Instance.health < 5)
+            {
+                GameManager.Instance.health++;
+                DynamicUIBuilder.Instance.UpdateHealthUI(GameManager.Instance.health);
+            }
+        }
     }
 }
