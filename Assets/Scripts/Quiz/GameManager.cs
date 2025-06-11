@@ -4,11 +4,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public static int lastHealth;
+    public static float lastTotalTime;
     public int currentChallengeIndex = 0;
     public int currentQuestionIndex = 0;
     public int health = 5;
     public VerbChallenge currentChallenge;
     public VerbQuestion currentQuestion;
+    public float totalPlayTime = 0f;
+    private bool isPaused = false;
 
     void Awake() {
         if (Instance == null) Instance = this;
@@ -19,6 +23,21 @@ public class GameManager : MonoBehaviour
     void Start() {
         LoadChallenge(currentChallengeIndex);
         LoadQuestion(0);
+    }
+
+    void Update() {
+        if (!isPaused)
+        {
+            totalPlayTime += Time.unscaledDeltaTime;
+        }
+    }
+
+    public void PauseTotalTime() {
+        isPaused = true;
+    }
+
+    public void ResumeTotalTime() {
+        isPaused = false;
     }
 
     public void LoadChallenge(int index) {
@@ -79,8 +98,11 @@ public class GameManager : MonoBehaviour
         if (correct) {
             if (currentQuestionIndex < currentChallenge.questions.Count - 1)
                 LoadQuestion(currentQuestionIndex + 1);
-            else
-                SceneManager.LoadScene("SuccessScene");
+            else {
+                lastHealth = health;
+                lastTotalTime = totalPlayTime;
+                SceneManager.LoadScene("SuccessAllScenes");
+            }
         } else {
             health--;
             if (DynamicUIBuilder.Instance != null)

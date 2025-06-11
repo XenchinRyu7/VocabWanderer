@@ -427,9 +427,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 67363905}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: ShowDialog
+      - m_Target: {fileID: 67363904}
+        m_TargetAssemblyTypeName: DynamicUIBuilder, Assembly-CSharp
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -610,6 +610,7 @@ MonoBehaviour:
     missing_letters: []
     scrambled_word: 
     time_limit_seconds: 0
+  totalPlayTime: 0
 --- !u!4 &739434746
 Transform:
   m_ObjectHideFlags: 0
@@ -813,14 +814,14 @@ PrefabInstance:
     - target: {fileID: 5469697568095859673, guid: 9043c97a0a300ac4f874425357120351, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 67363904}
     - target: {fileID: 5469697568095859673, guid: 9043c97a0a300ac4f874425357120351, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HideDialog
+      value: ResumeGame
       objectReference: {fileID: 0}
     - target: {fileID: 5469697568095859673, guid: 9043c97a0a300ac4f874425357120351, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuController, Assembly-CSharp
+      value: DynamicUIBuilder, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6273488938991183803, guid: 9043c97a0a300ac4f874425357120351, type: 3}
       propertyPath: m_SizeDelta.x
@@ -869,7 +870,7 @@ PrefabInstance:
     - target: {fileID: 7954176004861564341, guid: 9043c97a0a300ac4f874425357120351, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 67363905}
     - target: {fileID: 7954176004861564341, guid: 9043c97a0a300ac4f874425357120351, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadToScene

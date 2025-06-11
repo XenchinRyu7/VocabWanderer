@@ -113,10 +113,19 @@ public class DynamicUIBuilder : MonoBehaviour
                 }
             };
         }
-        else
-        {
-            Debug.LogWarning("TimerLine belum di-assign di DynamicUIBuilder!");
-        }
-        
+    }
+
+    public void PauseGame()
+    {
+        MenuController.Instance.ShowDialog();
+        if (timerLine != null) timerLine.Pause();
+        if (GameManager.Instance != null) GameManager.Instance.PauseTotalTime();
+    }
+
+    public void ResumeGame()
+    {
+        MenuController.Instance.HideDialog();
+        if (timerLine != null) timerLine.Resume();
+        if (GameManager.Instance != null) GameManager.Instance.ResumeTotalTime();
     }
 }

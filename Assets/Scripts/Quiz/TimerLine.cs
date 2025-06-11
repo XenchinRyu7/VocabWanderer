@@ -10,6 +10,9 @@ public class TimerLine : MonoBehaviour
     private float originalWidth;
     private RectTransform rectTransform;
 
+    private bool isPaused = false;
+    private float pausedTimeRemaining = 0f;
+
     public System.Action OnLineTimeout;
 
     void Start()
@@ -20,6 +23,7 @@ public class TimerLine : MonoBehaviour
 
     void Update()
     {
+        if (isPaused) return;
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
@@ -43,5 +47,17 @@ public class TimerLine : MonoBehaviour
         if (rectTransform == null)
             rectTransform = GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(originalWidth, rectTransform.sizeDelta.y);
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+        pausedTimeRemaining = timeRemaining;
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+        timeRemaining = pausedTimeRemaining;
     }
 }

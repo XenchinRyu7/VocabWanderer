@@ -3,8 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public static MenuController Instance;
     public bool enableSceneChange = true;
     public GameObject dialogPanel;
+
+    void Awake() {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -36,6 +41,7 @@ public class MenuController : MonoBehaviour
     {
         dialogPanel.SetActive(false);
     }
+    
 
     public void ExitGame()
     {
