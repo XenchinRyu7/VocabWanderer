@@ -1,0 +1,128 @@
+[
+  {
+    "index": 1,
+    "verb_level": "V1",
+    "background_asset": "Background/background_school_0",
+    "questions": [
+      {
+        "context": "Membeli barang dari toko",
+        "answer": "buy",
+        "missing_letters": ["u", "y"],
+        "scrambled_word": "b__",
+        "time_limit_seconds": 33
+      },
+      {
+        "context": "Berlari di taman",
+        "answer": "run",
+        "missing_letters": ["r", "u"],
+        "scrambled_word": "__n",
+        "time_limit_seconds": 23
+      },
+      {
+        "context": "Berbicara dengan seseorang",
+        "answer": "speak",
+        "missing_letters": ["s", "k"],
+        "scrambled_word": "_pea_",
+        "time_limit_seconds": 34
+      },
+      {
+        "context": "Berbicara dengan seseorang",
+        "answer": "speak",
+        "missing_letters": ["s", "p"],
+        "scrambled_word": "__eak",
+        "time_limit_seconds": 20
+      },
+      {
+        "context": "Melihat sesuatu dengan mata",
+        "answer": "see",
+        "missing_letters": ["e", "e"],
+        "scrambled_word": "s__",
+        "time_limit_seconds": 31
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "verb_level": "V1",
+    "background_asset": "Background/background_school_1",
+    "questions": [
+      {
+        "context": "Makan makanan",
+        "answer": "eat",
+        "missing_letters": ["e", "t"],
+        "scrambled_word": "_a_",
+        "time_limit_seconds": 30
+      },
+      {
+        "context": "Minum air",
+        "answer": "drink",
+        "missing_letters": ["d", "k"],
+        "scrambled_word": "_rin_",
+        "time_limit_seconds": 25
+      },
+      {
+        "context": "Tidur di malam hari",
+        "answer": "sleep",
+        "missing_letters": ["s", "p"],
+        "scrambled_word": "_le__",
+        "time_limit_seconds": 29
+      },
+      {
+        "context": "Bermain di luar rumah",
+        "answer": "play",
+        "missing_letters": ["p", "y"],
+        "scrambled_word": "_la_",
+        "time_limit_seconds": 32
+      },
+      {
+        "context": "Membaca buku",
+        "answer": "read",
+        "missing_letters": ["r", "d"],
+        "scrambled_word": "_ea_",
+        "time_limit_seconds": 28
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "verb_level": "V1",
+    "background_asset": "Background/background_school_2",
+    "questions": [
+      {
+        "context": "Menulis di kertas",
+        "answer": "write",
+        "missing_letters": ["w", "e"],
+        "scrambled_word": "_rit_",
+        "time_limit_seconds": 35
+      },
+      {
+        "context": "Menggambar sesuatu",
+        "answer": "draw",
+        "missing_letters": ["d", "w"],
+        "scrambled_word": "_ra_",
+        "time_limit_seconds": 30
+      },
+      {
+        "context": "Mendengarkan musik",
+        "answer": "listen",
+        "missing_letters": ["l", "n"],
+        "scrambled_word": "_iste_",
+        "time_limit_seconds": 33
+      },
+      {
+        "context": "Bermain alat musik",
+        "answer": "play music",
+        "missing_letters": ["p", "c"],
+        "scrambled_word": "_la_ _usi_",
+        "time_limit_seconds": 40
+      },
+      {
+        "context": "Menghitung angka",
+        "answer": "count",
+        "missing_letters": ["c", "t"],
+        "scrambled_word": "_ou_",
+        "time_limit_seconds": 27
+      }
+    ]
+  }
+]

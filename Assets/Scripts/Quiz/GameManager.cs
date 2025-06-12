@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
+        // Ambil parameter schema dan index dari QuizNavigationParam
+        string schema = QuizNavigationParam.schema;
+        int idx = QuizNavigationParam.index;
+        Debug.Log($"[GameManager] Start: schema={schema}, index={idx}");
+        VerbChallengeLoader.Instance.LoadChallenges(schema);
+        currentChallengeIndex = idx - 1; // index json mulai dari 1
         LoadChallenge(currentChallengeIndex);
         LoadQuestion(0);
     }

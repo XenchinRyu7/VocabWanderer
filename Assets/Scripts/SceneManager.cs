@@ -6,6 +6,7 @@ public class MenuController : MonoBehaviour
     public static MenuController Instance;
     public bool enableSceneChange = true;
     public GameObject dialogPanel;
+    public GameObject saveDialogPanel;
 
     void Awake() {
         Instance = this;
@@ -41,11 +42,33 @@ public class MenuController : MonoBehaviour
     {
         dialogPanel.SetActive(false);
     }
-    
+
+    public void showSaveDialog()
+    {
+        dialogPanel.SetActive(false);
+        saveDialogPanel.SetActive(true);
+    }
+
+    public void hideSaveDialog()
+    {
+        saveDialogPanel.SetActive(false);
+        dialogPanel.SetActive(true);
+    }
 
     public void ExitGame()
     {
         Debug.Log("Keluar dari game...");
         Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        // Jika belum ada save, buat save baru dengan schema default
+        if (SaveManager.Instance != null && (SaveManager.Instance.saves == null || SaveManager.Instance.saves.Count == 0))
+        {
+            SaveManager.Instance.AddNewSave("Verb 1, Schema 1", "schema_1");
+        }
+        // Pindah ke DialogScene
+        LoadToScene("DialogScene");
     }
 }

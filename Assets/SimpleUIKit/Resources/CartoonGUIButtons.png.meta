@@ -9166,10 +9166,10 @@ TextureImporter:
       name: CartoonGUIButtons_433
       rect:
         serializedVersion: 2
-        x: 2742
-        y: 1205
-        width: 228
-        height: 213
+        x: 2759
+        y: 1227
+        width: 183
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9334,28 +9334,6 @@ TextureImporter:
       bones: []
       spriteID: 91a9feefae70bef4e8735e6dd5545ffd
       internalID: -727416748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CartoonGUIButtons_441
-      rect:
-        serializedVersion: 2
-        x: 2964
-        y: 1289
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f78fbb261194bdc4486b347da4233813
-      internalID: 1873919148
       vertices: []
       indices: 
       edges: []

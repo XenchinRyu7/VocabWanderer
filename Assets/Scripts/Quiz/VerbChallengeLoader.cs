@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Newtonsoft.Json; // Tambahkan ini
 
 public class VerbChallengeLoader : MonoBehaviour
 {
@@ -10,17 +11,18 @@ public class VerbChallengeLoader : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
-        LoadChallenges();
     }
 
-    void LoadChallenges() {
-        TextAsset json = Resources.Load<TextAsset>("Quiz/dynamic_verb_challenges");
+    public void LoadChallenges(string schema)
+    {
+        string path = $"Quiz/quiz_{schema}"; 
+        TextAsset json = Resources.Load<TextAsset>(path);
         if (json == null) {
-            Debug.LogError("dynamic_verb_challenges.json not found in Resources/Quiz");
+            Debug.LogError($"{path} not found in Resources/Quiz");
+            challenges = null;
             return;
         }
-        VerbChallengeWrapper wrapper = JsonUtility.FromJson<VerbChallengeWrapper>(json.text);
-        challenges = wrapper.challenges;
+        challenges = JsonConvert.DeserializeObject<List<VerbChallenge>>(json.text);
     }
 
     public VerbChallenge GetChallenge(int index) {

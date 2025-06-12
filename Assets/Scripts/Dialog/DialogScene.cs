@@ -14,6 +14,9 @@ public class DialogLine
     public string speaker;
     public string text;
     public string expression;
+    public string @event; // gunakan @event karena event adalah keyword C#
+    public string quiz_schema;
+    public int? quiz_index; // nullable, karena tidak semua node punya
 }
 
 [System.Serializable]

@@ -91,6 +91,19 @@ public class DialogManager : MonoBehaviour
         }
 
         var line = currentScene.dialog[currentLine];
+        // Cek event quiz
+        if (!string.IsNullOrEmpty(line.@event) && line.@event == "quiz")
+        {
+            string quizSchema = line.quiz_schema;
+            int quizIndex = line.quiz_index ?? 1; // default ke 1 jika null
+            Debug.Log($"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}");
+            // Simpan parameter ke static helper agar bisa diakses di QuestionScene
+            QuizNavigationParam.schema = quizSchema;
+            QuizNavigationParam.index = quizIndex;
+            SceneManager.LoadScene("QuestionScene");
+            return;
+        }
+
         speakerText.text = line.speaker;
         dialogText.text = line.text;
 

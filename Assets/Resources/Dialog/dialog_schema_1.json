@@ -30,6 +30,27 @@
     {
       "speaker": "Shey",
       "text": "yoi aman aja"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Tapi, kenapa ada papan petunjuk di sini?"
+    },
+    {
+      "speaker": "Nova",
+      "text": "Mungkin itu petunjuk untuk menemukan sesuatu yang penting."
+    },
+    {
+      "speaker": "Shey",
+      "text": "Ayo kita baca petunjuknya!"
+    },
+    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 1 },
+    {
+      "speaker": "Elena",
+      "text": "Bagus! Kita harus mencari tahu apa yang ada di balik papan petunjuk ini."
+    },
+    {
+      "speaker": "Nova",
+      "text": "Ayo, kita mulai petualangan kita!"
     }
   ]
 }
