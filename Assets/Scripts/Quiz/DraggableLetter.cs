@@ -24,7 +24,6 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         originalParent = transform.parent;
         originalPosition = transform.position;
         originalSizeDelta = rectTransform.sizeDelta;
-        // Pindahkan ke canvas agar tidak dipengaruhi layout group
         transform.SetParent(canvas.transform, true);
         canvasGroup.blocksRaycasts = false;
         transform.SetAsLastSibling();
@@ -37,7 +36,6 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Jika tidak drop di slot valid, kembalikan ke parent & posisi awal
         if (eventData.pointerEnter == null || !eventData.pointerEnter.GetComponent<LetterDropSlot>())
         {
             transform.SetParent(originalParent, true);

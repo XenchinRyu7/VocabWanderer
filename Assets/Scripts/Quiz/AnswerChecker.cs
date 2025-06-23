@@ -12,7 +12,6 @@ public class AnswerChecker : MonoBehaviour
         var slots = letterSlotParent.GetComponentsInChildren<LetterDropSlot>();
         List<string> userInput = new List<string>();
         foreach (var slot in slots) {
-            // Ambil text dari setiap slot input user (tanpa cek enabled)
             if (slot.displayText != null) {
                 var text = slot.displayText.text;
                 userInput.Add(string.IsNullOrEmpty(text) ? "_" : text.ToLower());
@@ -35,7 +34,6 @@ public class AnswerChecker : MonoBehaviour
         foreach (var slot in slots) slot.ClearSlot();
     }
 
-    // Fungsi untuk menambah heart, maksimal 5
     public void AddHeart()
     {
         if (GameManager.Instance != null)

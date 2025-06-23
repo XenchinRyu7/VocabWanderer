@@ -8,8 +8,8 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
     public TextMeshProUGUI displayText;
     private char? currentLetter = null;
 
-    public Sprite filledSprite; // assign via inspector sprite filled (box terisi)
-    private UnityEngine.UI.Image slotImage; // tidak perlu assign manual
+    public Sprite filledSprite; 
+    private UnityEngine.UI.Image slotImage; 
 
     void Awake() {
         slotImage = GetComponent<UnityEngine.UI.Image>();
@@ -20,16 +20,12 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
         DraggableLetter dragged = eventData.pointerDrag.GetComponent<DraggableLetter>();
         if (dragged != null && !currentLetter.HasValue)
         {
-            // Ambil huruf dari tile yang didrag
             currentLetter = dragged.letter;
             displayText.text = currentLetter.ToString().ToUpper();
-            Destroy(dragged.gameObject); // Hapus tile huruf setelah dipakai
-            // Ganti sprite background box ke filled
+            Destroy(dragged.gameObject); 
             if (filledSprite != null && slotImage != null)
                 slotImage.sprite = filledSprite;
-            // Setelah terisi, slot tidak bisa diisi lagi
             this.enabled = false;
-            // --- Tambahan: Auto-submit jika semua slot sudah terisi ---
             var allSlots = transform.parent.GetComponentsInChildren<LetterDropSlot>();
             bool allFilled = true;
             foreach (var slot in allSlots) {
@@ -40,7 +36,6 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
                 Debug.Log("[LetterDropSlot] Semua slot terisi, submit jawaban otomatis!");
                 AnswerChecker.Instance.SubmitAnswer();
             }
-            // --- End tambahan ---
         }
     }
 

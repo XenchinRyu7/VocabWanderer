@@ -7,9 +7,9 @@ using UnityEngine;
 public class SaveData
 {
     public int index;
-    public string info;      // contoh: "Verb 1, Schema 1"
-    public string dateSaved; // contoh: "17/04/2025"
-    public string schema;    // schema aktif pada save ini
+    public string info;      
+    public string dateSaved; 
+    public string schema;    
 }
 
 [Serializable]

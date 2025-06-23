@@ -7,6 +7,12 @@ public class BacksoundPlayer : MonoBehaviour
 
     public AudioClip startClip;
     public AudioClip quizClip;
+    public AudioClip timeAlmostOutClip;
+    public AudioClip correctClip;
+    public AudioClip wrongClip;
+    public AudioClip gameOverClip;
+    public AudioClip successClip;
+    public AudioClip buttonClickClip; // Variabel untuk menyimpan clip suara klik tombol
     private AudioSource audioSource;
 
     private void Awake()
@@ -27,7 +33,7 @@ public class BacksoundPlayer : MonoBehaviour
             Debug.LogError("AudioSource component not found on BacksoundPlayer GameObject!");
         }
         audioSource.loop = true;
-        audioSource.volume = 1f; // Pastikan volume tidak 0
+        audioSource.volume = 1f; 
         audioSource.clip = startClip;
         audioSource.Play();
 
@@ -126,5 +132,155 @@ public class BacksoundPlayer : MonoBehaviour
 
         audioSource.volume = startVolume;
         Debug.Log("Fade-in complete. Volume restored to: " + startVolume);
+    }
+
+    public void PlayTimeAlmostOutSound()
+    {
+        if (timeAlmostOutClip == null)
+        {
+            Debug.LogError("PlayTimeAlmostOutSound called but timeAlmostOutClip is null!");
+            return;
+        }
+        Debug.Log("Playing timeAlmostOutClip: " + timeAlmostOutClip.name);
+        StartCoroutine(FadeToNewClip(timeAlmostOutClip));
+    }
+
+    public void PlayQuizBacksound()
+    {
+        if (quizClip == null)
+        {
+            Debug.LogError("PlayQuizBacksound called but quizClip is null!");
+            return;
+        }
+        Debug.Log("Playing quizClip: " + quizClip.name);
+        StartCoroutine(FadeToNewClip(quizClip));
+    }
+
+    public void PlayStartBacksound()
+    {
+        if (startClip == null)
+        {
+            Debug.LogError("PlayStartBacksound called but startClip is null!");
+            return;
+        }
+        Debug.Log("Playing startClip: " + startClip.name);
+        StartCoroutine(FadeToNewClip(startClip));
+    }
+
+    public void PlayCorrectSound()
+    {
+        if (correctClip == null)
+        {
+            Debug.LogError("PlayCorrectSound called but correctClip is null!");
+            return;
+        }
+        Debug.Log("Playing correctClip: " + correctClip.name);
+        StartCoroutine(FadeToNewClip(correctClip));
+    }
+
+    public void PlayWrongSound()
+    {
+        if (wrongClip == null)
+        {
+            Debug.LogError("PlayWrongSound called but wrongClip is null!");
+            return;
+        }
+        Debug.Log("Playing wrongClip: " + wrongClip.name);
+        StartCoroutine(FadeToNewClip(wrongClip));
+    }
+
+    public void PlayGameOverSound()
+    {
+        if (gameOverClip == null)
+        {
+            Debug.LogError("PlayGameOverSound called but gameOverClip is null!");
+            return;
+        }
+        Debug.Log("Playing gameOverClip: " + gameOverClip.name);
+        StartCoroutine(FadeToNewClip(gameOverClip));
+    }
+
+    public void PlaySuccessSound()
+    {
+        if (successClip == null)
+        {
+            Debug.LogError("PlaySuccessSound called but successClip is null!");
+            return;
+        }
+        Debug.Log("Playing successClip: " + successClip.name);
+        StartCoroutine(FadeToNewClip(successClip));
+    }
+
+    public void PlayButtonClickSound()
+    {
+        if (buttonClickClip == null)
+        {
+            Debug.LogError("PlayButtonClickSound called but buttonClickClip is null!");
+            return;
+        }
+        Debug.Log("Playing buttonClickClip: " + buttonClickClip.name);
+        audioSource.PlayOneShot(buttonClickClip);
+    }
+
+    // Contoh fungsi untuk dihubungkan ke button di UI
+    public void OnClickPlayStartBacksound()
+    {
+        PlayStartBacksound();
+    }
+    public void OnClickPlayQuizBacksound()
+    {
+        PlayQuizBacksound();
+    }
+    public void OnClickPlayTimeAlmostOutSound()
+    {
+        PlayTimeAlmostOutSound();
+    }
+    public void OnClickPlayCorrectSound()
+    {
+        PlayCorrectSound();
+    }
+    public void OnClickPlayWrongSound()
+    {
+        PlayWrongSound();
+    }
+    public void OnClickPlayGameOverSound()
+    {
+        PlayGameOverSound();
+    }
+    public void OnClickPlaySuccessSound()
+    {
+        PlaySuccessSound();
+    }
+
+    // Fungsi untuk toggle play/pause backsound dari button
+    public void OnClickToggleBacksound()
+    {
+        if (audioSource == null) return;
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+            Debug.Log("Backsound paused by button click.");
+        }
+        else
+        {
+            audioSource.UnPause();
+            Debug.Log("Backsound resumed by button click.");
+        }
+    }
+
+    // Fungsi untuk play/pause backsound saat button di-click (bukan fade, hanya toggle play/pause)
+    public void OnButtonClickBacksound()
+    {
+        if (audioSource == null) return;
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+            Debug.Log("Backsound paused by OnButtonClickBacksound.");
+        }
+        else
+        {
+            audioSource.UnPause();
+            Debug.Log("Backsound resumed by OnButtonClickBacksound.");
+        }
     }
 }

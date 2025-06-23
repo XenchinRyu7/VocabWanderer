@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,107 +16,133 @@ public class GameManager : MonoBehaviour
     public float totalPlayTime = 0f;
     private bool isPaused = false;
 
-    void Awake() {
+    void Awake()
+    {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start() {
-        // Ambil parameter schema dan index dari QuizNavigationParam
+    void Start()
+    {
         string schema = QuizNavigationParam.schema;
         int idx = QuizNavigationParam.index;
         Debug.Log($"[GameManager] Start: schema={schema}, index={idx}");
         VerbChallengeLoader.Instance.LoadChallenges(schema);
-        currentChallengeIndex = idx - 1; // index json mulai dari 1
+        currentChallengeIndex = idx - 1;
         LoadChallenge(currentChallengeIndex);
         LoadQuestion(0);
     }
 
-    void Update() {
+    void Update()
+    {
         if (!isPaused)
         {
             totalPlayTime += Time.unscaledDeltaTime;
         }
     }
 
-    public void PauseTotalTime() {
+    public void PauseTotalTime()
+    {
         isPaused = true;
     }
 
-    public void ResumeTotalTime() {
+    public void ResumeTotalTime()
+    {
         isPaused = false;
     }
 
-    public void LoadChallenge(int index) {
+    public void LoadChallenge(int index)
+    {
         Debug.Log($"LoadChallenge dipanggil dengan index={index}");
-        if (VerbChallengeLoader.Instance == null) {
+        if (VerbChallengeLoader.Instance == null)
+        {
             Debug.LogError("VerbChallengeLoader.Instance is null di LoadChallenge!");
             return;
         }
         Debug.Log("Sebelum GetChallenge");
         currentChallenge = VerbChallengeLoader.Instance.GetChallenge(index);
         Debug.Log("Setelah GetChallenge");
-        if (currentChallenge == null) {
+        if (currentChallenge == null)
+        {
             Debug.LogError($"GetChallenge({index}) return null di LoadChallenge!");
             return;
         }
         currentQuestionIndex = 0;
     }
 
-    public void LoadQuestion(int index) {
+    public void LoadQuestion(int index)
+    {
         currentQuestionIndex = index;
-        if (currentChallenge == null) {
+        if (currentChallenge == null)
+        {
             Debug.LogError("currentChallenge is null di LoadQuestion!");
             return;
         }
-        if (currentChallenge.questions == null) {
+        if (currentChallenge.questions == null)
+        {
             Debug.LogError("currentChallenge.questions is null di LoadQuestion!");
             return;
         }
-        if (index < 0 || index >= currentChallenge.questions.Count) {
+        if (index < 0 || index >= currentChallenge.questions.Count)
+        {
             Debug.LogError($"Index {index} out of range di LoadQuestion! questions.Count={currentChallenge.questions.Count}");
             return;
         }
         currentQuestion = currentChallenge.questions[index];
-        if (currentQuestion == null) {
+        if (currentQuestion == null)
+        {
             Debug.LogError($"currentQuestion null di LoadQuestion! index={index}");
             return;
         }
         Debug.Log("currentQuestion berhasil diambil, lanjut ke BuildQuestionUI");
-        if (DynamicUIBuilder.Instance == null) {
+        if (DynamicUIBuilder.Instance == null)
+        {
             Debug.LogError("DynamicUIBuilder.Instance null di LoadQuestion!");
             return;
         }
         DynamicUIBuilder.Instance.BuildQuestionUI(currentQuestion, currentChallenge.background_asset);
     }
 
-    public void OnTimeOut() {
+    public void OnTimeOut()
+    {
         health--;
-        // Update health UI secara dinamis
         if (DynamicUIBuilder.Instance != null)
             DynamicUIBuilder.Instance.UpdateHealthUI(health);
         if (health <= 0)
+        {
             SceneManager.LoadScene("GameOver");
+            BacksoundPlayer.instance.PlayGameOverSound();
+        }
         else
             LoadQuestion(currentQuestionIndex);
     }
 
-    public void OnAnswerSubmitted(bool correct) {
-        if (correct) {
+    public void OnAnswerSubmitted(bool correct)
+    {
+        if (correct)
+        {
+            BacksoundPlayer.instance.PlayCorrectSound();
             if (currentQuestionIndex < currentChallenge.questions.Count - 1)
                 LoadQuestion(currentQuestionIndex + 1);
-            else {
+            else
+            {
                 lastHealth = health;
                 lastTotalTime = totalPlayTime;
                 SceneManager.LoadScene("SuccessAllScenes");
             }
-        } else {
+        }
+        else
+        {
             health--;
+            BacksoundPlayer.instance.PlayWrongSound();
             if (DynamicUIBuilder.Instance != null)
                 DynamicUIBuilder.Instance.UpdateHealthUI(health);
             if (health <= 0)
+            {
                 SceneManager.LoadScene("GameOver");
+                BacksoundPlayer.instance.PlayGameOverSound();
+            }
             else
                 LoadQuestion(currentQuestionIndex);
         }

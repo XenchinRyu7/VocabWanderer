@@ -15,6 +15,8 @@ public class TimerLine : MonoBehaviour
 
     public System.Action OnLineTimeout;
 
+    public float RemainingTime => timeRemaining;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();

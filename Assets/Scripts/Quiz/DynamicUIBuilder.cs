@@ -25,14 +25,13 @@ public class DynamicUIBuilder : MonoBehaviour
 
     void Start()
     {
-        // Tampilkan health UI di awal scene
         if (GameManager.Instance != null)
         {
             UpdateHealthUI(GameManager.Instance.health);
         }
         else
         {
-            UpdateHealthUI(maxHealth); // fallback jika GameManager belum siap
+            UpdateHealthUI(maxHealth);
         }
 
         if (timerLine != null)
@@ -41,7 +40,6 @@ public class DynamicUIBuilder : MonoBehaviour
                 GameManager.Instance.OnTimeOut();
                 timerLine.StartLine(GameManager.Instance.currentQuestion.time_limit_seconds);
             };
-            // Jika ingin timerLine langsung muncul di awal scene, pastikan currentQuestion sudah ada
             if (GameManager.Instance != null && GameManager.Instance.currentQuestion != null)
             {
                 timerLine.StartLine(GameManager.Instance.currentQuestion.time_limit_seconds);
@@ -59,18 +57,14 @@ public class DynamicUIBuilder : MonoBehaviour
     }
 
     public void BuildQuestionUI(VerbQuestion question, string backgroundAsset) {
-        // Clear previous UI
         foreach (Transform child in letterSlotParent) Destroy(child.gameObject);
         foreach (Transform child in letterTileParent) Destroy(child.gameObject);
 
-        // Set context
         contextText.text = question.context;
 
-        // Set background
         Sprite bg = Resources.Load<Sprite>(backgroundAsset.Replace("assets/Resources/", "").Replace(".png", ""));
         if (bg != null && backgroundImage != null) backgroundImage.sprite = bg;
 
-        // Build letter slots (boxes)
         string scrambled = question.scrambled_word;
         for (int i = 0; i < scrambled.Length; i++) {
             char c = scrambled[i];
@@ -85,7 +79,6 @@ public class DynamicUIBuilder : MonoBehaviour
             char rnd = (char)('A' + Random.Range(0, 26));
             if (!tiles.Contains(rnd.ToString())) tiles.Add(rnd.ToString());
         }
-        // Shuffle
         for (int i = 0; i < tiles.Count; i++) {
             var tmp = tiles[i];
             int rand = Random.Range(i, tiles.Count);
@@ -97,7 +90,6 @@ public class DynamicUIBuilder : MonoBehaviour
             tile.GetComponentInChildren<TextMeshProUGUI>().text = t.ToUpper();
             tile.GetComponent<DraggableLetter>().letter = t[0];
         }
-        // Sinkronkan TimerLine dengan waktu soal
         if (timerLine != null)
         {
             Debug.Log($"[DynamicUIBuilder] TimerLine.StartLine dipanggil dengan waktu: {question.time_limit_seconds}");
@@ -105,13 +97,14 @@ public class DynamicUIBuilder : MonoBehaviour
             timerLine.OnLineTimeout = () => {
                 Debug.Log("[DynamicUIBuilder] TimerLine.OnLineTimeout trigger, memanggil GameManager.OnTimeOut()");
                 GameManager.Instance.OnTimeOut();
-                // Cek jika health masih > 0, reset timerLine untuk soal yang sama
                 if (GameManager.Instance.health > 0)
                 {
                     Debug.Log($"[DynamicUIBuilder] TimerLine direset dengan waktu: {question.time_limit_seconds}");
                     timerLine.StartLine(question.time_limit_seconds);
                 }
             };
+            // Tambahkan backsound time almost out
+            StartCoroutine(CheckTimeAlmostOutCoroutine(question.time_limit_seconds));
         }
     }
 
@@ -127,5 +120,21 @@ public class DynamicUIBuilder : MonoBehaviour
         MenuController.Instance.HideDialog();
         if (timerLine != null) timerLine.Resume();
         if (GameManager.Instance != null) GameManager.Instance.ResumeTotalTime();
+    }
+
+    private System.Collections.IEnumerator CheckTimeAlmostOutCoroutine(float totalTime)
+    {
+        float threshold = 5f; // detik sebelum habis
+        bool called = false;
+        while (timerLine != null && timerLine.RemainingTime > 0)
+        {
+            if (!called && timerLine.RemainingTime <= threshold)
+            {
+                called = true;
+                if (BacksoundPlayer.instance != null)
+                    BacksoundPlayer.instance.PlayTimeAlmostOutSound();
+            }
+            yield return null;
+        }
     }
 }

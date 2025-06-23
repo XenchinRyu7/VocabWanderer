@@ -3,22 +3,19 @@ using UnityEngine.UI;
 
 public class SaveSlotUI : MonoBehaviour
 {
-    public GameObject indexObj, infoObj, dateObj; // Assign di inspector ke GameObject UI (bisa TMP_Text, dsb)
+    public GameObject indexObj, infoObj, dateObj;
     private SaveMenuUI menuUI;
     private int slotIndex;
     private bool isNew;
 
-    // isNew = true untuk slot kosong
     public void SetData(SaveData data, bool isNew, SaveMenuUI menuUI, int slotIndex)
     {
         this.menuUI = menuUI;
         this.slotIndex = slotIndex;
         this.isNew = isNew;
-        // Set text pada GameObject (bisa pakai TMP_Text, Text, dsb)
         SetText(indexObj, isNew ? (SaveManager.Instance.saves.Count + 1).ToString() : data.index.ToString());
         SetText(infoObj, isNew ? "New Save" : data.info);
         SetText(dateObj, isNew ? "" : data.dateSaved);
-        // Pasang listener pada GameObject utama (row)
         var btn = GetComponent<Button>();
         if (btn != null)
         {
@@ -33,6 +30,5 @@ public class SaveSlotUI : MonoBehaviour
         if (tmp != null) { tmp.text = value; return; }
         var txt = obj.GetComponent<UnityEngine.UI.Text>();
         if (txt != null) { txt.text = value; return; }
-        // Tambah tipe lain jika perlu
     }
 }

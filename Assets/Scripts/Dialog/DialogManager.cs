@@ -78,26 +78,24 @@ public class DialogManager : MonoBehaviour
         {
             Debug.Log("Dialog selesai.");
             if (clickToContinueGO != null)
-                clickToContinueGO.SetActive(false); // Sembunyikan click to continue saat dialog habis
+                clickToContinueGO.SetActive(false); 
             if (nextButton != null)
             {
-                nextButton.SetActive(true); // Tampilkan tombol lanjut jika ada
+                nextButton.SetActive(true); 
             }
             else if (!string.IsNullOrEmpty(nextSceneName))
             {
-                SceneManager.LoadScene(nextSceneName); // Langsung pindah scene jika tidak pakai tombol
+                SceneManager.LoadScene(nextSceneName);
             }
             return;
         }
 
         var line = currentScene.dialog[currentLine];
-        // Cek event quiz
         if (!string.IsNullOrEmpty(line.@event) && line.@event == "quiz")
         {
             string quizSchema = line.quiz_schema;
-            int quizIndex = line.quiz_index ?? 1; // default ke 1 jika null
+            int quizIndex = line.quiz_index ?? 1; 
             Debug.Log($"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}");
-            // Simpan parameter ke static helper agar bisa diakses di QuestionScene
             QuizNavigationParam.schema = quizSchema;
             QuizNavigationParam.index = quizIndex;
             SceneManager.LoadScene("QuestionScene");
@@ -111,11 +109,10 @@ public class DialogManager : MonoBehaviour
 
         currentLine++;
 
-        // Tampilkan click to continue jika masih ada dialog berikutnya
         if (clickToContinueGO != null)
             clickToContinueGO.SetActive(true);
         if (nextButton != null)
-            nextButton.SetActive(false); // Pastikan next button tetap hidden selama dialog belum habis
+            nextButton.SetActive(false); 
     }
 
     void UpdateCharacterVisuals(string currentSpeaker)
@@ -130,7 +127,6 @@ public class DialogManager : MonoBehaviour
         var speakerSprite = Resources.Load<Sprite>("Characters/" + speakerCharacter.sprite);
         string speakerPos = speakerCharacter.position.ToLower();
 
-        // Pasang speaker
         if (speakerPos == "left")
         {
             var img = leftCharacterGO.GetComponent<Image>();
@@ -144,7 +140,6 @@ public class DialogManager : MonoBehaviour
             rightCharacterGO.SetActive(true);
         }
 
-        // Ambil karakter pendukung pertama yang bukan speaker
         var supportCharacter = currentScene.characters
             .FirstOrDefault(c => c.name != currentSpeaker);
 
@@ -154,7 +149,6 @@ public class DialogManager : MonoBehaviour
             var supportSprite = Resources.Load<Sprite>("Characters/" + c.sprite);
             string supportPos = c.position.ToLower();
 
-            // Kalau posisinya sama dengan speaker, pindah sisi
             if (supportPos == speakerPos)
                 supportPos = (speakerPos == "left") ? "right" : "left";
 
@@ -173,7 +167,6 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            // Tidak ada karakter lain
             if (speakerPos == "left")
                 rightCharacterGO.SetActive(false);
             else
@@ -188,7 +181,6 @@ public class DialogManager : MonoBehaviour
         ShowNextLine();
     }
 
-    // Fungsi untuk dipanggil tombol lanjut (jika pakai tombol)
     public void OnClickNextScene()
     {
         if (!string.IsNullOrEmpty(nextSceneName))
@@ -201,10 +193,8 @@ public class DialogManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Cek apakah tap-nya kena UI
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                // Cek apakah yang ditap adalah PauseButton
                 PointerEventData pointerData = new PointerEventData(EventSystem.current)
                 {
                     position = Input.mousePosition
@@ -217,13 +207,11 @@ public class DialogManager : MonoBehaviour
                 {
                     if (result.gameObject.name == "PauseButton")
                     {
-                        // Kalau tap di PauseButton, jangan lanjut
                         return;
                     }
                 }
             }
 
-            // Kalau bukan tap di PauseButton, lanjut
             ShowNextLine();
         }
     }

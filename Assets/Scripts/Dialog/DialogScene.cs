@@ -5,7 +5,7 @@ public class CharacterInfo
 {
     public string name;
     public string sprite;
-    public string position; // "left", "right"
+    public string position;
 }
 
 [System.Serializable]
@@ -14,9 +14,9 @@ public class DialogLine
     public string speaker;
     public string text;
     public string expression;
-    public string @event; // gunakan @event karena event adalah keyword C#
+    public string @event; 
     public string quiz_schema;
-    public int? quiz_index; // nullable, karena tidak semua node punya
+    public int? quiz_index; 
 }
 
 [System.Serializable]

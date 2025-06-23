@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Newtonsoft.Json; // Tambahkan ini
+using Newtonsoft.Json; 
 
 public class VerbChallengeLoader : MonoBehaviour
 {
