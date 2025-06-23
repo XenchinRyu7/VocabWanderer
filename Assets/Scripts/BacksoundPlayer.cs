@@ -12,8 +12,19 @@ public class BacksoundPlayer : MonoBehaviour
     public AudioClip wrongClip;
     public AudioClip gameOverClip;
     public AudioClip successClip;
-    public AudioClip buttonClickClip; // Variabel untuk menyimpan clip suara klik tombol
+    public AudioClip buttonClickClip;
     private AudioSource audioSource;
+    private AudioSource effectAudioSource;
+
+    [Header("Volume Settings")]
+    [Range(0f, 1f)]
+    public float musicVolume = 1f;
+
+    [Range(0f, 1f)]
+    public float sfxVolume = 1f;
+
+    [Range(0f, 1f)]
+    public float ambienceVolume = 1f;
 
     private void Awake()
     {
@@ -26,18 +37,28 @@ public class BacksoundPlayer : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             Debug.LogError("AudioSource component not found on BacksoundPlayer GameObject!");
-        }
+        } // Setup AudioSource kedua untuk sound effects
+        effectAudioSource = gameObject.AddComponent<AudioSource>();
+        effectAudioSource.loop = false;
+        effectAudioSource.volume = sfxVolume;
+        effectAudioSource.playOnAwake = false;
+
         audioSource.loop = true;
-        audioSource.volume = 1f; 
+        audioSource.volume = musicVolume;
         audioSource.clip = startClip;
         audioSource.Play();
 
-        Debug.Log("BacksoundPlayer initialized with startClip: " + (startClip != null ? startClip.name : "NULL"));
+        // Initialize AudioSettingsManager jika belum ada
+        InitializeAudioSettings();
+
+        Debug.Log(
+            "BacksoundPlayer initialized with startClip: "
+                + (startClip != null ? startClip.name : "NULL")
+        );
     }
 
     private void OnEnable()
@@ -82,7 +103,12 @@ public class BacksoundPlayer : MonoBehaviour
             return;
         }
 
-        Debug.Log("Backsound changing from " + (audioSource.clip != null ? audioSource.clip.name : "NULL") + " to " + newClip.name);
+        Debug.Log(
+            "Backsound changing from "
+                + (audioSource.clip != null ? audioSource.clip.name : "NULL")
+                + " to "
+                + newClip.name
+        );
         StartCoroutine(FadeToNewClip(newClip));
     }
 
@@ -94,15 +120,28 @@ public class BacksoundPlayer : MonoBehaviour
             Debug.LogWarning("Coroutine FadeToNewClip berhenti karena audioSource null");
             yield break;
         }
+
         if (newClip == null)
         {
             Debug.LogError("FadeToNewClip called with null AudioClip!");
             Debug.LogWarning("Coroutine FadeToNewClip berhenti karena newClip null");
             yield break;
         }
+
         float t = 0f;
         float duration = 1f;
         float startVolume = audioSource.volume;
+
+        // Tentukan target volume berdasarkan jenis clip
+        float targetVolume = musicVolume; // Default music
+        if (newClip == timeAlmostOutClip || newClip == gameOverClip || newClip == successClip)
+        {
+            targetVolume = ambienceVolume; // Gunakan ambience volume
+        }
+
+        Debug.Log(
+            $"[FADE] Target volume determined: {targetVolume} (musicVolume: {musicVolume}, ambienceVolume: {ambienceVolume})"
+        );
 
         Debug.Log("Fading out current clip...");
 
@@ -120,18 +159,33 @@ public class BacksoundPlayer : MonoBehaviour
 
         audioSource.Play();
 
-        Debug.Log($"audioSource.Play() dipanggil. Status: isPlaying={audioSource.isPlaying}, clip={(audioSource.clip != null ? audioSource.clip.name : "NULL")}, volume={audioSource.volume}, mute={audioSource.mute}");
-
+        Debug.Log(
+            $"audioSource.Play() dipanggil. Status: isPlaying={audioSource.isPlaying}, clip={(audioSource.clip != null ? audioSource.clip.name : "NULL")}, volume={audioSource.volume}, mute={audioSource.mute}"
+        );
         t = 0f;
         while (t < duration)
         {
             t += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(0f, startVolume, t / duration);
+            audioSource.volume = Mathf.Lerp(0f, targetVolume, t / duration);
             yield return null;
         }
 
-        audioSource.volume = startVolume;
-        Debug.Log("Fade-in complete. Volume restored to: " + startVolume);
+        audioSource.volume = targetVolume;
+        Debug.Log("Fade-in complete. Volume set to: " + targetVolume);
+    } // Fungsi sederhana untuk sound effect menggunakan AudioSource kedua
+
+    private void PlaySoundEffect(AudioClip effectClip)
+    {
+        if (effectAudioSource == null || effectClip == null)
+        {
+            Debug.LogError("effectAudioSource or effectClip is null in PlaySoundEffect!");
+            return;
+        }
+
+        Debug.Log($"Playing sound effect: {effectClip.name}");
+        effectAudioSource.Stop(); // Stop effect sebelumnya jika ada
+        effectAudioSource.clip = effectClip;
+        effectAudioSource.Play();
     }
 
     public void PlayTimeAlmostOutSound()
@@ -175,7 +229,7 @@ public class BacksoundPlayer : MonoBehaviour
             return;
         }
         Debug.Log("Playing correctClip: " + correctClip.name);
-        StartCoroutine(FadeToNewClip(correctClip));
+        PlaySoundEffect(correctClip);
     }
 
     public void PlayWrongSound()
@@ -186,7 +240,7 @@ public class BacksoundPlayer : MonoBehaviour
             return;
         }
         Debug.Log("Playing wrongClip: " + wrongClip.name);
-        StartCoroutine(FadeToNewClip(wrongClip));
+        PlaySoundEffect(wrongClip);
     }
 
     public void PlayGameOverSound()
@@ -219,7 +273,7 @@ public class BacksoundPlayer : MonoBehaviour
             return;
         }
         Debug.Log("Playing buttonClickClip: " + buttonClickClip.name);
-        audioSource.PlayOneShot(buttonClickClip);
+        PlaySoundEffect(buttonClickClip);
     }
 
     // Contoh fungsi untuk dihubungkan ke button di UI
@@ -227,26 +281,32 @@ public class BacksoundPlayer : MonoBehaviour
     {
         PlayStartBacksound();
     }
+
     public void OnClickPlayQuizBacksound()
     {
         PlayQuizBacksound();
     }
+
     public void OnClickPlayTimeAlmostOutSound()
     {
         PlayTimeAlmostOutSound();
     }
+
     public void OnClickPlayCorrectSound()
     {
         PlayCorrectSound();
     }
+
     public void OnClickPlayWrongSound()
     {
         PlayWrongSound();
     }
+
     public void OnClickPlayGameOverSound()
     {
         PlayGameOverSound();
     }
+
     public void OnClickPlaySuccessSound()
     {
         PlaySuccessSound();
@@ -255,7 +315,8 @@ public class BacksoundPlayer : MonoBehaviour
     // Fungsi untuk toggle play/pause backsound dari button
     public void OnClickToggleBacksound()
     {
-        if (audioSource == null) return;
+        if (audioSource == null)
+            return;
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
@@ -271,7 +332,8 @@ public class BacksoundPlayer : MonoBehaviour
     // Fungsi untuk play/pause backsound saat button di-click (bukan fade, hanya toggle play/pause)
     public void OnButtonClickBacksound()
     {
-        if (audioSource == null) return;
+        if (audioSource == null)
+            return;
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
@@ -281,6 +343,81 @@ public class BacksoundPlayer : MonoBehaviour
         {
             audioSource.UnPause();
             Debug.Log("Backsound resumed by OnButtonClickBacksound.");
+        }
+    }
+
+    // ===== VOLUME CONTROL METHODS =====
+
+    public void SetMusicVolume(float volume)
+    {
+        // UPDATE field musicVolume juga!
+        musicVolume = Mathf.Clamp01(volume);
+        Debug.Log($"[DEBUG] Updated musicVolume field to: {musicVolume}");
+        Debug.Log($"[DEBUG] AudioSource exists: {audioSource != null}");
+        if (audioSource != null)
+        {
+            Debug.Log($"[DEBUG] AudioSource isPlaying: {audioSource.isPlaying}");
+            Debug.Log(
+                $"[DEBUG] AudioSource clip: {(audioSource.clip != null ? audioSource.clip.name : "NULL")}"
+            );
+            Debug.Log($"[DEBUG] AudioSource volume BEFORE: {audioSource.volume}");
+
+            audioSource.volume = musicVolume;
+
+            Debug.Log($"[DEBUG] AudioSource volume AFTER: {audioSource.volume}");
+        }
+        else
+        {
+            Debug.LogError("[DEBUG] AudioSource is NULL!");
+        }
+        Debug.Log($"Music volume set to: {musicVolume}");
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        // UPDATE field sfxVolume juga!
+        sfxVolume = Mathf.Clamp01(volume);
+        if (effectAudioSource != null)
+        {
+            effectAudioSource.volume = sfxVolume;
+        }
+        Debug.Log($"SFX volume set to: {sfxVolume}");
+    }
+
+    public void SetAmbienceVolume(float volume)
+    {
+        // UPDATE field ambienceVolume juga!
+        ambienceVolume = Mathf.Clamp01(volume);
+        // Ambience menggunakan audioSource utama seperti music, tapi saat fade
+        // Volume akan diterapkan saat FadeToNewClip
+        Debug.Log($"Ambience volume set to: {ambienceVolume}");
+    }
+
+    // Method untuk mengupdate volume saat ini sesuai kategori
+    public void ApplyCurrentVolume()
+    {
+        if (audioSource != null)
+            audioSource.volume = musicVolume;
+        if (effectAudioSource != null)
+            effectAudioSource.volume = sfxVolume;
+    }
+
+    // Initialize AudioSettingsManager dan load settings
+    private void InitializeAudioSettings()
+    {
+        // Cek apakah AudioSettingsManager sudah ada
+        if (AudioSettingsManager.Instance == null)
+        {
+            // Buat AudioSettingsManager GameObject jika belum ada
+            GameObject audioSettingsGO = new GameObject("AudioSettingsManager");
+            audioSettingsGO.AddComponent<AudioSettingsManager>();
+            Debug.Log("AudioSettingsManager created by BacksoundPlayer");
+        }
+        else
+        {
+            // Jika sudah ada, apply settings langsung
+            AudioSettingsManager.Instance.ApplySettingsToAudio();
+            Debug.Log("AudioSettingsManager already exists, applied settings");
         }
     }
 }
