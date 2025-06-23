@@ -1,28 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum SaveMenuMode { Save, Load }
+public enum SaveMenuMode
+{
+    Save,
+    Load,
+}
 
 public class SaveMenuUI : MonoBehaviour
 {
-    public Transform slotParent; 
+    public Transform slotParent;
     public GameObject slotPrefab;
     public Button saveButton;
     public SaveMenuMode mode = SaveMenuMode.Save;
 
-    private int selectedSlotIndex = -1; 
+    private int selectedSlotIndex = -1;
 
     void Start()
     {
         RefreshSlots();
         saveButton.onClick.AddListener(OnSaveButtonClicked);
         saveButton.interactable = false;
-        saveButton.gameObject.SetActive(mode == SaveMenuMode.Save); 
+        saveButton.gameObject.SetActive(mode == SaveMenuMode.Save);
     }
 
     public void RefreshSlots()
     {
-        foreach (Transform child in slotParent) Destroy(child.gameObject);
+        foreach (Transform child in slotParent)
+            Destroy(child.gameObject);
         var saves = SaveManager.Instance.saves;
         for (int i = 0; i < saves.Count; i++)
         {
@@ -56,7 +61,8 @@ public class SaveMenuUI : MonoBehaviour
 
     private void OnSaveButtonClicked()
     {
-        if (selectedSlotIndex == -1) return;
+        if (selectedSlotIndex == -1)
+            return;
         var saves = SaveManager.Instance.saves;
         if (selectedSlotIndex < saves.Count)
         {

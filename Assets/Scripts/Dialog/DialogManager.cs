@@ -1,11 +1,11 @@
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
@@ -22,12 +22,13 @@ public class DialogManager : MonoBehaviour
     private DialogScene currentScene;
     private int currentLine = 0;
 
-    private Dictionary<string, CharacterInfo> characterMap = new Dictionary<string, CharacterInfo>();
+    private Dictionary<string, CharacterInfo> characterMap =
+        new Dictionary<string, CharacterInfo>();
 
     public GameObject clickToContinueGO;
 
     public string nextSceneName = "QuestionScene";
-    public GameObject nextButton; 
+    public GameObject nextButton;
 
     void Start()
     {
@@ -78,10 +79,10 @@ public class DialogManager : MonoBehaviour
         {
             Debug.Log("Dialog selesai.");
             if (clickToContinueGO != null)
-                clickToContinueGO.SetActive(false); 
+                clickToContinueGO.SetActive(false);
             if (nextButton != null)
             {
-                nextButton.SetActive(true); 
+                nextButton.SetActive(true);
             }
             else if (!string.IsNullOrEmpty(nextSceneName))
             {
@@ -94,8 +95,10 @@ public class DialogManager : MonoBehaviour
         if (!string.IsNullOrEmpty(line.@event) && line.@event == "quiz")
         {
             string quizSchema = line.quiz_schema;
-            int quizIndex = line.quiz_index ?? 1; 
-            Debug.Log($"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}");
+            int quizIndex = line.quiz_index ?? 1;
+            Debug.Log(
+                $"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}"
+            );
             QuizNavigationParam.schema = quizSchema;
             QuizNavigationParam.index = quizIndex;
             SceneManager.LoadScene("QuestionScene");
@@ -112,7 +115,7 @@ public class DialogManager : MonoBehaviour
         if (clickToContinueGO != null)
             clickToContinueGO.SetActive(true);
         if (nextButton != null)
-            nextButton.SetActive(false); 
+            nextButton.SetActive(false);
     }
 
     void UpdateCharacterVisuals(string currentSpeaker)
@@ -140,8 +143,9 @@ public class DialogManager : MonoBehaviour
             rightCharacterGO.SetActive(true);
         }
 
-        var supportCharacter = currentScene.characters
-            .FirstOrDefault(c => c.name != currentSpeaker);
+        var supportCharacter = currentScene.characters.FirstOrDefault(c =>
+            c.name != currentSpeaker
+        );
 
         if (supportCharacter != null)
         {
@@ -174,8 +178,6 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-
-
     public void OnClickNext()
     {
         ShowNextLine();
@@ -197,7 +199,7 @@ public class DialogManager : MonoBehaviour
             {
                 PointerEventData pointerData = new PointerEventData(EventSystem.current)
                 {
-                    position = Input.mousePosition
+                    position = Input.mousePosition,
                 };
 
                 var results = new List<RaycastResult>();
@@ -215,5 +217,4 @@ public class DialogManager : MonoBehaviour
             ShowNextLine();
         }
     }
-
 }

@@ -14,9 +14,9 @@ public class DialogLine
     public string speaker;
     public string text;
     public string expression;
-    public string @event; 
+    public string @event;
     public string quiz_schema;
-    public int? quiz_index; 
+    public int? quiz_index;
 }
 
 [System.Serializable]

@@ -405,13 +405,20 @@ public class BacksoundPlayer : MonoBehaviour
     // Initialize AudioSettingsManager dan load settings
     private void InitializeAudioSettings()
     {
+        // SAFETY: Hanya singleton BacksoundPlayer yang boleh initialize AudioSettingsManager
+        if (instance != this)
+        {
+            Debug.Log("InitializeAudioSettings called by non-singleton BacksoundPlayer, skipping");
+            return;
+        }
+
         // Cek apakah AudioSettingsManager sudah ada
         if (AudioSettingsManager.Instance == null)
         {
             // Buat AudioSettingsManager GameObject jika belum ada
             GameObject audioSettingsGO = new GameObject("AudioSettingsManager");
             audioSettingsGO.AddComponent<AudioSettingsManager>();
-            Debug.Log("AudioSettingsManager created by BacksoundPlayer");
+            Debug.Log("AudioSettingsManager created by BacksoundPlayer singleton");
         }
         else
         {

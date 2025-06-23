@@ -1424,18 +1424,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4418815554419274406}
   m_CullTransparentMesh: 1
---- !u!114 &3092532991332149255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3488973448237205824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3222944827313977549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,8 +1643,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4799842432480511853}
   - component: {fileID: 2675163004902017471}
-  - component: {fileID: 7573156766175451013}
-  - component: {fileID: 3092532991332149255}
   m_Layer: 10
   m_Name: Menu
   m_TagString: Untagged
@@ -2389,7 +2375,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 975839220}
         m_TargetAssemblyTypeName: BacksoundPlayer, Assembly-CSharp
-        m_MethodName: OnButtonClickBacksound
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2571,18 +2557,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &7573156766175451013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3488973448237205824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &7580895952402816940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2830,7 +2804,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 975839220}
         m_TargetAssemblyTypeName: BacksoundPlayer, Assembly-CSharp
-        m_MethodName: OnButtonClickBacksound
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
