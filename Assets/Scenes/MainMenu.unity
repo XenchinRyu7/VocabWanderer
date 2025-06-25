@@ -1084,7 +1084,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 975839220}
         m_TargetAssemblyTypeName: BacksoundPlayer, Assembly-CSharp
-        m_MethodName: PlayButtonClickSound
+        m_MethodName: PlayButtonClickSoundAlt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2375,7 +2375,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 975839220}
         m_TargetAssemblyTypeName: BacksoundPlayer, Assembly-CSharp
-        m_MethodName: PlayButtonClickSound
+        m_MethodName: PlayButtonClickSoundAlt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -7,9 +7,9 @@ using UnityEngine;
 public class SaveData
 {
     public int index;
-    public string info;      
-    public string dateSaved; 
-    public string schema;    
+    public string info;
+    public string dateSaved;
+    public string schema;
 }
 
 [Serializable]
@@ -59,7 +59,7 @@ public class SaveManager : MonoBehaviour
             index = newIndex,
             info = info,
             dateSaved = DateTime.Now.ToString("dd/MM/yyyy"),
-            schema = schema
+            schema = schema,
         };
         saves.Add(save);
         SaveSlotToFile(save);
@@ -68,7 +68,8 @@ public class SaveManager : MonoBehaviour
 
     public void OverwriteSave(int slotIndex, string info, string schema)
     {
-        if (slotIndex < 1 || slotIndex > saves.Count) return;
+        if (slotIndex < 1 || slotIndex > saves.Count)
+            return;
         var save = saves[slotIndex - 1];
         save.info = info;
         save.dateSaved = DateTime.Now.ToString("dd/MM/yyyy");
@@ -80,7 +81,8 @@ public class SaveManager : MonoBehaviour
     private void SaveSlotToFile(SaveData save)
     {
         string dirPath = Path.Combine(Application.dataPath, "Resources/Save");
-        if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
+        if (!Directory.Exists(dirPath))
+            Directory.CreateDirectory(dirPath);
         string slotPath = Path.Combine(dirPath, $"save{save.index}.json");
         string json = JsonUtility.ToJson(save, true);
         File.WriteAllText(slotPath, json);

@@ -78,6 +78,10 @@ public class BacksoundPlayer : MonoBehaviour
     {
         Debug.Log("Scene loaded: " + scene.name);
 
+        // REFRESH effectAudioSource setelah scene change untuk fix sound effect issue
+        RefreshEffectAudioSource();
+        Debug.Log("[SCENE_LOADED] effectAudioSource refreshed");
+
         if (scene.name == "QuestionScene")
         {
             Debug.Log("Changing to quizClip: " + (quizClip != null ? quizClip.name : "NULL"));
@@ -172,20 +176,57 @@ public class BacksoundPlayer : MonoBehaviour
 
         audioSource.volume = targetVolume;
         Debug.Log("Fade-in complete. Volume set to: " + targetVolume);
-    } // Fungsi sederhana untuk sound effect menggunakan AudioSource kedua
+    }
 
     private void PlaySoundEffect(AudioClip effectClip)
     {
-        if (effectAudioSource == null || effectClip == null)
+        // SAFETY CHECK: Ensure effectAudioSource is ready
+        if (effectAudioSource == null)
         {
-            Debug.LogError("effectAudioSource or effectClip is null in PlaySoundEffect!");
+            Debug.LogError("[SFX] effectAudioSource is null, attempting to recreate...");
+            RefreshEffectAudioSource();
+            if (effectAudioSource == null)
+            {
+                Debug.LogError("[SFX] Failed to recreate effectAudioSource!");
+                return;
+            }
+        }
+
+        if (effectClip == null)
+        {
+            Debug.LogError("[SFX] effectClip is null!");
             return;
         }
 
-        Debug.Log($"Playing sound effect: {effectClip.name}");
+        // FORCE refresh settings setiap kali play
+        effectAudioSource.volume = sfxVolume;
+        effectAudioSource.enabled = true;
+
+        Debug.Log($"[SFX] Playing sound effect: {effectClip.name}");
+        Debug.Log(
+            $"[SFX] effectAudioSource status - enabled: {effectAudioSource.enabled}, volume: {effectAudioSource.volume}"
+        );
+        Debug.Log($"[SFX] sfxVolume field: {sfxVolume}");
+
         effectAudioSource.Stop(); // Stop effect sebelumnya jika ada
         effectAudioSource.clip = effectClip;
         effectAudioSource.Play();
+
+        Debug.Log(
+            $"[SFX] After Play() - isPlaying: {effectAudioSource.isPlaying}, clip: {effectAudioSource.clip?.name}"
+        );
+
+        // EXTRA DEBUG: Check if audio is actually audible
+        if (!effectAudioSource.isPlaying)
+        {
+            Debug.LogError("[SFX] WARNING: effectAudioSource.isPlaying is FALSE after Play()!");
+        }
+        if (effectAudioSource.volume <= 0)
+        {
+            Debug.LogError(
+                $"[SFX] WARNING: effectAudioSource.volume is {effectAudioSource.volume}!"
+            );
+        }
     }
 
     public void PlayTimeAlmostOutSound()
@@ -272,7 +313,13 @@ public class BacksoundPlayer : MonoBehaviour
             Debug.LogError("PlayButtonClickSound called but buttonClickClip is null!");
             return;
         }
-        Debug.Log("Playing buttonClickClip: " + buttonClickClip.name);
+
+        Debug.Log(
+            $"[BUTTON] PlayButtonClickSound called - BacksoundPlayer instance: {instance != null}"
+        );
+        Debug.Log($"[BUTTON] BacksoundPlayer GameObject active: {gameObject.activeInHierarchy}");
+        Debug.Log($"[BUTTON] buttonClickClip: {buttonClickClip.name}");
+
         PlaySoundEffect(buttonClickClip);
     }
 
@@ -426,5 +473,150 @@ public class BacksoundPlayer : MonoBehaviour
             AudioSettingsManager.Instance.ApplySettingsToAudio();
             Debug.Log("AudioSettingsManager already exists, applied settings");
         }
+    }
+
+    // ===== DEBUG & SCENE ACCESS METHODS =====
+
+    [ContextMenu("Debug BacksoundPlayer State")]
+    public void DebugBacksoundPlayerState()
+    {
+        Debug.Log("=== BACKSOUNDPLAYER DEBUG STATE ===");
+        Debug.Log($"Instance exists: {instance != null}");
+        Debug.Log($"This is singleton: {instance == this}");
+        Debug.Log($"GameObject active: {gameObject.activeInHierarchy}");
+        Debug.Log($"GameObject name: {gameObject.name}");
+        Debug.Log($"Main AudioSource: {audioSource != null}");
+        Debug.Log($"Effect AudioSource: {effectAudioSource != null}");
+        if (audioSource != null)
+        {
+            Debug.Log(
+                $"Main AudioSource - isPlaying: {audioSource.isPlaying}, volume: {audioSource.volume}"
+            );
+        }
+
+        if (effectAudioSource != null)
+        {
+            Debug.Log(
+                $"Effect AudioSource - enabled: {effectAudioSource.enabled}, volume: {effectAudioSource.volume}"
+            );
+        }
+        Debug.Log(
+            $"Button click clip: {(buttonClickClip != null ? buttonClickClip.name : "NULL")}"
+        );
+        Debug.Log("=== END DEBUG ===");
+    }
+
+    [ContextMenu("Test Button Click Sound")]
+    public void TestButtonClickSound()
+    {
+        Debug.Log("[TEST] Manual button click sound test triggered");
+        PlayButtonClickSound();
+    }
+
+    // Static method untuk akses dari scene lain
+    public static void PlayButtonClickFromAnyScene()
+    {
+        if (instance != null)
+        {
+            Debug.Log("[STATIC] Playing button click from any scene");
+            instance.PlayButtonClickSound();
+        }
+        else
+        {
+            Debug.LogError(
+                "[STATIC] BacksoundPlayer instance not found! Cannot play button sound."
+            );
+        }
+    } // Method untuk re-initialize effectAudioSource jika rusak
+
+    public void RefreshEffectAudioSource()
+    {
+        if (effectAudioSource == null)
+        {
+            Debug.Log("[REFRESH] effectAudioSource is null, recreating...");
+            effectAudioSource = gameObject.AddComponent<AudioSource>();
+            effectAudioSource.loop = false;
+            effectAudioSource.volume = sfxVolume;
+            effectAudioSource.playOnAwake = false;
+            Debug.Log("[REFRESH] effectAudioSource recreated successfully");
+        }
+        else
+        {
+            Debug.Log("[REFRESH] effectAudioSource exists, refreshing settings...");
+            effectAudioSource.volume = sfxVolume;
+            effectAudioSource.enabled = true;
+
+            // Ensure effectAudioSource is properly configured
+            if (!effectAudioSource.enabled)
+            {
+                effectAudioSource.enabled = true;
+                Debug.Log("[REFRESH] effectAudioSource was disabled, re-enabled");
+            }
+        }
+
+        Debug.Log(
+            $"[REFRESH] Final state - enabled: {effectAudioSource.enabled}, volume: {effectAudioSource.volume}"
+        );
+    }
+
+    [ContextMenu("Refresh Effect Audio Source")]
+    public void RefreshEffectAudioSourceManual()
+    {
+        RefreshEffectAudioSource();
+    }
+
+    [ContextMenu("Force Audio Test")]
+    public void ForceAudioTest()
+    {
+        Debug.Log("[FORCE_TEST] Starting forced audio test...");
+
+        // Test dengan audio clip sederhana
+        if (buttonClickClip != null)
+        {
+            Debug.Log("[FORCE_TEST] Playing buttonClickClip directly...");
+
+            // Method 1: Direct AudioSource.PlayOneShot
+            if (effectAudioSource != null)
+            {
+                effectAudioSource.PlayOneShot(buttonClickClip, sfxVolume);
+                Debug.Log("[FORCE_TEST] Method 1: PlayOneShot executed");
+            }
+
+            // Method 2: Create temporary AudioSource
+            GameObject tempGO = new GameObject("TempAudioTest");
+            AudioSource tempAudio = tempGO.AddComponent<AudioSource>();
+            tempAudio.clip = buttonClickClip;
+            tempAudio.volume = sfxVolume;
+            tempAudio.Play();
+            Debug.Log("[FORCE_TEST] Method 2: Temporary AudioSource created and played");
+
+            // Destroy temp object after 2 seconds
+            Destroy(tempGO, 2f);
+        }
+        else
+        {
+            Debug.LogError("[FORCE_TEST] buttonClickClip is null!");
+        }
+    }
+
+    // Method alternatif menggunakan PlayOneShot
+    public void PlayButtonClickSoundAlt()
+    {
+        if (buttonClickClip == null)
+        {
+            Debug.LogError("PlayButtonClickSoundAlt called but buttonClickClip is null!");
+            return;
+        }
+
+        if (effectAudioSource == null)
+        {
+            Debug.LogError("[ALT] effectAudioSource is null!");
+            RefreshEffectAudioSource();
+            return;
+        }
+
+        Debug.Log($"[ALT] Playing button click with PlayOneShot - volume: {sfxVolume}");
+        effectAudioSource.PlayOneShot(buttonClickClip, sfxVolume);
+        Debug.Log("[ALT] PlayOneShot executed");
     }
 }
