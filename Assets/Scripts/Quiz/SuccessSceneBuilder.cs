@@ -34,6 +34,19 @@ public class SuccessSceneBuilder : MonoBehaviour
 
     public void OnContinueDialogClicked()
     {
+        // Pastikan dialog melanjutkan dari autosave setelah quiz
+        SaveManager saveManager = SaveManager.EnsureInstance();
+        if (saveManager != null)
+        {
+            var autoSave = saveManager.GetCurrentAutoSave();
+            if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
+            {
+                DialogManager.lastDialogSceneId = autoSave.schema;
+                DialogManager.lastDialogIndex = autoSave.dialogIndex;
+                Debug.Log($"Continuing dialog after quiz: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}");
+            }
+        }
+        
         MenuController.Instance.LoadToScene("DialogScene");
     }
 }

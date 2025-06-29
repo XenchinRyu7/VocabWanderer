@@ -17,12 +17,14 @@ public class DialogLine
     public string @event;
     public string quiz_schema;
     public int? quiz_index;
+    public string next_schema; // Field untuk next_schema event
 }
 
 [System.Serializable]
 public class DialogScene
 {
     public string sceneId;
+    public string schema; // Schema identifier (e.g., "schema_1")
     public string background;
     public List<CharacterInfo> characters;
     public List<DialogLine> dialog;

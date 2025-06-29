@@ -63,7 +63,7 @@
       {
         "context": "Tidur di malam hari",
         "answer": "sleep",
-        "missing_letters": ["s", "p"],
+        "missing_letters": ["s", "e", "p"],
         "scrambled_word": "_le__",
         "time_limit_seconds": 29
       },
@@ -111,7 +111,7 @@
       },
       {
         "context": "Bermain alat musik",
-        "answer": "play music",
+        "answer": "playmusic",
         "missing_letters": ["p", "c"],
         "scrambled_word": "_la_ _usi_",
         "time_limit_seconds": 40

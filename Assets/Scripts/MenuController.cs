@@ -69,21 +69,45 @@ public class MenuController : MonoBehaviour
 
     public void StartGame()
     {
-        if (SaveManager.Instance != null)
+        SaveManager saveManager = SaveManager.EnsureInstance();
+        if (saveManager != null)
         {
-            SaveManager.Instance.AutoSaveProgress("schema_1", 0, 0);
+            // Reset dan mulai game baru
+            saveManager.AutoSaveProgress("schema_1", 0, 0);
             DialogManager.lastDialogSceneId = "schema_1";
             DialogManager.lastDialogIndex = 0;
+            Debug.Log("Started new game with schema_1");
         }
         LoadToScene("DialogScene");
     }
 
     public void ContinueGame()
     {
+        Debug.Log("=== ContinueGame() Begin ===");
+        
         SaveManager saveManager = SaveManager.EnsureInstance();
         if (saveManager != null)
         {
-            saveManager.LoadGameFromAutoSave();
+            var autoSave = saveManager.GetCurrentAutoSave();
+            Debug.Log($"AutoSave before continue: schema={autoSave?.schema}, dialogIndex={autoSave?.dialogIndex}, quizIndex={autoSave?.lastCompletedQuizIndex}");
+            
+            if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
+            {
+                Debug.Log($"Continuing game from autosave: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}");
+                
+                // Set static variables untuk DialogManager
+                DialogManager.lastDialogSceneId = autoSave.schema;
+                DialogManager.lastDialogIndex = autoSave.dialogIndex;
+                
+                Debug.Log("=== ContinueGame() - Loading DialogScene ===");
+                LoadToScene("DialogScene");
+            }
+            else
+            {
+                Debug.LogError("No valid autosave data found!");
+                // Fallback ke new game jika tidak ada autosave
+                StartGame();
+            }
         }
         else
         {

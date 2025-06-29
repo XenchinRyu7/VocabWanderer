@@ -37,26 +37,57 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
-        // Jika ada schema dari parameter save, load file JSON yang sesuai
-        if (!string.IsNullOrEmpty(lastDialogSceneId))
+        Debug.Log("=== DialogManager.Start() Begin ===");
+        
+        // Cek dan gunakan SaveManager untuk memuat progress dari autosave
+        SaveManager saveManager = SaveManager.EnsureInstance();
+        bool loadedFromSave = false;
+
+        if (saveManager != null)
         {
-            LoadDialogFromSchema(lastDialogSceneId);
+            var autoSave = saveManager.GetCurrentAutoSave();
+            Debug.Log(
+                $"AutoSave data: schema={autoSave?.schema}, dialogIndex={autoSave?.dialogIndex}"
+            );
+            
+            if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
+            {
+                Debug.Log(
+                    $"Loading from autosave: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}"
+                );
+                LoadDialogFromSchema(autoSave.schema);
+                currentLine = autoSave.dialogIndex;
+                loadedFromSave = true;
+                Debug.Log($"Set currentLine to: {currentLine}");
+            }
         }
-        else
+
+        // Fallback: Jika ada schema dari parameter static save, load file JSON yang sesuai
+        if (!loadedFromSave && !string.IsNullOrEmpty(lastDialogSceneId))
         {
+            Debug.Log(
+                $"Loading from static params: lastDialogSceneId={lastDialogSceneId}, lastDialogIndex={lastDialogIndex}"
+            );
+            LoadDialogFromSchema(lastDialogSceneId);
+            if (lastDialogIndex >= 0)
+            {
+                currentLine = lastDialogIndex;
+                Debug.Log($"Set currentLine from static to: {currentLine}");
+            }
+            lastDialogSceneId = null;
+            lastDialogIndex = -1;
+        }
+        // Fallback terakhir: gunakan dialogJson default
+        else if (!loadedFromSave)
+        {
+            Debug.Log("Loading from default dialogJson");
             LoadSceneFromJson();
         }
 
         SetupBackground();
         SetupCharacterMap();
-
-        // Cek jika ada posisi dialog tersimpan, lanjutkan dari sana
-        if (lastDialogSceneId == sceneId && lastDialogIndex >= 0)
-        {
-            currentLine = lastDialogIndex;
-            lastDialogSceneId = null;
-            lastDialogIndex = -1;
-        }
+        
+        Debug.Log($"=== DialogManager.Start() End - currentLine={currentLine} ===");
         ShowNextLine();
     }
 
@@ -73,12 +104,35 @@ public class DialogManager : MonoBehaviour
         {
             currentScene = JsonConvert.DeserializeObject<DialogScene>(jsonFile.text);
             sceneId = currentScene.sceneId;
-            Debug.Log($"Loaded dialog from schema: {schema}, sceneId: {sceneId}");
+
+            // Pastikan field schema terisi, jika tidak ada di JSON, set dari parameter
+            if (string.IsNullOrEmpty(currentScene.schema))
+            {
+                currentScene.schema = schema;
+            }
+
+            Debug.Log(
+                $"Loaded dialog from schema: {schema}, sceneId: {sceneId}, currentScene.schema: {currentScene.schema}"
+            );
         }
         else
         {
             Debug.LogError($"Dialog file not found: {path}");
-            LoadSceneFromJson();
+            // Fallback ke dialogJson default jika ada
+            if (dialogJson != null)
+            {
+                Debug.Log("Falling back to default dialogJson");
+                LoadSceneFromJson();
+                // Set schema secara manual untuk fallback
+                if (currentScene != null)
+                {
+                    currentScene.schema = schema;
+                }
+            }
+            else
+            {
+                Debug.LogError("No fallback dialogJson available!");
+            }
         }
     }
 
@@ -117,6 +171,7 @@ public class DialogManager : MonoBehaviour
         if (currentLine >= currentScene.dialog.Count)
         {
             Debug.Log("Dialog selesai.");
+            
             if (clickToContinueGO != null)
                 clickToContinueGO.SetActive(false);
             if (nextButton != null)
@@ -131,22 +186,72 @@ public class DialogManager : MonoBehaviour
         }
 
         var line = currentScene.dialog[currentLine];
-        if (!string.IsNullOrEmpty(line.@event) && line.@event == "quiz")
+        if (!string.IsNullOrEmpty(line.@event))
         {
-            // Simpan posisi dialog setelah quiz
-            lastDialogSceneId = sceneId;
-            lastDialogIndex = currentLine + 1;
-            string quizSchema = line.quiz_schema;
-            int quizIndex = line.quiz_index ?? 1;
-            // Simpan state quiz terakhir untuk retry
-            GameManager.SetLastQuiz(quizSchema, quizIndex);
-            Debug.Log(
-                $"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}"
-            );
-            QuizNavigationParam.schema = quizSchema;
-            QuizNavigationParam.index = quizIndex;
-            SceneManager.LoadScene("QuestionScene");
-            return;
+            if (line.@event == "quiz")
+            {
+                // Simpan posisi dialog setelah quiz untuk static fallback
+                lastDialogSceneId = sceneId;
+                lastDialogIndex = currentLine + 1;
+
+                string quizSchema = line.quiz_schema;
+                int quizIndex = line.quiz_index ?? 1;
+
+                GameManager.SetLastQuiz(quizSchema, quizIndex);
+                Debug.Log(
+                    $"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}"
+                );
+                QuizNavigationParam.schema = quizSchema;
+                QuizNavigationParam.index = quizIndex;
+                SceneManager.LoadScene("QuestionScene");
+                return;
+            }
+            else if (line.@event == "next_schema")
+            {
+                // Berpindah ke schema berikutnya
+                string nextSchema = line.next_schema;
+                if (!string.IsNullOrEmpty(nextSchema))
+                {
+                    Debug.Log($"[DialogManager] Moving to next schema: {nextSchema}");
+                    
+                    // Auto-save progress ke schema baru dengan dialogIndex 0
+                    SaveManager saveManager = SaveManager.EnsureInstance();
+                    if (saveManager != null)
+                    {
+                        saveManager.AutoSaveProgress(nextSchema, 0, 0);
+                        Debug.Log($"Auto-saved transition to: {nextSchema}");
+                    }
+                    
+                    // Set static variables untuk load schema baru
+                    lastDialogSceneId = nextSchema;
+                    lastDialogIndex = 0;
+                    
+                    // Reload scene dengan schema baru
+                    SceneManager.LoadScene("DialogScene");
+                    return;
+                }
+                else
+                {
+                    Debug.LogError("next_schema event found but no next_schema specified!");
+                }
+            }
+            else if (line.@event == "game_complete")
+            {
+                // Game selesai, kembali ke main menu atau ending screen
+                Debug.Log("[DialogManager] Game completed!");
+                
+                // Reset auto-save atau save final completion
+                SaveManager saveManager = SaveManager.EnsureInstance();
+                if (saveManager != null)
+                {
+                    saveManager.AutoSaveProgress("game_completed", 0, 0);
+                    Debug.Log("Game completion saved!");
+                }
+                
+                // Load main menu atau ending scene
+                SceneManager.LoadScene("MainMenu");
+                return;
+            }
         }
 
         speakerText.text = line.speaker;
@@ -260,5 +365,55 @@ public class DialogManager : MonoBehaviour
 
             ShowNextLine();
         }
+    }
+
+    private string GetCurrentSchema()
+    {
+        SaveManager saveManager = SaveManager.EnsureInstance();
+        if (saveManager != null)
+        {
+            var autoSave = saveManager.GetCurrentAutoSave();
+            if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
+            {
+                Debug.Log($"GetCurrentSchema: Found from autoSave: {autoSave.schema}");
+                return autoSave.schema;
+            }
+        }
+
+        // Cek apakah currentScene memiliki field schema yang sudah di-set
+        if (currentScene != null && !string.IsNullOrEmpty(currentScene.schema))
+        {
+            Debug.Log($"GetCurrentSchema: Found from currentScene: {currentScene.schema}");
+            return currentScene.schema;
+        }
+
+        if (!string.IsNullOrEmpty(lastDialogSceneId))
+        {
+            Debug.Log($"GetCurrentSchema: Using lastDialogSceneId: {lastDialogSceneId}");
+            return lastDialogSceneId;
+        }
+
+        Debug.Log("GetCurrentSchema: Using default schema_1");
+        return "schema_1";
+    }
+
+    // Helper method untuk ekstrak schema dari filename
+    private string ExtractSchemaFromFilename(string filename)
+    {
+        if (string.IsNullOrEmpty(filename))
+            return "schema_1";
+
+        // Jika filename mengandung "dialog_schema_X", ekstrak "schema_X"
+        if (filename.Contains("dialog_schema_"))
+        {
+            int startIndex = filename.IndexOf("dialog_schema_") + "dialog_".Length;
+            int endIndex = filename.IndexOf('.', startIndex);
+            if (endIndex == -1)
+                endIndex = filename.Length;
+
+            return filename.Substring(startIndex, endIndex - startIndex);
+        }
+
+        return "schema_1"; // Default fallback
     }
 }

@@ -1,5 +1,6 @@
 {
   "sceneId": "word_cafe",
+  "schema": "schema_4",
   "background": "cozy_cafe",
   "characters": [
     {
@@ -55,6 +56,7 @@
     {
       "speaker": "Mira",
       "text": "Tapi ingat, setiap kata punya nuansa makna yang berbeda."
-    }
+    },
+    { "event": "next_schema", "next_schema": "schema_5" }
   ]
 }

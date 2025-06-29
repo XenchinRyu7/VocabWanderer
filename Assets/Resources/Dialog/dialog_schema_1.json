@@ -1,5 +1,6 @@
 {
   "sceneId": "school_gate",
+  "schema": "schema_1",
   "background": "school_gate",
   "characters": [
     {
@@ -52,7 +53,25 @@
       "speaker": "Nova",
       "text": "Ayo, kita mulai petualangan kita!"
     },
-    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 }
+    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 },
+    {
+      "speaker": "Shey",
+      "text": "Aku sudah tidak sabar untuk menemukan rahasia di balik papan petunjuk ini!"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Mari kita pecahkan teka-teki ini bersama-sama!"
+    },
+    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 3 },
+    {
+      "speaker": "Nova",
+      "text": "Kita pasti bisa menemukan jawabannya!"
+    },
+    {
+      "speaker": "Shey",
+      "text": "Ayo, kita lanjutkan pencarian kita!"
+    },
+    { "event": "next_schema", "next_schema": "schema_2" }
   ]
 }
 

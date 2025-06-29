@@ -1,5 +1,6 @@
 {
   "sceneId": "hidden_classroom",
+  "schema": "schema_2",
   "background": "old_classroom",
   "characters": [
     {
@@ -55,6 +56,7 @@
     {
       "speaker": "Riko",
       "text": "Tenang, kita bantu! Yuk mulai dari soal pertama!"
-    }
+    },
+    { "event": "next_schema", "next_schema": "schema_3" }
   ]
 }
