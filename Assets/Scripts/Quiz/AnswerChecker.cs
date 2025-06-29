@@ -1,24 +1,31 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class AnswerChecker : MonoBehaviour
 {
     public static AnswerChecker Instance;
     public Transform letterSlotParent;
 
-    void Awake() { Instance = this; }
+    void Awake()
+    {
+        Instance = this;
+    }
 
-    public void SubmitAnswer() {
+    public void SubmitAnswer()
+    {
         var slots = letterSlotParent.GetComponentsInChildren<LetterDropSlot>();
         List<string> userInput = new List<string>();
-        foreach (var slot in slots) {
-            if (slot.displayText != null) {
+        foreach (var slot in slots)
+        {
+            if (slot.displayText != null)
+            {
                 var text = slot.displayText.text;
                 userInput.Add(string.IsNullOrEmpty(text) ? "_" : text.ToLower());
             }
         }
         string userAnswer = string.Join("", userInput).Replace("_", "");
-        string kunci = string.Join("", GameManager.Instance.currentQuestion.missing_letters).ToLower();
+        string kunci = string.Join("", GameManager.Instance.currentQuestion.missing_letters)
+            .ToLower();
         Debug.Log($"[AnswerChecker] userAnswer='{userAnswer}', kunci='{kunci}'");
         bool correct = userAnswer == kunci;
         Debug.Log($"[AnswerChecker] correct={correct}");
@@ -29,9 +36,11 @@ public class AnswerChecker : MonoBehaviour
         GameManager.Instance.OnAnswerSubmitted(correct);
     }
 
-    public void ClearSlots() {
+    public void ClearSlots()
+    {
         var slots = letterSlotParent.GetComponentsInChildren<LetterDropSlot>();
-        foreach (var slot in slots) slot.ClearSlot();
+        foreach (var slot in slots)
+            slot.ClearSlot();
     }
 
     public void AddHeart()

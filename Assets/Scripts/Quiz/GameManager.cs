@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public static int lastHealth;
     public static float lastTotalTime;
+    public static string lastQuizSchema;
+    public static int lastQuizIndex;
     public int currentChallengeIndex = 0;
     public int currentQuestionIndex = 0;
     public int health = 5;
@@ -18,18 +20,36 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
+        Debug.Log(
+            $"[GameManager] Start: schema={QuizNavigationParam.schema}, index={QuizNavigationParam.index}"
+        );
         string schema = QuizNavigationParam.schema;
         int idx = QuizNavigationParam.index;
-        Debug.Log($"[GameManager] Start: schema={schema}, index={idx}");
-        VerbChallengeLoader.Instance.LoadChallenges(schema);
+
+        // Set the last quiz schema and index for auto save
+        lastQuizSchema = schema;
+        lastQuizIndex = idx;
+
+        Debug.Log(
+            $"[GameManager] Set lastQuizSchema={lastQuizSchema}, lastQuizIndex={lastQuizIndex}"
+        );
+
+        // Reset state saat mulai quiz baru
+        health = 5;
+        totalPlayTime = 0f;
         currentChallengeIndex = idx - 1;
+        currentQuestionIndex = 0;
+        VerbChallengeLoader.Instance.LoadChallenges(schema);
+        Debug.Log($"[GameManager] LoadChallenge index={currentChallengeIndex}");
         LoadChallenge(currentChallengeIndex);
         LoadQuestion(0);
     }
@@ -86,7 +106,9 @@ public class GameManager : MonoBehaviour
         }
         if (index < 0 || index >= currentChallenge.questions.Count)
         {
-            Debug.LogError($"Index {index} out of range di LoadQuestion! questions.Count={currentChallenge.questions.Count}");
+            Debug.LogError(
+                $"Index {index} out of range di LoadQuestion! questions.Count={currentChallenge.questions.Count}"
+            );
             return;
         }
         currentQuestion = currentChallenge.questions[index];
@@ -101,7 +123,10 @@ public class GameManager : MonoBehaviour
             Debug.LogError("DynamicUIBuilder.Instance null di LoadQuestion!");
             return;
         }
-        DynamicUIBuilder.Instance.BuildQuestionUI(currentQuestion, currentChallenge.background_asset);
+        DynamicUIBuilder.Instance.BuildQuestionUI(
+            currentQuestion,
+            currentChallenge.background_asset
+        );
     }
 
     public void OnTimeOut()
@@ -129,6 +154,67 @@ public class GameManager : MonoBehaviour
             {
                 lastHealth = health;
                 lastTotalTime = totalPlayTime;
+
+                Debug.Log($"Quiz completed. Preparing auto save...");
+                Debug.Log(
+                    $"Current values: lastQuizSchema='{lastQuizSchema}', lastQuizIndex={lastQuizIndex}"
+                );
+                Debug.Log($"DialogManager.lastDialogIndex={DialogManager.lastDialogIndex}");
+
+                // Ensure SaveManager exists
+                SaveManager saveManager = SaveManager.EnsureInstance();
+                Debug.Log(
+                    $"SaveManager after EnsureInstance: exists={saveManager != null}, instance match={saveManager == SaveManager.Instance}"
+                );
+
+                if (saveManager == null)
+                {
+                    Debug.LogError("CRITICAL: SaveManager.EnsureInstance() returned null!");
+                    SceneManager.LoadScene("SuccessAllScenes");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(lastQuizSchema))
+                {
+                    Debug.LogError(
+                        $"Cannot auto save: lastQuizSchema is empty. QuizNavigationParam.schema='{QuizNavigationParam.schema}'"
+                    );
+                    // Try to use QuizNavigationParam.schema as fallback
+                    if (!string.IsNullOrEmpty(QuizNavigationParam.schema))
+                    {
+                        lastQuizSchema = QuizNavigationParam.schema;
+                        Debug.Log(
+                            $"Using QuizNavigationParam.schema as fallback: '{lastQuizSchema}'"
+                        );
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(lastQuizSchema))
+                {
+                    int dialogIndex =
+                        DialogManager.lastDialogIndex > 0 ? DialogManager.lastDialogIndex : 0;
+                    Debug.Log(
+                        $"Calling auto save with: schema='{lastQuizSchema}', dialogIndex={dialogIndex}, quizIndex={lastQuizIndex}"
+                    );
+
+                    try
+                    {
+                        saveManager.UpdateProgress(lastQuizSchema, dialogIndex, lastQuizIndex);
+                        Debug.Log("Auto save completed successfully!");
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.LogError($"Auto save failed with exception: {e.Message}");
+                        Debug.LogError($"Stack trace: {e.StackTrace}");
+                    }
+                }
+                else
+                {
+                    Debug.LogError(
+                        $"Cannot auto save: No valid schema available. lastQuizSchema='{lastQuizSchema}', QuizNavigationParam.schema='{QuizNavigationParam.schema}'"
+                    );
+                }
+
                 SceneManager.LoadScene("SuccessAllScenes");
             }
         }
@@ -147,5 +233,39 @@ public class GameManager : MonoBehaviour
                 LoadQuestion(currentQuestionIndex);
         }
     }
-}
 
+    public void ResetQuizState()
+    {
+        health = 5;
+        totalPlayTime = 0f;
+        currentChallengeIndex = 0;
+        currentQuestionIndex = 0;
+        currentChallenge = null;
+        currentQuestion = null;
+        isPaused = false;
+    }
+
+    public static void SetLastQuiz(string schema, int index)
+    {
+        lastQuizSchema = schema;
+        lastQuizIndex = index;
+    }
+
+    public static void RetryLastQuiz()
+    {
+        if (!string.IsNullOrEmpty(lastQuizSchema))
+        {
+            if (Instance != null)
+            {
+                Instance.ResetQuizState();
+            }
+            QuizNavigationParam.schema = lastQuizSchema;
+            QuizNavigationParam.index = lastQuizIndex;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("QuestionScene");
+        }
+        else
+        {
+            Debug.LogError("No last quiz state to retry!");
+        }
+    }
+}

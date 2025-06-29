@@ -9,12 +9,12 @@
     },
     {
       "name": "Nova",
-      "sprite": "nova_happy",
+      "sprite": "Nova_default",
       "position": "right"
     },
     {
       "name": "Shey",
-      "sprite": "shey_default",
+      "sprite": "Shey_default",
       "position": "left"
     }
   ],
@@ -51,7 +51,8 @@
     {
       "speaker": "Nova",
       "text": "Ayo, kita mulai petualangan kita!"
-    }
+    },
+    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 }
   ]
 }
 

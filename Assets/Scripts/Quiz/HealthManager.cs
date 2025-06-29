@@ -9,14 +9,21 @@ public class HealthManager : MonoBehaviour
     public GameObject heartPrefabEmpty;
     public int maxHealth = 5;
 
-    void Awake() { Instance = this; }
+    void Awake()
+    {
+        Instance = this;
+    }
 
     public void UpdateHealth(int health)
     {
-        foreach (Transform child in heartParent) Destroy(child.gameObject);
+        foreach (Transform child in heartParent)
+            Destroy(child.gameObject);
         for (int i = 0; i < maxHealth; i++)
         {
-            GameObject heart = Instantiate(i < health ? heartPrefabFull : heartPrefabEmpty, heartParent);
+            GameObject heart = Instantiate(
+                i < health ? heartPrefabFull : heartPrefabEmpty,
+                heartParent
+            );
         }
     }
 }

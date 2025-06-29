@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using TMPro;
 
 public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -31,12 +31,16 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / transform.root.GetComponent<Canvas>().scaleFactor;
+        rectTransform.anchoredPosition +=
+            eventData.delta / transform.root.GetComponent<Canvas>().scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData.pointerEnter == null || !eventData.pointerEnter.GetComponent<LetterDropSlot>())
+        if (
+            eventData.pointerEnter == null
+            || !eventData.pointerEnter.GetComponent<LetterDropSlot>()
+        )
         {
             transform.SetParent(originalParent, true);
             transform.position = originalPosition;

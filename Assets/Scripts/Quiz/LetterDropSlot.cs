@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using TMPro;
 
 public class LetterDropSlot : MonoBehaviour, IDropHandler
 {
@@ -8,10 +8,11 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
     public TextMeshProUGUI displayText;
     private char? currentLetter = null;
 
-    public Sprite filledSprite; 
-    private UnityEngine.UI.Image slotImage; 
+    public Sprite filledSprite;
+    private UnityEngine.UI.Image slotImage;
 
-    void Awake() {
+    void Awake()
+    {
         slotImage = GetComponent<UnityEngine.UI.Image>();
     }
 
@@ -22,17 +23,25 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
         {
             currentLetter = dragged.letter;
             displayText.text = currentLetter.ToString().ToUpper();
-            Destroy(dragged.gameObject); 
+            Destroy(dragged.gameObject);
             if (filledSprite != null && slotImage != null)
                 slotImage.sprite = filledSprite;
             this.enabled = false;
             var allSlots = transform.parent.GetComponentsInChildren<LetterDropSlot>();
             bool allFilled = true;
-            foreach (var slot in allSlots) {
-                if (!slot.GetCurrentLetter().HasValue) { allFilled = false; break; }
+            foreach (var slot in allSlots)
+            {
+                if (!slot.GetCurrentLetter().HasValue)
+                {
+                    allFilled = false;
+                    break;
+                }
             }
-            Debug.Log($"[LetterDropSlot] allFilled={allFilled}, AnswerChecker.Instance null? {AnswerChecker.Instance == null}");
-            if (allFilled && AnswerChecker.Instance != null) {
+            Debug.Log(
+                $"[LetterDropSlot] allFilled={allFilled}, AnswerChecker.Instance null? {AnswerChecker.Instance == null}"
+            );
+            if (allFilled && AnswerChecker.Instance != null)
+            {
                 Debug.Log("[LetterDropSlot] Semua slot terisi, submit jawaban otomatis!");
                 AnswerChecker.Instance.SubmitAnswer();
             }
@@ -40,5 +49,10 @@ public class LetterDropSlot : MonoBehaviour, IDropHandler
     }
 
     public char? GetCurrentLetter() => currentLetter;
-    public void ClearSlot() { currentLetter = null; displayText.text = ""; }
+
+    public void ClearSlot()
+    {
+        currentLetter = null;
+        displayText.text = "";
+    }
 }

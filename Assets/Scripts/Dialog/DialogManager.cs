@@ -18,6 +18,7 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI dialogText;
 
     public TextAsset dialogJson;
+    public string sceneId; // Set ini di inspector sesuai sceneId di json
 
     private DialogScene currentScene;
     private int currentLine = 0;
@@ -30,17 +31,55 @@ public class DialogManager : MonoBehaviour
     public string nextSceneName = "QuestionScene";
     public GameObject nextButton;
 
+    // Untuk melanjutkan dialog setelah quiz
+    public static string lastDialogSceneId = null;
+    public static int lastDialogIndex = -1;
+
     void Start()
     {
-        LoadSceneFromJson();
+        // Jika ada schema dari parameter save, load file JSON yang sesuai
+        if (!string.IsNullOrEmpty(lastDialogSceneId))
+        {
+            LoadDialogFromSchema(lastDialogSceneId);
+        }
+        else
+        {
+            LoadSceneFromJson();
+        }
+
         SetupBackground();
         SetupCharacterMap();
+
+        // Cek jika ada posisi dialog tersimpan, lanjutkan dari sana
+        if (lastDialogSceneId == sceneId && lastDialogIndex >= 0)
+        {
+            currentLine = lastDialogIndex;
+            lastDialogSceneId = null;
+            lastDialogIndex = -1;
+        }
         ShowNextLine();
     }
 
     void LoadSceneFromJson()
     {
         currentScene = JsonConvert.DeserializeObject<DialogScene>(dialogJson.text);
+    }
+
+    void LoadDialogFromSchema(string schema)
+    {
+        string path = $"Dialog/dialog_{schema}";
+        TextAsset jsonFile = Resources.Load<TextAsset>(path);
+        if (jsonFile != null)
+        {
+            currentScene = JsonConvert.DeserializeObject<DialogScene>(jsonFile.text);
+            sceneId = currentScene.sceneId;
+            Debug.Log($"Loaded dialog from schema: {schema}, sceneId: {sceneId}");
+        }
+        else
+        {
+            Debug.LogError($"Dialog file not found: {path}");
+            LoadSceneFromJson();
+        }
     }
 
     void SetupBackground()
@@ -94,8 +133,13 @@ public class DialogManager : MonoBehaviour
         var line = currentScene.dialog[currentLine];
         if (!string.IsNullOrEmpty(line.@event) && line.@event == "quiz")
         {
+            // Simpan posisi dialog setelah quiz
+            lastDialogSceneId = sceneId;
+            lastDialogIndex = currentLine + 1;
             string quizSchema = line.quiz_schema;
             int quizIndex = line.quiz_index ?? 1;
+            // Simpan state quiz terakhir untuk retry
+            GameManager.SetLastQuiz(quizSchema, quizIndex);
             Debug.Log(
                 $"[DialogManager] Navigasi ke QuestionScene: schema={quizSchema}, index={quizIndex}"
             );
