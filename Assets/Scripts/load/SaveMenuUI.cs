@@ -28,7 +28,15 @@ public class SaveMenuUI : MonoBehaviour
     {
         foreach (Transform child in slotParent)
             Destroy(child.gameObject);
-        var saves = SaveManager.Instance.saves;
+
+        SaveManager saveManager = SaveManager.EnsureInstance();
+        if (saveManager == null)
+        {
+            Debug.LogError("SaveManager not available!");
+            return;
+        }
+
+        var saves = saveManager.saves;
         for (int i = 0; i < saves.Count; i++)
         {
             var slot = Instantiate(slotPrefab, slotParent);
@@ -44,11 +52,14 @@ public class SaveMenuUI : MonoBehaviour
     {
         if (mode == SaveMenuMode.Load)
         {
-            var saves = SaveManager.Instance.saves;
-            if (slotIndex < saves.Count)
+            if (!isNew)
             {
-                SelectedSaveSlot.index = slotIndex;
-                UnityEngine.SceneManagement.SceneManager.LoadScene("DialogScene");
+                SaveManager saveManager = SaveManager.EnsureInstance();
+                if (saveManager != null)
+                {
+                    saveManager.LoadGameFromSlot(slotIndex + 1); // slotIndex dimulai dari 0, tapi save dimulai dari 1
+                    Debug.Log($"Loading game from slot {slotIndex + 1}");
+                }
             }
         }
         else
@@ -63,16 +74,25 @@ public class SaveMenuUI : MonoBehaviour
     {
         if (selectedSlotIndex == -1)
             return;
-        var saves = SaveManager.Instance.saves;
-        if (selectedSlotIndex < saves.Count)
+
+        SaveManager saveManager = SaveManager.EnsureInstance();
+        if (saveManager != null)
         {
-            var data = saves[selectedSlotIndex];
-            SaveManager.Instance.OverwriteSave(data.index, "Verb 1, Schema 1", data.schema);
+            var autoSave = saveManager.GetCurrentAutoSave();
+            if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
+            {
+                // Copy dari autosave ke manual save slot
+                string saveInfo = $"Save {selectedSlotIndex + 1} - {autoSave.schema}";
+                saveManager.CopyAutoSaveToSlot(selectedSlotIndex + 1, saveInfo);
+                Debug.Log($"Copied autosave to slot {selectedSlotIndex + 1}");
+            }
+            else
+            {
+                Debug.LogError("No autosave data to copy!");
+                return;
+            }
         }
-        else
-        {
-            SaveManager.Instance.AddNewSave("Verb 1, Schema 1", "schema_1");
-        }
+
         RefreshSlots();
         saveButton.interactable = false;
         selectedSlotIndex = -1;

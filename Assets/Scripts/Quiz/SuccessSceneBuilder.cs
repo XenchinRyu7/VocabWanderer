@@ -43,10 +43,12 @@ public class SuccessSceneBuilder : MonoBehaviour
             {
                 DialogManager.lastDialogSceneId = autoSave.schema;
                 DialogManager.lastDialogIndex = autoSave.dialogIndex;
-                Debug.Log($"Continuing dialog after quiz: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}");
+                Debug.Log(
+                    $"Continuing dialog after quiz: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}"
+                );
             }
         }
-        
-        MenuController.Instance.LoadToScene("DialogScene");
+
+        MenuController.GetOrCreateInstance().LoadToScene("DialogScene");
     }
 }

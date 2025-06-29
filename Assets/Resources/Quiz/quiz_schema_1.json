@@ -111,16 +111,16 @@
       },
       {
         "context": "Bermain alat musik",
-        "answer": "playmusic",
-        "missing_letters": ["p", "c"],
-        "scrambled_word": "_la_ _usi_",
+        "answer": "play",
+        "missing_letters": ["p", "y"],
+        "scrambled_word": "_la_",
         "time_limit_seconds": 40
       },
       {
         "context": "Menghitung angka",
         "answer": "count",
-        "missing_letters": ["c", "t"],
-        "scrambled_word": "_ou_",
+        "missing_letters": ["c", "n","t"],
+        "scrambled_word": "_ou__",
         "time_limit_seconds": 27
       }
     ]

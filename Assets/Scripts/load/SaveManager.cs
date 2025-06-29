@@ -40,8 +40,12 @@ public class SaveManager : MonoBehaviour
     // Ensure SaveManager exists
     public static SaveManager EnsureInstance()
     {
-        if (Instance == null)
+        // Check if Instance exists and is not destroyed
+        if (Instance == null || (Instance != null && Instance.gameObject == null))
         {
+            // Clear the reference if it's pointing to a destroyed object
+            Instance = null;
+
             GameObject saveManagerGO = new GameObject("SaveManager");
             Instance = saveManagerGO.AddComponent<SaveManager>();
             DontDestroyOnLoad(saveManagerGO);
@@ -54,6 +58,11 @@ public class SaveManager : MonoBehaviour
 
             Debug.Log($"SaveManager created dynamically at path: {Application.persistentDataPath}");
         }
+        else if (Instance != null)
+        {
+            Debug.Log("SaveManager instance already exists and is valid");
+        }
+
         return Instance;
     }
 
@@ -67,9 +76,11 @@ public class SaveManager : MonoBehaviour
             autoSavePath = Path.Combine(Application.persistentDataPath, "autosave.json");
             LoadSaves();
             LoadAutoSave();
+            Debug.Log("SaveManager Awake - Instance set and initialized");
         }
-        else
+        else if (Instance != this)
         {
+            Debug.Log("SaveManager Awake - Destroying duplicate instance");
             Destroy(gameObject);
         }
     }
