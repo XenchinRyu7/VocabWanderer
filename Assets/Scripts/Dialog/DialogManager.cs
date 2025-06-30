@@ -38,7 +38,7 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         Debug.Log("=== DialogManager.Start() Begin ===");
-        
+
         // Cek dan gunakan SaveManager untuk memuat progress dari autosave
         SaveManager saveManager = SaveManager.EnsureInstance();
         bool loadedFromSave = false;
@@ -49,7 +49,7 @@ public class DialogManager : MonoBehaviour
             Debug.Log(
                 $"AutoSave data: schema={autoSave?.schema}, dialogIndex={autoSave?.dialogIndex}"
             );
-            
+
             if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
             {
                 Debug.Log(
@@ -86,7 +86,7 @@ public class DialogManager : MonoBehaviour
 
         SetupBackground();
         SetupCharacterMap();
-        
+
         Debug.Log($"=== DialogManager.Start() End - currentLine={currentLine} ===");
         ShowNextLine();
     }
@@ -171,7 +171,7 @@ public class DialogManager : MonoBehaviour
         if (currentLine >= currentScene.dialog.Count)
         {
             Debug.Log("Dialog selesai.");
-            
+
             if (clickToContinueGO != null)
                 clickToContinueGO.SetActive(false);
             if (nextButton != null)
@@ -213,7 +213,7 @@ public class DialogManager : MonoBehaviour
                 if (!string.IsNullOrEmpty(nextSchema))
                 {
                     Debug.Log($"[DialogManager] Moving to next schema: {nextSchema}");
-                    
+
                     // Auto-save progress ke schema baru dengan dialogIndex 0
                     SaveManager saveManager = SaveManager.EnsureInstance();
                     if (saveManager != null)
@@ -221,11 +221,11 @@ public class DialogManager : MonoBehaviour
                         saveManager.AutoSaveProgress(nextSchema, 0, 0);
                         Debug.Log($"Auto-saved transition to: {nextSchema}");
                     }
-                    
+
                     // Set static variables untuk load schema baru
                     lastDialogSceneId = nextSchema;
                     lastDialogIndex = 0;
-                    
+
                     // Reload scene dengan schema baru
                     SceneManager.LoadScene("DialogScene");
                     return;
@@ -239,7 +239,7 @@ public class DialogManager : MonoBehaviour
             {
                 // Game selesai, kembali ke main menu atau ending screen
                 Debug.Log("[DialogManager] Game completed!");
-                
+
                 // Reset auto-save atau save final completion
                 SaveManager saveManager = SaveManager.EnsureInstance();
                 if (saveManager != null)
@@ -247,7 +247,7 @@ public class DialogManager : MonoBehaviour
                     saveManager.AutoSaveProgress("game_completed", 0, 0);
                     Debug.Log("Game completion saved!");
                 }
-                
+
                 // Load main menu atau ending scene
                 SceneManager.LoadScene("MainMenu");
                 return;
@@ -344,6 +344,7 @@ public class DialogManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // Check if click is over any UI element
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 PointerEventData pointerData = new PointerEventData(EventSystem.current)
@@ -354,13 +355,24 @@ public class DialogManager : MonoBehaviour
                 var results = new List<RaycastResult>();
                 EventSystem.current.RaycastAll(pointerData, results);
 
+                // Check if click is on any UI element that should block dialog progression
                 foreach (var result in results)
                 {
-                    if (result.gameObject.name == "PauseButton")
+                    // Skip ShowNextLine if clicking on buttons or UI panels
+                    if (
+                        result.gameObject.name == "PauseButton"
+                        || result.gameObject.name.Contains("Button")
+                        || result.gameObject.name.Contains("Panel")
+                        || result.gameObject.name.Contains("SaveMenu")
+                        || result.gameObject.name.Contains("Dialog")
+                    )
                     {
+                        Debug.Log($"Click blocked by UI element: {result.gameObject.name}");
                         return;
                     }
                 }
+
+                Debug.Log("Click on UI but no blocking elements found, continuing dialog");
             }
 
             ShowNextLine();
