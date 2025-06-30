@@ -53,6 +53,43 @@
       "speaker": "Nova",
       "text": "Ayo, kita mulai petualangan kita!"
     },
+    {
+      "speaker": "Shey",
+      "text": "Aku sudah tidak sabar untuk menemukan rahasia di balik papan petunjuk ini!"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Mari kita pecahkan teka-teki ini bersama-sama!"
+    },
+    {
+      "speaker": "Nova",
+      "text": "Aku yakin kita bisa menemukan jawabannya!"
+    },
+    {
+      "speaker": "Shey",
+      "text": "Ayo, kita lanjutkan pencarian kita!"
+    },
+    {
+      "speaker": "Elena",
+      "text": "Kita harus tetap fokus dan berpikir kreatif."
+    },
+    {
+      "speaker": "Nova",
+      "text": "Setiap teka-teki akan membawa kita lebih dekat ke tujuan kita."
+    },
+    {
+      "speaker": "Shey",
+      "text": "Aku siap untuk tantangan berikutnya!"
+    },
+    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 },
+    {
+      "speaker": "Elena",
+      "text": "Bagus! Kita harus mencari tahu apa yang ada di balik papan petunjuk ini."
+    },
+    {
+      "speaker": "Nova",
+      "text": "Ayo, kita mulai petualangan kita!"
+    },
     { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 },
     {
       "speaker": "Shey",

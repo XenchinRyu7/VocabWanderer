@@ -306,9 +306,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154773134}
-  - component: {fileID: 154773138}
-  - component: {fileID: 154773137}
-  - component: {fileID: 154773136}
   - component: {fileID: 154773135}
   m_Layer: 0
   m_Name: LoadMenu
@@ -353,43 +350,6 @@ MonoBehaviour:
   slotPrefab: {fileID: 6176901336912779302, guid: 324001d808cc363418734b860432aaf9, type: 3}
   saveButton: {fileID: 2106812466}
   mode: 1
---- !u!114 &154773136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154773133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3be94ef900860c34790634f03503fdb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saves: []
---- !u!114 &154773137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154773133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &154773138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154773133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &288935846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,6 +1422,7 @@ MonoBehaviour:
   enableSceneChange: 1
   dialogPanel: {fileID: 0}
   saveDialogPanel: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!114 &1495367444
 MonoBehaviour:
   m_ObjectHideFlags: 0

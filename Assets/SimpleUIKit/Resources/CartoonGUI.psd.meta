@@ -652,9 +652,9 @@ TextureImporter:
       name: CartoonGUI_38
       rect:
         serializedVersion: 2
-        x: 70
+        x: 98
         y: 2096
-        width: 503
+        width: 445
         height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -798,116 +798,6 @@ TextureImporter:
       bones: []
       spriteID: 3e51802f8e4b16e47b7173510938f3db
       internalID: 192786580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CartoonGUI_45
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 2094
-        width: 18
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a7c4655a8896494fb1664664f65f778
-      internalID: 688546001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CartoonGUI_46
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 2091
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81a3537fb9b08ea479b30113e43293f0
-      internalID: 1634799710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CartoonGUI_47
-      rect:
-        serializedVersion: 2
-        x: 541
-        y: 2081
-        width: 20
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5977929cdb940f1469e7e816085ba319
-      internalID: 1839331746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CartoonGUI_48
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 2077
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e65fe5627a23f448b7352ef9e8a2eab
-      internalID: -131250852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CartoonGUI_50
-      rect:
-        serializedVersion: 2
-        x: 535
-        y: 2069
-        width: 10
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f04ec82f1198ff4aac198fe37bf74d4
-      internalID: 1074273791
       vertices: []
       indices: 
       edges: []

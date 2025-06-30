@@ -12,30 +12,9 @@ public class MenuController : MonoBehaviour
 
     void Awake()
     {
-        // Hanya buat singleton jika BUKAN di scene MainMenu
-        // Di MainMenu, biarkan MenuController normal tanpa DontDestroyOnLoad
-        string currentScene = SceneManager.GetActiveScene().name;
-
-        if (currentScene == "MainMenu" || currentScene == "LoadGame" || currentScene == "Settings")
-        {
-            // Di scene menu, tidak perlu singleton
-            Debug.Log($"MenuController di scene {currentScene} - tidak menggunakan singleton");
-            return;
-        }
-
-        // Singleton pattern hanya untuk scene lain
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("MenuController initialized as singleton");
-        }
-        else if (Instance != this)
-        {
-            Debug.Log("Destroying duplicate MenuController");
-            Destroy(gameObject);
-            return;
-        }
+        Debug.Log(
+            $"MenuController di scene {SceneManager.GetActiveScene().name} - normal instance"
+        );
     }
 
     void Start()
@@ -86,43 +65,71 @@ public class MenuController : MonoBehaviour
     {
         try
         {
-            // Load saveDialogPanel dari prefab jika belum ada atau sudah di-destroy
-            if (saveDialogPanel == null || saveDialogPanel.gameObject == null)
+            Debug.Log("=== showSaveDialog() started ===");
+
+            if (saveDialogPanel != null)
             {
-                // Try to load from Resources - using SaveMenu prefab
-                GameObject prefab = Resources.Load<GameObject>("Prefabs/Save/SaveMenu");
-                if (prefab != null)
-                {
-                    saveDialogPanel = Instantiate(prefab);
+                Debug.Log("Destroying existing saveDialogPanel");
+                DestroyImmediate(saveDialogPanel);
+                saveDialogPanel = null;
+            }
 
-                    // Pastikan SaveMenu di-parent ke Canvas yang ada
-                    Canvas canvas = FindObjectOfType<Canvas>();
-                    if (canvas != null)
-                    {
-                        saveDialogPanel.transform.SetParent(canvas.transform, false);
-                        Debug.Log("SaveMenu di-parent ke Canvas");
-                    }
+            Canvas[] canvases = FindObjectsOfType<Canvas>();
+            Canvas sceneCanvas = null;
 
-                    // TIDAK pakai DontDestroyOnLoad untuk UI - biar ikut scene
-                    Debug.Log("SaveMenu UI berhasil dibuat");
-                }
-                else
+            foreach (Canvas canvas in canvases)
+            {
+                if (canvas.gameObject.scene.name != "DontDestroyOnLoad")
                 {
-                    Debug.LogError(
-                        "SaveMenu prefab tidak ditemukan! Cek Resources/Prefabs/Save/SaveMenu"
-                    );
-                    return;
+                    sceneCanvas = canvas;
+                    break;
                 }
             }
 
-            if (saveDialogPanel != null && saveDialogPanel.gameObject != null)
+            if (sceneCanvas == null)
             {
-                saveDialogPanel.SetActive(true);
+                Debug.LogError("No Canvas found in current scene!");
+                return;
             }
+
+            GameObject saveMenuPrefab = Resources.Load<GameObject>("Prefabs/Save/SaveMenu");
+            if (saveMenuPrefab != null)
+            {
+                Debug.Log("SaveMenu prefab loaded successfully");
+
+                GameObject saveMenuInstance = Instantiate(saveMenuPrefab, sceneCanvas.transform);
+                Debug.Log($"SaveMenu instantiated: {saveMenuInstance.name}");
+
+                RectTransform saveRect = saveMenuInstance.GetComponent<RectTransform>();
+                if (saveRect != null)
+                {
+                    saveRect.anchorMin = Vector2.zero;
+                    saveRect.anchorMax = Vector2.one;
+                    saveRect.sizeDelta = Vector2.zero;
+                    saveRect.anchoredPosition = Vector2.zero;
+                }
+
+                saveMenuInstance.transform.SetAsLastSibling();
+
+                saveDialogPanel = saveMenuInstance;
+
+                Debug.Log($"SaveMenu from prefab successfully displayed: {saveMenuInstance.name}");
+                Debug.Log($"SaveMenu active: {saveMenuInstance.activeSelf}");
+                Debug.Log($"SaveMenu parent: {saveMenuInstance.transform.parent.name}");
+            }
+            else
+            {
+                Debug.LogError(
+                    "SaveMenu prefab could not be loaded from Resources/Prefabs/Save/SaveMenu!"
+                );
+            }
+
+            Debug.Log("=== showSaveDialog() completed ===");
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"Error di showSaveDialog: {e.Message}");
+            Debug.LogError($"Error in showSaveDialog: {e.Message}");
+            Debug.LogError($"Stack trace: {e.StackTrace}");
         }
     }
 
@@ -130,31 +137,15 @@ public class MenuController : MonoBehaviour
     {
         try
         {
-            // Re-find saveDialogPanel jika null atau destroyed
-            if (saveDialogPanel == null || saveDialogPanel.gameObject == null)
+            if (saveDialogPanel != null)
             {
-                // Look for SaveMenu object (instantiated from SaveMenu prefab)
-                saveDialogPanel = GameObject.Find("SaveMenu(Clone)");
-                if (saveDialogPanel == null)
-                {
-                    saveDialogPanel = GameObject.Find("SaveMenu");
-                }
+                Debug.Log("Hiding SaveMenu dialog");
+                DestroyImmediate(saveDialogPanel);
+                saveDialogPanel = null;
             }
-
-            if (saveDialogPanel != null && saveDialogPanel.gameObject != null)
+            else
             {
-                saveDialogPanel.SetActive(false);
-            }
-
-            // Re-find dialogPanel jika null atau destroyed
-            if (dialogPanel == null || dialogPanel.gameObject == null)
-            {
-                dialogPanel = GameObject.Find("DialogPanel");
-            }
-
-            if (dialogPanel != null && dialogPanel.gameObject != null)
-            {
-                dialogPanel.SetActive(true);
+                Debug.Log("saveDialogPanel is null, nothing to hide");
             }
         }
         catch (System.Exception e)
@@ -174,7 +165,6 @@ public class MenuController : MonoBehaviour
         SaveManager saveManager = SaveManager.EnsureInstance();
         if (saveManager != null)
         {
-            // Reset dan mulai game baru
             saveManager.AutoSaveProgress("schema_1", 0, 0);
             DialogManager.lastDialogSceneId = "schema_1";
             DialogManager.lastDialogIndex = 0;
@@ -193,7 +183,7 @@ public class MenuController : MonoBehaviour
             if (saveManager == null)
             {
                 Debug.LogError("SaveManager tidak bisa dibuat!");
-                StartGame(); // Fallback ke game baru
+                StartGame();
                 return;
             }
 
@@ -208,13 +198,11 @@ public class MenuController : MonoBehaviour
                     $"Melanjutkan game dari autosave: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}"
                 );
 
-                // Set static variables untuk DialogManager
                 DialogManager.lastDialogSceneId = autoSave.schema;
                 DialogManager.lastDialogIndex = autoSave.dialogIndex;
 
                 Debug.Log("=== ContinueGame() - Loading DialogScene ===");
 
-                // Langsung load scene tanpa coroutine
                 LoadToScene("DialogScene");
             }
             else
@@ -227,7 +215,7 @@ public class MenuController : MonoBehaviour
         {
             Debug.LogError($"Error di ContinueGame: {e.Message}");
             Debug.LogError($"Stack trace: {e.StackTrace}");
-            StartGame(); // Fallback ke game baru
+            StartGame();
         }
     }
 
@@ -280,10 +268,8 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // Cari MenuController yang ada atau buat baru jika diperlukan
     public static MenuController GetOrCreateInstance()
     {
-        // Pertama coba cari yang sudah ada di scene
         MenuController existing = FindObjectOfType<MenuController>();
         if (existing != null)
         {
@@ -291,17 +277,9 @@ public class MenuController : MonoBehaviour
             return existing;
         }
 
-        // Jika tidak ada, cek static Instance
-        if (Instance != null && Instance.gameObject != null)
-        {
-            Debug.Log("MenuController Instance masih valid");
-            return Instance;
-        }
-
-        // Jika tetap tidak ada, buat baru
         GameObject menuControllerGO = new GameObject("MenuController");
         MenuController newInstance = menuControllerGO.AddComponent<MenuController>();
-        Debug.Log("MenuController baru dibuat");
+        Debug.Log("MenuController baru dibuat di scene saat ini");
 
         return newInstance;
     }
