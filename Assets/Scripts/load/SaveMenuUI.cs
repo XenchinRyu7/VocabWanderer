@@ -57,16 +57,30 @@ public class SaveMenuUI : MonoBehaviour
                 SaveManager saveManager = SaveManager.EnsureInstance();
                 if (saveManager != null)
                 {
-                    saveManager.LoadGameFromSlot(slotIndex + 1); // slotIndex dimulai dari 0, tapi save dimulai dari 1
+                    saveManager.LoadGameFromSlot(slotIndex + 1);
                     Debug.Log($"Loading game from slot {slotIndex + 1}");
                 }
             }
         }
-        else
+        else // Save mode
         {
-            selectedSlotIndex = slotIndex;
-            saveButton.interactable = true;
-            saveButton.GetComponentInChildren<Text>().text = isNew ? "Save" : "Overwrite";
+            if (isNew)
+            {
+                // NEW SAVE - langsung save tanpa konfirmasi
+                selectedSlotIndex = slotIndex;
+                OnSaveButtonClicked(); // Langsung save
+                Debug.Log($"New save - directly saving to slot {slotIndex + 1}");
+            }
+            else
+            {
+                // EXISTING SAVE - butuh konfirmasi via button
+                selectedSlotIndex = slotIndex;
+                saveButton.interactable = true;
+                saveButton.GetComponentInChildren<Text>().text = "Overwrite";
+                Debug.Log(
+                    $"Existing save selected - slot {slotIndex + 1}, waiting for overwrite confirmation"
+                );
+            }
         }
     }
 
@@ -96,6 +110,31 @@ public class SaveMenuUI : MonoBehaviour
         RefreshSlots();
         saveButton.interactable = false;
         selectedSlotIndex = -1;
+    }
+
+    public void CloseSaveDialog()
+    {
+        try
+        {
+            MenuController menuController = FindObjectOfType<MenuController>();
+
+            if (menuController != null)
+            {
+                Debug.Log("SaveMenuController: Found MenuController, calling hideSaveDialog()");
+                menuController.hideSaveDialog();
+            }
+            else
+            {
+                Debug.LogError("SaveMenuController: Could not find MenuController in scene!");
+                Debug.Log("SaveMenuController: Destroying save dialog as fallback");
+                Destroy(gameObject);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"SaveMenuController: Error in CloseSaveDialog: {e.Message}");
+            Destroy(gameObject);
+        }
     }
 }
 

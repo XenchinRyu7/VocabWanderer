@@ -43,21 +43,101 @@ public class MenuController : MonoBehaviour
 
     public void ShowDialog()
     {
-        if (dialogPanel != null)
+        try
         {
-            dialogPanel.SetActive(true);
+            Debug.Log("=== ShowDialog() started ===");
+
+            // Close existing dialog first
+            if (dialogPanel != null)
+            {
+                Debug.Log("Destroying existing dialogPanel");
+                DestroyImmediate(dialogPanel);
+                dialogPanel = null;
+            }
+
+            // Find the scene Canvas
+            Canvas[] canvases = FindObjectsOfType<Canvas>();
+            Canvas sceneCanvas = null;
+
+            foreach (Canvas canvas in canvases)
+            {
+                // Skip Canvas in DontDestroyOnLoad
+                if (canvas.gameObject.scene.name != "DontDestroyOnLoad")
+                {
+                    sceneCanvas = canvas;
+                    break;
+                }
+            }
+
+            if (sceneCanvas == null)
+            {
+                Debug.LogError("No Canvas found in current scene!");
+                return;
+            }
+
+            // Load DialogPanel prefab
+            GameObject dialogPrefab = Resources.Load<GameObject>("Prefabs/Dialog/DialogPanel");
+            if (dialogPrefab != null)
+            {
+                Debug.Log("DialogPanel prefab loaded successfully");
+
+                // Instantiate the prefab
+                GameObject dialogInstance = Instantiate(dialogPrefab, sceneCanvas.transform);
+                Debug.Log($"DialogPanel instantiated: {dialogInstance.name}");
+
+                // Setup proper parenting and positioning
+                RectTransform dialogRect = dialogInstance.GetComponent<RectTransform>();
+                if (dialogRect != null)
+                {
+                    dialogRect.anchorMin = Vector2.zero;
+                    dialogRect.anchorMax = Vector2.one;
+                    dialogRect.sizeDelta = Vector2.zero;
+                    dialogRect.anchoredPosition = Vector2.zero;
+                }
+
+                // Force to front
+                dialogInstance.transform.SetAsLastSibling();
+
+                dialogPanel = dialogInstance;
+
+                Debug.Log($"DialogPanel from prefab successfully displayed: {dialogInstance.name}");
+                Debug.Log($"DialogPanel active: {dialogInstance.activeSelf}");
+                Debug.Log($"DialogPanel parent: {dialogInstance.transform.parent.name}");
+            }
+            else
+            {
+                Debug.LogError(
+                    "DialogPanel prefab could not be loaded from Resources/Prefabs/Dialog/DialogPanel!"
+                );
+            }
+
+            Debug.Log("=== ShowDialog() completed ===");
         }
-        else
+        catch (System.Exception e)
         {
-            Debug.LogError("dialogPanel is null! Please assign it in the Inspector.");
+            Debug.LogError($"Error in ShowDialog: {e.Message}");
+            Debug.LogError($"Stack trace: {e.StackTrace}");
         }
     }
 
     public void HideDialog()
     {
-        if (dialogPanel != null)
+        try
         {
-            dialogPanel.SetActive(false);
+            if (dialogPanel != null)
+            {
+                Debug.Log("Hiding Dialog panel");
+                DestroyImmediate(dialogPanel);
+                dialogPanel = null;
+            }
+            else
+            {
+                Debug.Log("dialogPanel is null, nothing to hide");
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Error in HideDialog: {e.Message}");
         }
     }
 
@@ -110,6 +190,15 @@ public class MenuController : MonoBehaviour
                 }
 
                 saveMenuInstance.transform.SetAsLastSibling();
+
+                // Add SaveMenuController script if it doesn't exist
+                SaveMenuController saveMenuController =
+                    saveMenuInstance.GetComponent<SaveMenuController>();
+                if (saveMenuController == null)
+                {
+                    saveMenuController = saveMenuInstance.AddComponent<SaveMenuController>();
+                    Debug.Log("Added SaveMenuController script to SaveMenu instance");
+                }
 
                 saveDialogPanel = saveMenuInstance;
 

@@ -355,16 +355,26 @@ public class DialogManager : MonoBehaviour
                 var results = new List<RaycastResult>();
                 EventSystem.current.RaycastAll(pointerData, results);
 
-                // Check if click is on any UI element that should block dialog progression
                 foreach (var result in results)
                 {
-                    // Skip ShowNextLine if clicking on buttons or UI panels
+                    // Allow buttons inside panels to work normally (except PauseButton)
+                    if (
+                        result.gameObject.name.Contains("Button")
+                        && result.gameObject.name != "PauseButton"
+                    )
+                    {
+                        Debug.Log($"Allowing button click: {result.gameObject.name}");
+                        return; // Let the button handle the click, don't continue to ShowNextLine
+                    }
+
+                    // Block dialog progression for these specific UI elements
                     if (
                         result.gameObject.name == "PauseButton"
-                        || result.gameObject.name.Contains("Button")
-                        || result.gameObject.name.Contains("Panel")
                         || result.gameObject.name.Contains("SaveMenu")
-                        || result.gameObject.name.Contains("Dialog")
+                        || (
+                            result.gameObject.name.Contains("Dialog")
+                            && !result.gameObject.name.Contains("Button")
+                        )
                     )
                     {
                         Debug.Log($"Click blocked by UI element: {result.gameObject.name}");
