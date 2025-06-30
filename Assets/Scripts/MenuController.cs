@@ -191,15 +191,6 @@ public class MenuController : MonoBehaviour
 
                 saveMenuInstance.transform.SetAsLastSibling();
 
-                // Add SaveMenuController script if it doesn't exist
-                SaveMenuController saveMenuController =
-                    saveMenuInstance.GetComponent<SaveMenuController>();
-                if (saveMenuController == null)
-                {
-                    saveMenuController = saveMenuInstance.AddComponent<SaveMenuController>();
-                    Debug.Log("Added SaveMenuController script to SaveMenu instance");
-                }
-
                 saveDialogPanel = saveMenuInstance;
 
                 Debug.Log($"SaveMenu from prefab successfully displayed: {saveMenuInstance.name}");
