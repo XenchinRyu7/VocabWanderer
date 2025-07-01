@@ -128,12 +128,8 @@ public class SaveMenuUI : MonoBehaviour
         var newUi = newSlot.GetComponent<SaveSlotUI>();
         newUi.SetData(null, true, this, saves.Count);
 
-        // New slot tidak perlu swipe handler (tidak bisa di-delete)
-
-        // Debug hierarchy setelah generate slots
         DebugScrollViewHierarchy();
 
-        // Pastikan setiap slot memiliki LayoutElement yang tepat
         EnsureSlotLayoutElements();
     }
 
@@ -260,7 +256,6 @@ public class SaveMenuUI : MonoBehaviour
 
     public void OnSlotDeleteRequested(int slotIndex)
     {
-        // Tampilkan konfirmasi popup
         ShowDeleteConfirmation(slotIndex);
     }
 

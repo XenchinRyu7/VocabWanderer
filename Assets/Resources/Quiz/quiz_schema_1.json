@@ -2,7 +2,7 @@
   {
     "index": 1,
     "verb_level": "V1",
-    "background_asset": "Background/background_school_0",
+    "background_asset": "Background/school_gate",
     "questions": [
       {
         "context": "Membeli barang dari toko",
@@ -44,7 +44,7 @@
   {
     "index": 2,
     "verb_level": "V1",
-    "background_asset": "Background/background_school_1",
+    "background_asset": "Background/school_gate",
     "questions": [
       {
         "context": "Makan makanan",
@@ -86,7 +86,7 @@
   {
     "index": 3,
     "verb_level": "V1",
-    "background_asset": "Background/background_school_2",
+    "background_asset": "Background/school_gate",
     "questions": [
       {
         "context": "Menulis di kertas",
@@ -119,7 +119,7 @@
       {
         "context": "Menghitung angka",
         "answer": "count",
-        "missing_letters": ["c", "n","t"],
+        "missing_letters": ["c", "n", "t"],
         "scrambled_word": "_ou__",
         "time_limit_seconds": 27
       }

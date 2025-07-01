@@ -118,22 +118,21 @@ public class GameManager : MonoBehaviour
             return;
         }
         Debug.Log("currentQuestion berhasil diambil, lanjut ke BuildQuestionUI");
-        if (DynamicUIBuilder.Instance == null)
+        DynamicUIBuilder dynamicUIBuilder = FindObjectOfType<DynamicUIBuilder>();
+        if (dynamicUIBuilder == null)
         {
-            Debug.LogError("DynamicUIBuilder.Instance null di LoadQuestion!");
+            Debug.LogError("DynamicUIBuilder not found in current scene in LoadQuestion!");
             return;
         }
-        DynamicUIBuilder.Instance.BuildQuestionUI(
-            currentQuestion,
-            currentChallenge.background_asset
-        );
+        dynamicUIBuilder.BuildQuestionUI(currentQuestion, currentChallenge.background_asset);
     }
 
     public void OnTimeOut()
     {
         health--;
-        if (DynamicUIBuilder.Instance != null)
-            DynamicUIBuilder.Instance.UpdateHealthUI(health);
+        DynamicUIBuilder dynamicUIBuilder = FindObjectOfType<DynamicUIBuilder>();
+        if (dynamicUIBuilder != null)
+            dynamicUIBuilder.UpdateHealthUI(health);
         if (health <= 0)
         {
             SceneManager.LoadScene("GameOver");
@@ -222,8 +221,9 @@ public class GameManager : MonoBehaviour
         {
             health--;
             BacksoundPlayer.instance.PlayWrongSound();
-            if (DynamicUIBuilder.Instance != null)
-                DynamicUIBuilder.Instance.UpdateHealthUI(health);
+            DynamicUIBuilder dynamicUIBuilder = FindObjectOfType<DynamicUIBuilder>();
+            if (dynamicUIBuilder != null)
+                dynamicUIBuilder.UpdateHealthUI(health);
             if (health <= 0)
             {
                 SceneManager.LoadScene("GameOver");

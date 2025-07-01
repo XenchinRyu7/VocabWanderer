@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5812419589684935212}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: showSaveDialog
+      - m_Target: {fileID: 2371339176600911712}
+        m_TargetAssemblyTypeName: DialogPanelController, Assembly-CSharp
+        m_MethodName: OnSaveClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -436,9 +436,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5812419589684935212}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: HideDialog
+      - m_Target: {fileID: 2371339176600911712}
+        m_TargetAssemblyTypeName: DialogPanelController, Assembly-CSharp
+        m_MethodName: OnContinueClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -712,10 +712,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5812419589684935212}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: LoadToScene
-        m_Mode: 5
+      - m_Target: {fileID: 2371339176600911712}
+        m_TargetAssemblyTypeName: DialogPanelController, Assembly-CSharp
+        m_MethodName: onHomeClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 1121537191284389964}
   - component: {fileID: 8981672616967984452}
   - component: {fileID: 8367928977960909441}
-  - component: {fileID: 5812419589684935212}
+  - component: {fileID: 2371339176600911712}
   m_Layer: 0
   m_Name: DialogPanel
   m_TagString: Untagged
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5812419589684935212
+--- !u!114 &2371339176600911712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -840,13 +840,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6530456506441630065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd6285027cbe61b42a8ea22559a3d402, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f47741f3b9e764ea3c8a514ea8b37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableSceneChange: 1
-  dialogPanel: {fileID: 0}
-  saveDialogPanel: {fileID: 0}
   continueButton: {fileID: 0}
+  saveButton: {fileID: 0}
+  exitButton: {fileID: 0}
 --- !u!1 &7449368611774511032
 GameObject:
   m_ObjectHideFlags: 0

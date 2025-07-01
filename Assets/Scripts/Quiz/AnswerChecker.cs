@@ -50,7 +50,11 @@ public class AnswerChecker : MonoBehaviour
             if (GameManager.Instance.health < 5)
             {
                 GameManager.Instance.health++;
-                DynamicUIBuilder.Instance.UpdateHealthUI(GameManager.Instance.health);
+                DynamicUIBuilder dynamicUIBuilder = FindObjectOfType<DynamicUIBuilder>();
+                if (dynamicUIBuilder != null)
+                {
+                    dynamicUIBuilder.UpdateHealthUI(GameManager.Instance.health);
+                }
             }
         }
     }

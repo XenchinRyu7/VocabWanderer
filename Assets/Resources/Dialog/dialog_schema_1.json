@@ -83,17 +83,8 @@
     },
     { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 },
     {
-      "speaker": "Elena",
-      "text": "Bagus! Kita harus mencari tahu apa yang ada di balik papan petunjuk ini."
-    },
-    {
       "speaker": "Nova",
       "text": "Ayo, kita mulai petualangan kita!"
-    },
-    { "event": "quiz", "quiz_schema": "schema_1", "quiz_index": 2 },
-    {
-      "speaker": "Shey",
-      "text": "Aku sudah tidak sabar untuk menemukan rahasia di balik papan petunjuk ini!"
     },
     {
       "speaker": "Elena",

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DynamicUIBuilder : MonoBehaviour
 {
-    public static DynamicUIBuilder Instance;
     public Transform letterSlotParent;
     public Transform letterTileParent;
     public GameObject letterBoxPrefab;
@@ -18,11 +17,6 @@ public class DynamicUIBuilder : MonoBehaviour
     public GameObject heartPrefabFull;
     public GameObject heartPrefabEmpty;
     public int maxHealth = 5;
-
-    void Awake()
-    {
-        Instance = this;
-    }
 
     void Start()
     {
@@ -129,27 +123,70 @@ public class DynamicUIBuilder : MonoBehaviour
                     timerLine.StartLine(question.time_limit_seconds);
                 }
             };
-            // Tambahkan backsound time almost out
             StartCoroutine(CheckTimeAlmostOutCoroutine(question.time_limit_seconds));
         }
     }
 
     public void PauseGame()
     {
-        MenuController.Instance.ShowDialog();
-        if (timerLine != null)
-            timerLine.Pause();
-        if (GameManager.Instance != null)
-            GameManager.Instance.PauseTotalTime();
+        try
+        {
+            // Find MenuController in current scene
+            MenuController menuController = FindObjectOfType<MenuController>();
+            if (menuController != null)
+            {
+                Debug.Log("PauseGame: Found MenuController, calling ShowDialog()");
+                menuController.ShowDialog();
+            }
+            else
+            {
+                Debug.LogError("PauseGame: MenuController not found in current scene!");
+            }
+            if (timerLine != null)
+                timerLine.Pause();
+            if (GameManager.Instance != null)
+                GameManager.Instance.PauseTotalTime();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Error in PauseGame: {e.Message}");
+            return;
+        }
     }
 
     public void ResumeGame()
     {
-        MenuController.Instance.HideDialog();
-        if (timerLine != null)
-            timerLine.Resume();
-        if (GameManager.Instance != null)
-            GameManager.Instance.ResumeTotalTime();
+        try
+        {
+            // Find MenuController in current scene
+            MenuController menuController = FindObjectOfType<MenuController>();
+            if (menuController != null)
+            {
+                Debug.Log("ResumeGame: Found MenuController, calling HideDialog()");
+                menuController.HideDialog();
+            }
+            else
+            {
+                Debug.LogError("ResumeGame: MenuController not found in current scene!");
+                Debug.Log("ResumeGame: Fallback - resuming timer and game directly");
+
+                if (timerLine != null)
+                    timerLine.Resume();
+                if (GameManager.Instance != null)
+                    GameManager.Instance.ResumeTotalTime();
+
+                Destroy(gameObject);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Error in ResumeGame: {e.Message}");
+
+            if (timerLine != null)
+                timerLine.Resume();
+            if (GameManager.Instance != null)
+                GameManager.Instance.ResumeTotalTime();
+        }
     }
 
     private System.Collections.IEnumerator CheckTimeAlmostOutCoroutine(float totalTime)

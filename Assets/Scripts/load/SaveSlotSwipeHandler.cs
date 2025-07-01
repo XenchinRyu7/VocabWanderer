@@ -6,34 +6,31 @@ using UnityEngine.UI;
 public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Swipe Settings")]
-    public float swipeThreshold = 100f; // Pixel threshold untuk trigger delete
-    public float deleteThreshold = 200f; // Pixel threshold untuk auto-delete
+    public float swipeThreshold = 100f;
+    public float deleteThreshold = 200f;
     public float animationSpeed = 5f;
 
     [Header("UI References")]
-    public RectTransform slotContent; // Main slot content yang akan di-slide
-    public GameObject deleteOverlay; // Overlay "DELETE" yang muncul di belakang
-    public Text deleteText; // Text "DELETE"
+    public RectTransform slotContent;
+    public GameObject deleteOverlay;
+    public Text deleteText;
 
     private Vector2 originalPosition;
     private Vector2 startDragPosition;
     private bool isDragging = false;
     private bool deleteRevealed = false;
 
-    // References
     private SaveMenuUI saveMenuUI;
     private int slotIndex;
     private bool isNewSlot;
 
     void Start()
     {
-        // Set original position
         if (slotContent == null)
             slotContent = GetComponent<RectTransform>();
 
         originalPosition = slotContent.anchoredPosition;
 
-        // Setup delete overlay jika belum ada
         SetupDeleteOverlay();
     }
 
@@ -41,7 +38,6 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
     {
         if (deleteOverlay == null)
         {
-            // Buat delete overlay di belakang slot content
             GameObject overlay = new GameObject("DeleteOverlay");
             overlay.transform.SetParent(transform);
 
@@ -51,13 +47,11 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
             overlayRect.sizeDelta = Vector2.zero;
             overlayRect.anchoredPosition = Vector2.zero;
 
-            // Background merah untuk delete
             Image overlayImage = overlay.AddComponent<Image>();
-            overlayImage.color = new Color(1f, 0.2f, 0.2f, 0.8f); // Red background
+            overlayImage.color = new Color(1f, 0.2f, 0.2f, 0.8f);
 
             deleteOverlay = overlay;
 
-            // Buat delete text
             GameObject textObj = new GameObject("DeleteText");
             textObj.transform.SetParent(overlay.transform);
 
@@ -75,11 +69,9 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
             deleteText.alignment = TextAnchor.MiddleCenter;
             deleteText.fontStyle = FontStyle.Bold;
 
-            // Hide initially
             deleteOverlay.SetActive(false);
         }
 
-        // Pastikan delete overlay di belakang content
         deleteOverlay.transform.SetSiblingIndex(0);
         slotContent.SetSiblingIndex(1);
     }
@@ -90,7 +82,6 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
         slotIndex = index;
         isNewSlot = isNew;
 
-        // New slot tidak bisa di-delete
         if (isNewSlot)
         {
             this.enabled = false;
@@ -105,7 +96,6 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
         startDragPosition = eventData.position;
         isDragging = true;
 
-        // Show delete overlay
         deleteOverlay.SetActive(true);
     }
 
@@ -114,20 +104,15 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
         if (isNewSlot || !isDragging)
             return;
 
-        // Calculate drag distance
         Vector2 dragDistance = eventData.position - startDragPosition;
 
-        // Only handle horizontal drag
         float horizontalDrag = dragDistance.x;
 
-        // Clamp drag distance
         horizontalDrag = Mathf.Clamp(horizontalDrag, -deleteThreshold, deleteThreshold);
 
-        // Update slot position
         Vector2 newPosition = originalPosition + new Vector2(horizontalDrag, 0);
         slotContent.anchoredPosition = newPosition;
 
-        // Update delete text based on drag direction and distance
         UpdateDeleteUI(horizontalDrag);
     }
 
@@ -139,7 +124,6 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
         {
             deleteRevealed = true;
 
-            // Change text color based on proximity to delete threshold
             if (absDrag >= deleteThreshold)
             {
                 deleteText.text = "RELEASE TO DELETE";
@@ -166,20 +150,16 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
 
         isDragging = false;
 
-        // Calculate final drag distance
         Vector2 dragDistance = eventData.position - startDragPosition;
         float horizontalDrag = dragDistance.x;
         float absDrag = Mathf.Abs(horizontalDrag);
 
-        // Check if delete threshold reached
         if (absDrag >= deleteThreshold && deleteRevealed)
         {
-            // Trigger delete
             TriggerDelete();
         }
         else
         {
-            // Snap back to original position
             StartCoroutine(AnimateToPosition(originalPosition));
             deleteOverlay.SetActive(false);
         }
@@ -219,14 +199,12 @@ public class SaveSlotSwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandl
             yield return null;
         }
 
-        // Trigger delete after animation
         if (saveMenuUI != null)
         {
             saveMenuUI.OnSlotDeleteRequested(slotIndex);
         }
     }
 
-    // Reset position if needed
     public void ResetPosition()
     {
         slotContent.anchoredPosition = originalPosition;

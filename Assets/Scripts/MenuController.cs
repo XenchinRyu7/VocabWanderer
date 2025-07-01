@@ -4,18 +4,10 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    public static MenuController Instance;
     public bool enableSceneChange = true;
     public GameObject dialogPanel;
     public GameObject saveDialogPanel;
     public Button continueButton;
-
-    void Awake()
-    {
-        Debug.Log(
-            $"MenuController di scene {SceneManager.GetActiveScene().name} - normal instance"
-        );
-    }
 
     void Start()
     {
@@ -56,18 +48,7 @@ public class MenuController : MonoBehaviour
             }
 
             // Find the scene Canvas
-            Canvas[] canvases = FindObjectsOfType<Canvas>();
-            Canvas sceneCanvas = null;
-
-            foreach (Canvas canvas in canvases)
-            {
-                // Skip Canvas in DontDestroyOnLoad
-                if (canvas.gameObject.scene.name != "DontDestroyOnLoad")
-                {
-                    sceneCanvas = canvas;
-                    break;
-                }
-            }
+            Canvas sceneCanvas = FindObjectOfType<Canvas>();
 
             if (sceneCanvas == null)
             {
@@ -99,6 +80,21 @@ public class MenuController : MonoBehaviour
                 dialogInstance.transform.SetAsLastSibling();
 
                 dialogPanel = dialogInstance;
+
+                // Sembunyikan button Save jika di QuestionScene
+                if (SceneManager.GetActiveScene().name == "QuestionScene")
+                {
+                    GameObject saveButton = FindChildRecursive(dialogInstance.transform, "Save");
+                    if (saveButton != null)
+                    {
+                        saveButton.SetActive(false);
+                        Debug.Log("Save button hidden in QuestionScene");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Save button not found in DialogPanel");
+                    }
+                }
 
                 Debug.Log($"DialogPanel from prefab successfully displayed: {dialogInstance.name}");
                 Debug.Log($"DialogPanel active: {dialogInstance.activeSelf}");
@@ -134,6 +130,33 @@ public class MenuController : MonoBehaviour
             {
                 Debug.Log("dialogPanel is null, nothing to hide");
             }
+
+            // Resume game jika sedang di QuestionScene
+            if (SceneManager.GetActiveScene().name == "QuestionScene")
+            {
+                Debug.Log("HideDialog: Resuming game in QuestionScene");
+                DynamicUIBuilder dynamicUIBuilder = FindObjectOfType<DynamicUIBuilder>();
+                if (dynamicUIBuilder != null)
+                {
+                    // Panggil resume logic langsung tanpa memanggil ResumeGame()
+                    TimerLine timerLine = dynamicUIBuilder.timerLine;
+                    if (timerLine != null)
+                    {
+                        timerLine.Resume();
+                        Debug.Log("HideDialog: TimerLine resumed");
+                    }
+
+                    if (GameManager.Instance != null)
+                    {
+                        GameManager.Instance.ResumeTotalTime();
+                        Debug.Log("HideDialog: GameManager total time resumed");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("DynamicUIBuilder not found in QuestionScene");
+                }
+            }
         }
         catch (System.Exception e)
         {
@@ -154,17 +177,7 @@ public class MenuController : MonoBehaviour
                 saveDialogPanel = null;
             }
 
-            Canvas[] canvases = FindObjectsOfType<Canvas>();
-            Canvas sceneCanvas = null;
-
-            foreach (Canvas canvas in canvases)
-            {
-                if (canvas.gameObject.scene.name != "DontDestroyOnLoad")
-                {
-                    sceneCanvas = canvas;
-                    break;
-                }
-            }
+            Canvas sceneCanvas = FindObjectOfType<Canvas>();
 
             if (sceneCanvas == null)
             {
@@ -231,6 +244,8 @@ public class MenuController : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.LogError($"Error in hideSaveDialog: {e.Message}");
+            // Cleanup reference jika ada error
+            saveDialogPanel = null;
         }
     }
 
@@ -348,19 +363,24 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public static MenuController GetOrCreateInstance()
+    // Helper method untuk mencari child GameObject secara rekursif
+    private GameObject FindChildRecursive(Transform parent, string childName)
     {
-        MenuController existing = FindObjectOfType<MenuController>();
-        if (existing != null)
+        for (int i = 0; i < parent.childCount; i++)
         {
-            Debug.Log("MenuController ditemukan di scene saat ini");
-            return existing;
+            Transform child = parent.GetChild(i);
+            if (child.name == childName)
+            {
+                return child.gameObject;
+            }
+
+            // Cari secara rekursif di grandchildren
+            GameObject result = FindChildRecursive(child, childName);
+            if (result != null)
+            {
+                return result;
+            }
         }
-
-        GameObject menuControllerGO = new GameObject("MenuController");
-        MenuController newInstance = menuControllerGO.AddComponent<MenuController>();
-        Debug.Log("MenuController baru dibuat di scene saat ini");
-
-        return newInstance;
+        return null;
     }
 }
