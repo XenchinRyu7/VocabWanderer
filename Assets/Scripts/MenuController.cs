@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     public GameObject dialogPanel;
     public GameObject saveDialogPanel;
     public Button continueButton;
+    public GameObject exitDialog;
 
     void Start()
     {
@@ -382,5 +383,31 @@ public class MenuController : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void ShowExitDialog()
+    {
+        if (exitDialog != null)
+        {
+            Debug.Log("Showing exit dialog");
+            exitDialog.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Exit dialog GameObject is not assigned!");
+        }
+    }
+
+    public void HideExitDialog()
+    {
+        if (exitDialog != null)
+        {
+            Debug.Log("Hiding exit dialog");
+            exitDialog.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Exit dialog GameObject is not assigned!");
+        }
     }
 }

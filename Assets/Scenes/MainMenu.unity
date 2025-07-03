@@ -1090,9 +1090,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableSceneChange: 1
-  dialogPanel: {fileID: 5057070314595285465}
+  dialogPanel: {fileID: 0}
   saveDialogPanel: {fileID: 0}
   continueButton: {fileID: 1783969807}
+  exitDialog: {fileID: 5057070314595285465}
 --- !u!224 &199669798030859398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1990,8 +1991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 311.84253, y: -87}
-  m_SizeDelta: {x: 583.68506, y: 54}
+  m_AnchoredPosition: {x: 407.35754, y: -85.283394}
+  m_SizeDelta: {x: 774.7151, y: 50.566784}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3416444994127833550
 MonoBehaviour:
@@ -2456,7 +2457,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 628.1575, y: 0}
-  m_SizeDelta: {x: -1256.315, y: 174}
+  m_SizeDelta: {x: -1256.315, y: 170.56679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6586433347342874090
 RectTransform:
@@ -3500,7 +3501,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2115061950}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: HideDialog
+        m_MethodName: HideExitDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3854,7 +3855,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2115061950}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: ShowDialog
+        m_MethodName: ShowExitDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3866,7 +3867,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 975839220}
         m_TargetAssemblyTypeName: BacksoundPlayer, Assembly-CSharp
-        m_MethodName: OnButtonClickBacksound
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
