@@ -1,23 +1,23 @@
 # ninja log v5
-12	3955	7667572041127364	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7d36e2f25d770a1c
-25	508	7667572006642014	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	67a167d6e8942ac2
-510	1309	7667572011928644	D:/UNIKU/Unity Dev/VocabWanderer/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y3j15r2/obj/arm64-v8a/libswappywrapper.so	4ed30c242d8329c1
-3	3570	7667572037238442	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	19b42179a0b56788
-22	3108	7667572032636062	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d93138c9f399ce40
-16	3119	7667572032651224	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ced7e10530bc1645
-14	3261	7667572034196612	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc732d91d357c445
-20	3535	7667572036914124	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f8b75b959f4aaf3a
-7	3403	7667572035602289	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a527f3dd0ebb33a0
-18	3841	7667572039972067	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	149884a797f53582
-3955	4094	7667572042533204	D:/UNIKU/Unity Dev/VocabWanderer/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y3j15r2/obj/arm64-v8a/libgame.so	9b9d850e8100e300
+27	4741	7703228156785795	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7d36e2f25d770a1c
 62	798	7703228117438299	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	67a167d6e8942ac2
 799	1958	7703228128797592	D:/UNIKU/Unity Dev/VocabWanderer/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y3j15r2/obj/arm64-v8a/libswappywrapper.so	4ed30c242d8329c1
-40	3891	7703228148007323	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc732d91d357c445
-32	3940	7703228148391480	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ced7e10530bc1645
-16	3944	7703228148633608	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a527f3dd0ebb33a0
 46	4021	7703228149522023	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d93138c9f399ce40
 22	4157	7703228150470381	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	19b42179a0b56788
+32	3940	7703228148391480	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ced7e10530bc1645
+40	3891	7703228148007323	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc732d91d357c445
+16	3944	7703228148633608	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a527f3dd0ebb33a0
 56	4712	7703228156543166	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f8b75b959f4aaf3a
 51	4716	7703228156553165	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	149884a797f53582
-27	4741	7703228156785795	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7d36e2f25d770a1c
 4741	4943	7703228158996485	D:/UNIKU/Unity Dev/VocabWanderer/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y3j15r2/obj/arm64-v8a/libgame.so	9b9d850e8100e300
+57	474	7731361969202692	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	67a167d6e8942ac2
+475	800	7731361972483203	D:/UNIKU/Unity Dev/VocabWanderer/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y3j15r2/obj/arm64-v8a/libswappywrapper.so	4ed30c242d8329c1
+36	2314	7731361987572342	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc732d91d357c445
+23	2355	7731361987956235	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ced7e10530bc1645
+29	2405	7731361988427520	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d93138c9f399ce40
+18	2416	7731361988581752	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a527f3dd0ebb33a0
+7	2486	7731361989292362	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	19b42179a0b56788
+43	2776	7731361992190577	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	149884a797f53582
+50	2890	7731361993366691	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f8b75b959f4aaf3a
+13	2942	7731361993853508	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7d36e2f25d770a1c
+2942	3102	7731361995509359	D:/UNIKU/Unity Dev/VocabWanderer/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y3j15r2/obj/arm64-v8a/libgame.so	9b9d850e8100e300

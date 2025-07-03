@@ -20,17 +20,36 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("[GameManager] Awake called");
         if (Instance == null)
+        {
             Instance = this;
+            Debug.Log("[GameManager] Set as singleton instance");
+            DontDestroyOnLoad(gameObject);
+        }
         else
+        {
+            Debug.Log("[GameManager] Duplicate instance found, destroying this duplicate");
+            Debug.Log("[GameManager] Triggering quiz setup on existing instance");
+            // Trigger quiz setup pada instance yang sudah ada
+            Instance.SetupQuizFromScene();
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Start()
     {
+        // Hanya jalankan jika ini adalah instance pertama (bukan duplicate)
+        if (Instance == this)
+        {
+            SetupQuizFromScene();
+        }
+    }
+
+    public void SetupQuizFromScene()
+    {
         Debug.Log(
-            $"[GameManager] Start: schema={QuizNavigationParam.schema}, index={QuizNavigationParam.index}"
+            $"[GameManager] SetupQuizFromScene: schema={QuizNavigationParam.schema}, index={QuizNavigationParam.index}"
         );
         string schema = QuizNavigationParam.schema;
         int idx = QuizNavigationParam.index;
@@ -74,20 +93,37 @@ public class GameManager : MonoBehaviour
 
     public void LoadChallenge(int index)
     {
-        Debug.Log($"LoadChallenge dipanggil dengan index={index}");
+        Debug.Log($"[GameManager] LoadChallenge called with index={index}");
         if (VerbChallengeLoader.Instance == null)
         {
             Debug.LogError("VerbChallengeLoader.Instance is null di LoadChallenge!");
             return;
         }
-        Debug.Log("Sebelum GetChallenge");
+        Debug.Log("[GameManager] VerbChallengeLoader found, checking total challenges");
+        int totalChallenges = VerbChallengeLoader.Instance.challenges?.Count ?? 0;
+        Debug.Log($"[GameManager] Total challenges available: {totalChallenges}");
+        Debug.Log($"[GameManager] Requesting challenge at index: {index}");
+
+        if (index >= totalChallenges || totalChallenges == 0)
+        {
+            Debug.LogError(
+                $"[GameManager] Challenge index {index} out of range! Total challenges: {totalChallenges}"
+            );
+            return;
+        }
+
         currentChallenge = VerbChallengeLoader.Instance.GetChallenge(index);
-        Debug.Log("Setelah GetChallenge");
+        Debug.Log(
+            $"[GameManager] GetChallenge returned: {(currentChallenge != null ? "SUCCESS" : "NULL")}"
+        );
         if (currentChallenge == null)
         {
             Debug.LogError($"GetChallenge({index}) return null di LoadChallenge!");
             return;
         }
+        Debug.Log(
+            $"[GameManager] Challenge loaded successfully: questions count = {currentChallenge.questions?.Count ?? 0}"
+        );
         currentQuestionIndex = 0;
     }
 
@@ -104,6 +140,15 @@ public class GameManager : MonoBehaviour
             Debug.LogError("currentChallenge.questions is null di LoadQuestion!");
             return;
         }
+        Debug.Log($"[GameManager] LoadQuestion called with index={index}");
+        Debug.Log($"[GameManager] currentChallenge is null: {currentChallenge == null}");
+        if (currentChallenge != null)
+        {
+            Debug.Log(
+                $"[GameManager] currentChallenge.questions.Count={currentChallenge.questions.Count}"
+            );
+        }
+
         if (index < 0 || index >= currentChallenge.questions.Count)
         {
             Debug.LogError(
@@ -117,13 +162,16 @@ public class GameManager : MonoBehaviour
             Debug.LogError($"currentQuestion null di LoadQuestion! index={index}");
             return;
         }
-        Debug.Log("currentQuestion berhasil diambil, lanjut ke BuildQuestionUI");
+        Debug.Log(
+            $"[GameManager] currentQuestion berhasil diambil: {currentQuestion.answer}, lanjut ke BuildQuestionUI"
+        );
         DynamicUIBuilder dynamicUIBuilder = FindObjectOfType<DynamicUIBuilder>();
         if (dynamicUIBuilder == null)
         {
             Debug.LogError("DynamicUIBuilder not found in current scene in LoadQuestion!");
             return;
         }
+        Debug.Log("[GameManager] DynamicUIBuilder found, calling BuildQuestionUI");
         dynamicUIBuilder.BuildQuestionUI(currentQuestion, currentChallenge.background_asset);
     }
 

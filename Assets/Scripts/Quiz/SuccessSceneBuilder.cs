@@ -43,11 +43,20 @@ public class SuccessSceneBuilder : MonoBehaviour
             var autoSave = saveManager.GetCurrentAutoSave();
             if (autoSave != null && !string.IsNullOrEmpty(autoSave.schema))
             {
+                Debug.Log(
+                    $"[SuccessSceneBuilder] Current AutoSave after quiz completion: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}, quizIndex={autoSave.lastCompletedQuizIndex}"
+                );
+
                 DialogManager.lastDialogSceneId = autoSave.schema;
                 DialogManager.lastDialogIndex = autoSave.dialogIndex;
+
                 Debug.Log(
-                    $"Continuing dialog after quiz: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}"
+                    $"[SuccessSceneBuilder] Continuing dialog after quiz: schema={autoSave.schema}, dialogIndex={autoSave.dialogIndex}"
                 );
+            }
+            else
+            {
+                Debug.LogError("[SuccessSceneBuilder] No valid autosave found!");
             }
         }
 
@@ -84,7 +93,9 @@ public class SuccessSceneBuilder : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("SuccessSceneBuilder: MenuController not found in current scene for save dialog!");
+                Debug.LogWarning(
+                    "SuccessSceneBuilder: MenuController not found in current scene for save dialog!"
+                );
             }
         }
         catch (System.Exception e)
@@ -107,7 +118,9 @@ public class SuccessSceneBuilder : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("SuccessSceneBuilder: MenuController not found in current scene for dialog!");
+                Debug.LogWarning(
+                    "SuccessSceneBuilder: MenuController not found in current scene for dialog!"
+                );
             }
         }
         catch (System.Exception e)

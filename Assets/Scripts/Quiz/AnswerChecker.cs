@@ -8,11 +8,36 @@ public class AnswerChecker : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Debug.Log("[AnswerChecker] Replacing old instance with new scene instance");
+        }
+
         Instance = this;
+        Debug.Log("[AnswerChecker] Fresh instance created for this scene");
+
+        // Validate letterSlotParent
+        if (letterSlotParent == null)
+        {
+            Debug.LogError("[AnswerChecker] letterSlotParent is null! Please assign in inspector.");
+        }
     }
 
     public void SubmitAnswer()
     {
+        if (letterSlotParent == null)
+        {
+            Debug.LogError("[AnswerChecker] Cannot submit answer: letterSlotParent is null!");
+            return;
+        }
+
+        if (!letterSlotParent.gameObject.activeInHierarchy)
+        {
+            Debug.LogError("[AnswerChecker] Cannot submit answer: letterSlotParent is not active!");
+            return;
+        }
+
+        Debug.Log("[AnswerChecker] SubmitAnswer called with valid letterSlotParent");
         var slots = letterSlotParent.GetComponentsInChildren<LetterDropSlot>();
         List<string> userInput = new List<string>();
         foreach (var slot in slots)
